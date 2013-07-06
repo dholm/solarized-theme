@@ -1,0 +1,5 @@
+* Solarized Theme for Emacs
+
+This is my version of the Solarized theme. I based my implementation
+on the implementations of [[https://github.com/sellout/emacs-color-theme-solarized][Greg Pfeil]] and [[https://github.com/bbatsov/solarized-emacs][Bozhidar Batsov]]
+implementations. It works with `load-theme'.
