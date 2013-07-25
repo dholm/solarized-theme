@@ -83,7 +83,7 @@
 
 (defun solarized-back (palette)
   "Returns additional attributes for some backgrounds."
-  (if (or window-system (> display-color-cells 16))
+  (if (or window-system (> (display-color-cells) 16))
       `(:background ,(solarized-find-color 'base03 palette))
     '()))
 
