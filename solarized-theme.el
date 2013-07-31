@@ -1,4 +1,9 @@
 ;;; solarized-theme.el --- Emacs highlighting using Ethan Schoonover’s Solarized color scheme
+;;; Commentary:
+;;; Code:
+
+(eval-when-compile
+  (require 'cl))
 
 (deftheme solarized "Solarized")
 
@@ -67,8 +72,27 @@
     (cyan    "#2AA198" "#00AFAF" "cyan"          "cyan")
     (green   "#859900" "#5F8700" "green"         "green")))
 
+(defconst solarized-contrast-components
+  ;; name       sRGB      256       16              8
+  '((yellow  (("#7B6000" "#875f00" "yellow"        "yellow")
+              ("#DEB542" "#d7a55f" "brightyellow"  "white")))
+    (orange  (("#8B2C02" "#d75f00" "red"           "red")
+              ("#F2804F" "#ff875f" "brightyellow"  "white")))
+    (red     (("#990A1B" "#870000" "red"           "red")
+              ("#FF6E64" "#ff5f5f" "brightred"     "white")))
+    (magenta (("#93115C" "#87005f" "magenta"       "magenta")
+              ("#F771AC" "#ff87af" "brightmagenta" "white")))
+    (violet  (("#3F4D91" "#5f5fd7" "blue"          "blue")
+              ("#9EA0E5" "#87afff" "brightmagenta" "white")))
+    (blue    (("#00629D" "#005faf" "blue"          "blue")
+              ("#69B7F0" "#5fafff" "brightblue"    "white")))
+    (cyan    (("#00736F" "#00875f" "cyan"          "cyan")
+              ("#69CABF" "#5fd7d7" "brightcyan"    "white")))
+    (green   (("#546E00" "#5f8700" "green"         "green")
+              ("#B4C342" "#d7ff5f" "brightgreen"   "white")))))
+
 (defun solarized-column-index ()
-  "Returns the palette column to use based on available features."
+  "Return the palette column to use based on available features."
   (if window-system
       1
     (case (display-color-cells)
@@ -77,12 +101,14 @@
       (otherwise 2))))
 
 (defun solarized-find-color (name palette)
-  "Grab the named color from the palette."
+  "Grab the color NAME from the PALETTE."
   (let ((index (solarized-column-index)))
     (nth index (assoc name palette))))
 
 (defun solarized-diff-case (high-value low-value normal-windowed-value normal-value)
-  "Checks `solarized-diff-mode' and returns the appropriate value."
+  "Check `solarized-diff-mode' and return the appropriate value.
+These values are chosen from HIGH-VALUE, LOW-VALUE, NORMAL-WINDOWED-VALUE and
+NORMAL-VALUE."
   (case solarized-diff-mode
     (high high-value)
     (low low-value)
@@ -90,8 +116,26 @@
                 normal-windowed-value
               normal-value))))
 
+(defun solarized-contrast-palette ()
+  "Build the Solarized contrast palette."
+  (cl-reduce 'append
+             (cl-reduce 'append
+                        (mapcar
+                         (lambda (color)
+                           (let ((index (- (solarized-column-index) 1))
+                                 (hc-index (if (eq solarized-background 'light) 0 1))
+                                 (lc-index (if (eq solarized-background 'light) 1 0)))
+                             (mapcar
+                              (lambda (cons)
+                                (list
+                                 (list (intern (concat (symbol-name (car color)) "-hc"))
+                                       (nth index (nth hc-index cons)))
+                                 (list (intern (concat (symbol-name (car color)) "-lc"))
+                                       (nth index (nth lc-index cons)))))
+                              (cdr color)))) solarized-contrast-components))))
+
 (defmacro solarized-with-values (&rest body)
-  "`let' bind all values for Solarized."
+  "`let' bind all values for Solarized on BODY."
   (declare (indent 0))
   (let ((index (solarized-column-index))
         (palette (if (eq 'light solarized-background)
@@ -112,6 +156,7 @@
             (solarized-emph ,(if (eq 'light solarized-background) 'base01 'base1))
             (solarized-comment ,(if (eq 'light solarized-background) 'base1 'base01))
 
+            ,@(solarized-contrast-palette)
             (opt-under nil)
             (fmt-none '(:weight normal :slant normal  :underline nil        :inverse-video nil))
             (fmt-bold '(:weight ,bold  :slant normal  :underline nil        :inverse-video nil))
@@ -212,12 +257,25 @@
      '(eshell-ls-symlink ((t (:foreground ,cyan))))
 
      ;; flymake
-     '(flymake-errline ((t (,@fmt-revr :foreground ,red :background ,solarized-bg))))
-     '(flymake-warnline ((t (,@fmt-bold :foreground ,red :background ,solarized-bg))))
+     '(flymake-errline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,red) :inherit unspecified
+                     :foreground ,red-hc :background ,red-lc))
+        (t (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
+     '(flymake-infoline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,green) :inherit unspecified
+                     :foreground ,green-hc :background ,green-lc))
+        (t (:foreground ,green-hc :background ,green-lc :weight bold :underline t))))
+     '(flymake-warnline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,yellow) :inherit unspecified
+                     :foreground ,yellow-hc :background ,yellow-lc))
+        (t (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
 
      ;; flyspell
-     '(flyspell-incorrect ((t (:foreground ,red))))
-     '(flyspell-duplicate ((t (:foreground ,yellow))))
+     '(flyspell-incorrect ((t (:inherit flymake-errline))))
+     '(flyspell-duplicate ((t (:inherit flymake-warnline))))
 
      ;; erc
      '(erc-input-face ((t (:foreground ,solarized-comment))))
