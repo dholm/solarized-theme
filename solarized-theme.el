@@ -81,12 +81,6 @@
   (let ((index (solarized-column-index)))
     (nth index (assoc name palette))))
 
-(defun solarized-back (palette)
-  "Returns additional attributes for some backgrounds."
-  (if (or window-system (> (display-color-cells) 16))
-      `(:background ,(solarized-find-color 'base03 palette))
-    '()))
-
 (defun solarized-diff-case (high-value low-value normal-windowed-value normal-value)
   "Checks `solarized-diff-mode' and returns the appropriate value."
   (case solarized-diff-mode
@@ -108,7 +102,16 @@
         (underline (if solarized-underline t nil))
         (italic (if solarized-italic 'italic 'normal)))
     `(let* (,@(mapcar (lambda (cons) (list (car cons) (nth index cons))) palette)
-            (back ',(solarized-back palette))
+
+            ;; Basic colors
+            (solarized-fg ,(if (eq 'light solarized-background) 'base00 'base0))
+            (solarized-bg ,(if (or window-system (> (display-color-cells) 16))
+                               (if (eq 'light solarized-background) 'base3 'base03) palette
+                             '()))
+            (solarized-hl ,(if (eq 'light solarized-background) 'base2 'base02))
+            (solarized-emph ,(if (eq 'light solarized-background) 'base01 'base1))
+            (solarized-comment ,(if (eq 'light solarized-background) 'base1 'base01))
+
             (opt-under nil)
             (fmt-none '(:weight normal :slant normal  :underline nil        :inverse-video nil))
             (fmt-bold '(:weight ,bold  :slant normal  :underline nil        :inverse-video nil))
@@ -139,37 +142,37 @@
      '(button ((t (:underline t))))
      '(link ((t (,@fmt-undr :foreground ,violet))))
      '(link-visited ((t (,@fmt-undr :foreground ,magenta))))
-     '(default ((t (:foreground ,base0 ,@back))))
-     '(cursor ((t (:foreground ,base03 :background ,base0))))
+     '(default ((t (:foreground ,solarized-fg :background ,solarized-bg))))
+     '(cursor ((t (:foreground ,solarized-bg :background ,solarized-fg))))
      '(escape-glyph ((t (:foreground ,red))))
-     '(fringe ((t (:foreground ,base01 :background ,base02))))
-     '(header-line ((t (:foreground ,base0 :background ,base02 ,@fmt-revbb))))
-     '(highlight ((t (:background ,base02))))
-     '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow ,@back))))
-     '(menu ((t (:foreground ,base0 :background ,base02))))
+     '(fringe ((t (:foreground ,solarized-comment :background ,solarized-hl))))
+     '(header-line ((t (:foreground ,solarized-fg :background ,solarized-hl ,@fmt-revbb))))
+     '(highlight ((t (:background ,solarized-hl))))
+     '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow :background ,solarized-bg))))
+     '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
-     '(mode-line ((t (:foreground ,base1 :background ,base02 ,@fmt-revbb :box nil))))
-     '(mode-line-inactive ((t (:foreground ,base00 :background ,base02 ,@fmt-revbb :box nil))))
-     '(region ((t (:foreground ,base01 :background ,base03 ,@fmt-revbb))))
-     '(secondary-selection ((t (:background ,base02))))
+     '(mode-line ((t (:foreground ,solarized-emph :background ,solarized-hl ,@fmt-revbb :box nil))))
+     '(mode-line-inactive ((t (:foreground ,base00 :background ,solarized-hl ,@fmt-revbb :box nil))))
+     '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
+     '(secondary-selection ((t (:background ,solarized-hl))))
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
-     '(vertical-border ((t (:foreground ,base0))))
+     '(vertical-border ((t (:foreground ,solarized-fg))))
 
      ;; compilation
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
      ;; isearch
-     '(isearch ((t (,@fmt-stnd :foreground ,orange ,@back))))
-     '(isearch-fail ((t (,@fmt-stnd :foreground ,orange ,@back))))
+     '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
+     '(isearch-fail ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
 
      ;; font lock
      '(font-lock-builtin-face ((t (,@fmt-none :foreground ,green))))
-     '(font-lock-comment-face ((t (,@fmt-ital :foreground ,base01))))
-     '(font-lock-comment-delimiter-face ((t (,@fmt-ital :foreground ,base01))))
+     '(font-lock-comment-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-comment-delimiter-face ((t (,@fmt-ital :foreground ,solarized-comment))))
      '(font-lock-constant-face ((t (,@fmt-none :foreground ,cyan))))
-     '(font-lock-doc-face ((t (,@fmt-ital :foreground ,base01))))
-     '(font-lock-doc-string-face ((t (,@fmt-ital :foreground ,base01))))
+     '(font-lock-doc-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-doc-string-face ((t (,@fmt-ital :foreground ,solarized-comment))))
      '(font-lock-function-name-face ((t (,@fmt-none :foreground ,blue))))
      '(font-lock-keyword-face ((t (,@fmt-none :foreground ,green))))
      '(font-lock-negation-char-face ((t (,@fmt-none :foreground ,red))))
@@ -184,16 +187,16 @@
      '(font-latex-sectioning-5 ((t (:foreground ,violet))))
 
      ;; bookmarks
-     '(bm-fringe-face ((t (:background ,orange :foreground ,base03))))
-     '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,base03))))
+     '(bm-fringe-face ((t (:background ,orange :foreground ,solarized-bg))))
+     '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,solarized-bg))))
 
      ;; diff
      '(diff-added ((t (,@fmt-revr :foreground ,green))))
      '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
      '(diff-removed ((t (,@fmt-revr :foreground ,red))))
-     '(diff-refine-change ((t (,@fmt-revr :foreground ,blue ,@back))))
-     '(diff-file-header ((t (,@back))))
-     '(diff-header ((t (:foreground ,base1 ,@back))))
+     '(diff-refine-change ((t (,@fmt-revr :foreground ,blue :background ,solarized-bg))))
+     '(diff-file-header ((t (:background ,solarized-bg))))
+     '(diff-header ((t (:foreground ,solarized-emph :background ,solarized-bg))))
 
      ;; eshell
      '(eshell-prompt ((t (,@fmt-bold :foreground ,green))))
@@ -209,20 +212,20 @@
      '(eshell-ls-symlink ((t (:foreground ,cyan))))
 
      ;; flymake
-     '(flymake-errline ((t (,@fmt-revr :foreground ,red ,@back))))
-     '(flymake-warnline ((t (,@fmt-bold :foreground ,red ,@back))))
+     '(flymake-errline ((t (,@fmt-revr :foreground ,red :background ,solarized-bg))))
+     '(flymake-warnline ((t (,@fmt-bold :foreground ,red :background ,solarized-bg))))
 
      ;; flyspell
      '(flyspell-incorrect ((t (:foreground ,red))))
      '(flyspell-duplicate ((t (:foreground ,yellow))))
 
      ;; erc
-     '(erc-input-face ((t (:foreground ,base01))))
+     '(erc-input-face ((t (:foreground ,solarized-comment))))
      '(erc-keyword-face ((t (,@fmt-bldi :foreground ,yellow))))
      '(erc-nick-default-face ((t (,@fmt-none :foreground ,cyan))))
      '(erc-my-nick-face ((t (:foreground ,blue))))
      '(erc-notice-face ((t (,@fmt-none :foreground ,blue))))
-     '(erc-timestamp-face ((t (:foreground ,base01))))
+     '(erc-timestamp-face ((t (:foreground ,solarized-comment))))
 
      ;; git-gutter
      '(git-gutter:modified ((t (:foreground ,violet))))
@@ -238,16 +241,16 @@
      '(gnus-group-mail-3-empty ((t (:foreground ,magenta))))
      '(gnus-group-mail-low ((t (,@fmt-bold :foreground ,base00))))
      '(gnus-group-mail-low-empty ((t (:foreground ,base00))))
-     '(gnus-group-news-1 ((t (,@fmt-bold :foreground ,base1))))
-     '(gnus-group-news-1-empty ((t (:foreground ,base1))))
+     '(gnus-group-news-1 ((t (,@fmt-bold :foreground ,solarized-emph))))
+     '(gnus-group-news-1-empty ((t (:foreground ,solarized-emph))))
      '(gnus-group-news-2 ((t (,@fmt-bold :foreground ,blue))))
      '(gnus-group-news-2-empty ((t (:foreground ,blue))))
      '(gnus-group-news-low ((t (,@fmt-bold :foreground ,violet))))
      '(gnus-group-news-low-empty ((t (:foreground ,violet))))
-     '(gnus-header-content ((t (,@fmt-none :foreground ,base01))))
+     '(gnus-header-content ((t (,@fmt-none :foreground ,solarized-comment))))
      '(gnus-header-from ((t (,@fmt-none :foreground ,base00))))
-     '(gnus-header-name ((t (,@fmt-none :foreground ,base01))))
-     '(gnus-header-newsgroups ((t (,@fmt-none :foreground ,base02))))
+     '(gnus-header-name ((t (,@fmt-none :foreground ,solarized-comment))))
+     '(gnus-header-newsgroups ((t (,@fmt-none :foreground ,solarized-hl))))
      '(gnus-header-subject ((t (,@fmt-none :foreground ,blue))))
      '(gnus-summary-cancelled ((t (,@fmt-none :foreground ,red))))
      '(gnus-summary-high-ancient ((t (,@fmt-bold :inherit gnus-summary-normal-ancient))))
@@ -259,10 +262,10 @@
      '(gnus-summary-low-ticked ((t (,@fmt-ital :inherit gnus-summary-normal-ancient))))
      '(gnus-summary-low-unread ((t (,@fmt-ital :inherit gnus-summary-normal-unread))))
      '(gnus-summary-normal-ancient ((t (,@fmt-none :foreground ,blue))))
-     '(gnus-summary-normal-read ((t (,@fmt-none :foreground ,base01))))
+     '(gnus-summary-normal-read ((t (,@fmt-none :foreground ,solarized-comment))))
      '(gnus-summary-normal-ticked ((t (,@fmt-none :foreground ,red))))
      '(gnus-summary-normal-unread ((t (,@fmt-none :foreground ,blue))))
-     '(gnus-summary-selected ((t (,@fmt-none :foreground ,base03 :background ,yellow))))
+     '(gnus-summary-selected ((t (,@fmt-none :foreground ,solarized-bg :background ,yellow))))
      '(gnus-cite-1 ((t (,@fmt-none :foreground ,blue))))
      '(gnus-cite-2 ((t (,@fmt-none :foreground ,cyan))))
      '(gnus-cite-3 ((t (,@fmt-none :foreground ,yellow))))
@@ -272,12 +275,12 @@
      '(gnus-cite-7 ((t (,@fmt-none :foreground ,green))))
      '(gnus-cite-8 ((t (,@fmt-none :foreground ,magenta))))
      '(gnus-cite-9 ((t (,@fmt-none :foreground ,base00))))
-     '(gnus-cite-10 ((t (,@fmt-none :foreground ,base01))))
-     '(gnus-cite-11 ((t (,@fmt-none :foreground ,base02))))
-     '(gnus-signature ((t (,@fmt-none :foreground ,base01))))
+     '(gnus-cite-10 ((t (,@fmt-none :foreground ,solarized-comment))))
+     '(gnus-cite-11 ((t (,@fmt-none :foreground ,solarized-hl))))
+     '(gnus-signature ((t (,@fmt-none :foreground ,solarized-comment))))
 
      ;; hl-line
-     '(hl-line ((t (:underline ,opt-under :background ,base02))))
+     '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
 
      ;; ido
      '(ido-first-match ((t (,@fmt-bold :foreground ,green))))
@@ -294,13 +297,13 @@
      '(jabber-activity-personal-face ((t (,@fmt-bold :foreground ,blue))))
 
      ;; linum
-     '(linum ((t (:foreground ,base01 :background ,base02))))
+     '(linum ((t (:foreground ,solarized-comment :background ,solarized-hl))))
 
      ;; message
      '(message-cited-text ((t (:foreground ,base2))))
      '(message-header-name ((t (:foreground ,cyan))))
      '(message-header-other ((t (:foreground ,red))))
-     '(message-header-to ((t (,@fmt-bold :foreground ,base1))))
+     '(message-header-to ((t (,@fmt-bold :foreground ,solarized-emph))))
      '(message-header-cc ((t (,@fmt-bold :foreground ,green))))
      '(message-header-newsgroups ((t (,@fmt-bldi :foreground ,yellow))))
      '(message-header-subject ((t (:foreground ,base00))))
@@ -310,16 +313,16 @@
 
      ;; org
      '(org-done ((t (,@fmt-bold :foreground ,green))))
-     '(org-hide ((t (:foreground ,base03))))
-     '(org-todo ((t (,@fmt-bold :foreground ,base03 :background ,red))))
+     '(org-hide ((t (:foreground ,solarized-bg))))
+     '(org-todo ((t (,@fmt-bold :foreground ,solarized-bg :background ,red))))
 
      ;; outline
      '(outline-1 ((t (,@fmt-none :foreground ,blue))))
      '(outline-2 ((t (,@fmt-none :foreground ,cyan))))
      '(outline-3 ((t (,@fmt-none :foreground ,yellow))))
      '(outline-4 ((t (,@fmt-none :foreground ,red))))
-     '(outline-5 ((t (,@fmt-none :foreground ,base0))))
-     '(outline-6 ((t (,@fmt-none :foreground ,base01))))
+     '(outline-5 ((t (,@fmt-none :foreground ,solarized-fg))))
+     '(outline-6 ((t (,@fmt-none :foreground ,solarized-comment))))
      '(outline-7 ((t (,@fmt-none :foreground ,orange))))
      '(outline-8 ((t (,@fmt-none :foreground ,violet))))
 
@@ -332,26 +335,26 @@
      '(rainbow-delimiters-depth-6-face ((t (:foreground ,blue))))
      '(rainbow-delimiters-depth-7-face ((t (:foreground ,orange))))
      '(rainbow-delimiters-depth-8-face ((t (:foreground ,magenta))))
-     '(rainbow-delimiters-depth-9-face ((t (:foreground ,base0))))
+     '(rainbow-delimiters-depth-9-face ((t (:foreground ,solarized-fg))))
 
      ;; rcirc
      '(rcirc-my-nick ((t (:foreground ,blue))))
      '(rcirc-other-nick ((t (:foreground ,green))))
      '(rcirc-bright-nick ((t (:foreground ,magenta))))
-     '(rcirc-server ((t (:foreground ,base1))))
-     '(rcirc-timestamp ((t (:foreground ,base01))))
+     '(rcirc-server ((t (:foreground ,solarized-emph))))
+     '(rcirc-timestamp ((t (:foreground ,solarized-comment))))
      '(rcirc-nick-in-message ((t (:foreground ,orange))))
      '(rcirc-prompt ((t (:foreground ,yellow))))
 
      ;; show-paren
-     '(show-paren-mismatch ((t (,@fmt-bold :foreground ,red :background ,base01))))
-     '(show-paren-match ((t (,@fmt-bold :foreground ,cyan :background ,base02))))
+     '(show-paren-mismatch ((t (,@fmt-bold :foreground ,red :background ,solarized-comment))))
+     '(show-paren-match ((t (,@fmt-bold :foreground ,cyan :background ,solarized-hl))))
 
      ;; slime
      '(slime-repl-inputted-output-face ((t (:foreground ,red))))
 
      ;; term
-     '(term-color-black ((t ( :foreground ,base02))))
+     '(term-color-black ((t ( :foreground ,solarized-hl))))
      '(term-color-red ((t ( :foreground ,red))))
      '(term-color-green ((t ( :foreground ,green))))
      '(term-color-yellow ((t ( :foreground ,yellow))))
@@ -361,13 +364,13 @@
      '(term-color-white ((t ( :foreground ,base00))))
 
      ;; whitespace
-     '(whitespace-space ((t (:foreground ,base02))))
+     '(whitespace-space ((t (:foreground ,solarized-hl))))
      '(whitespace-hspace ((t (:foreground ,orange))))
-     '(whitespace-tab ((t (:foreground ,base02))))
-     '(whitespace-trailing ((t (,@fmt-bold :foreground ,red :background ,base02))))
-     '(whitespace-line ((t (:foreground ,magenta :background ,base03))))
+     '(whitespace-tab ((t (:foreground ,solarized-hl))))
+     '(whitespace-trailing ((t (,@fmt-bold :foreground ,red :background ,solarized-hl))))
+     '(whitespace-line ((t (:foreground ,magenta :background ,solarized-bg))))
      '(whitespace-space-before-tab ((t (,@fmt-bold :foreground ,red))))
-     '(whitespace-indentation ((t (:foreground ,base02))))
+     '(whitespace-indentation ((t (:foreground ,solarized-hl))))
      '(whitespace-empty ((t (:foreground ,red))))
      '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
 
