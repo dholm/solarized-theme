@@ -159,6 +159,10 @@
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
+     ;; dropdown
+     '(dropdown-list-face ((t (:foreground ,cyan :background ,solarized-hl))))
+     '(dropdown-list-selection-face ((t (:foreground ,cyan-hc :background ,cyan-lc))))
+
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange ,@back))))
      '(isearch-fail ((t (,@fmt-stnd :foreground ,orange ,@back))))
