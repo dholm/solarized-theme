@@ -323,6 +323,15 @@
      '(outline-7 ((t (,@fmt-none :foreground ,orange))))
      '(outline-8 ((t (,@fmt-none :foreground ,violet))))
 
+     ;; powerline
+     '(mode-line ((t (:foreground ,solarized-fg :background ,solarized-comment))))
+     '(mode-line-buffer-id ((t (:foreground ,base2 :background ,blue))))
+     '(mode-line-inactive ((t (:foreground ,solarized-fg :background ,solarized-comment))))
+     '(powerline-active1 ((t (:foreground ,solarized-comment :background ,solarized-hl))))
+     '(powerline-active2 ((t (:foreground ,orange :background ,solarized-hl))))
+     '(powerline-inactive1 ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+     '(powerline-inactive2 ((t (:foreground ,solarized-fg :background ,solarized-comment))))
+
      ;; rainbow-delimiters
      '(rainbow-delimiters-depth-1-face ((t (:foreground ,cyan))))
      '(rainbow-delimiters-depth-2-face ((t (:foreground ,yellow))))
