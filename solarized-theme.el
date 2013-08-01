@@ -369,7 +369,14 @@
      '(whitespace-space-before-tab ((t (,@fmt-bold :foreground ,red))))
      '(whitespace-indentation ((t (:foreground ,base02))))
      '(whitespace-empty ((t (:foreground ,red))))
-     '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
+     '(whitespace-space-after-tab ((t (:foreground ,cyan))))
+
+     ;; xcscope
+     '(cscope-file-face ((t (:foreground ,green :weight bold))))
+     '(cscope-function-face ((t (:foreground ,blue))))
+     '(cscope-line-number-face ((t (:foreground ,yellow))))
+     '(cscope-line-face ((t (:foreground ,solarized-fg))))
+     '(cscope-mouse-face ((t (:foreground ,solarized-fg :background ,blue)))))))
 
 ;;;###autoload
 (when (and load-file-name
