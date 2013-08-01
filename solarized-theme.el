@@ -208,6 +208,23 @@
      '(eshell-ls-special ((t (:foreground ,violet))))
      '(eshell-ls-symlink ((t (:foreground ,cyan))))
 
+     ;; flycheck
+     '(flycheck-error
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,red) :inherit unspecified
+                     :foreground ,red-hc :background ,red-lc))
+        (t (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
+     '(flycheck-warning
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,yellow) :inherit unspecified
+                     :foreground ,yellow-hc :background ,yellow-lc))
+        (t (:foreground ,yellow-hc :background ,yellow-lc :weight bold
+                        :underline t))))
+     '(flycheck-fringe-error ((t (:foreground ,red-hc :background ,red-lc
+                                              :weight bold))))
+     '(flycheck-fringe-warning ((t (:foreground ,yellow-hc :background ,yellow-lc
+                                                :weight bold))))
+
      ;; flymake
      '(flymake-errline ((t (,@fmt-revr :foreground ,red ,@back))))
      '(flymake-warnline ((t (,@fmt-bold :foreground ,red ,@back))))
