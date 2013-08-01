@@ -187,6 +187,13 @@
      '(bm-fringe-face ((t (:background ,orange :foreground ,base03))))
      '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,base03))))
 
+     ;; ctable
+     '(ctbl:face-cell-select ((t (:foreground ,solarized-emph :background ,solarized-hl
+                                              :underline ,solarized-emph :weight bold))))
+     '(ctbl:face-continue-bar ((t (:foreground ,yellow :background ,solarized-hl))))
+     '(ctbl:face-row-select ((t (:foreground ,solarized-fg :background ,solarized-hl
+                                             :underline t))))
+
      ;; diff
      '(diff-added ((t (,@fmt-revr :foreground ,green))))
      '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
