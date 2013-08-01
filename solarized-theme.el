@@ -293,6 +293,9 @@
      '(jabber-activity-face ((t (,@fmt-bold :foreground ,red))))
      '(jabber-activity-personal-face ((t (,@fmt-bold :foreground ,blue))))
 
+     ;; jedi
+     '(jedi:highlight-function-argument ((t (:inherit bold))))
+
      ;; linum
      '(linum ((t (:foreground ,base01 :background ,base02))))
 
