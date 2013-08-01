@@ -293,6 +293,21 @@
      '(jabber-activity-face ((t (,@fmt-bold :foreground ,red))))
      '(jabber-activity-personal-face ((t (,@fmt-bold :foreground ,blue))))
 
+     ;; js2-mode
+     '(js2-error ((t (:foreground ,red))))
+     '(js2-external-variable ((t (:foreground ,orange))))
+     '(js2-function-param ((t (:foreground ,green))))
+     '(js2-instance-member ((t (:foreground ,magenta))))
+     '(js2-jsdoc-html-tag-delimiter ((t (:foreground ,cyan))))
+     '(js2-jsdoc-html-tag-name ((t (:foreground ,orange))))
+     '(js2-jsdoc-tag ((t (:foreground ,cyan))))
+     '(js2-jsdoc-type ((t (:foreground ,blue))))
+     '(js2-jsdoc-value ((t (:foreground ,violet))))
+     '(js2-magic-paren ((t (,@fmt-undr))))
+     '(js2-private-function-call ((t (:foreground ,yellow))))
+     '(js2-private-member ((t (:foreground ,blue))))
+     '(js2-warning ((t (:underline ,orange))))
+
      ;; linum
      '(linum ((t (:foreground ,base01 :background ,base02))))
 
