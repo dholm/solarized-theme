@@ -159,6 +159,16 @@
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
+     ;; ido-mode
+     '(ido-first-match ((t (:foreground ,yellow :weight normal))))
+     '(ido-only-match ((t (:foreground ,solarized-bg :background ,yellow
+                                       :weight normal))))
+     '(ido-subdir ((t (:foreground ,blue))))
+     '(ido-incomplete-regexp ((t (:foreground ,red :weight bold))))
+     '(ido-indicator ((t (:foreground ,solarized-bg :background ,red
+                                      :width condensed))))
+     '(ido-virtual ((t (:foreground ,cyan))))
+
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange ,@back))))
      '(isearch-fail ((t (,@fmt-stnd :foreground ,orange ,@back))))
