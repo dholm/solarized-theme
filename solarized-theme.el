@@ -350,6 +350,19 @@
      ;; slime
      '(slime-repl-inputted-output-face ((t (:foreground ,red))))
 
+     ;; syslog-mode
+     '(syslog-ip-face ((t (:foreground ,yellow :background unspecified))))
+     '(syslog-hour-face ((t (:foreground ,green :background unspecified))))
+     '(syslog-error-face ((t (:foreground ,red :background unspecified
+                                          :weight bold))))
+     '(syslog-warn-face ((t (:foreground ,orange :background unspecified
+                                         :weight bold))))
+     '(syslog-info-face ((t (:foreground ,blue :background unspecified
+                                         :weight bold))))
+     '(syslog-debug-face ((t (:foreground ,cyan :background unspecified
+                                          :weight bold))))
+     '(syslog-su-face ((t (:foreground ,magenta :background unspecified))))
+
      ;; term
      '(term-color-black ((t ( :foreground ,base02))))
      '(term-color-red ((t ( :foreground ,red))))
