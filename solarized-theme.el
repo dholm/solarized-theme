@@ -323,6 +323,9 @@
      '(outline-7 ((t (,@fmt-none :foreground ,orange))))
      '(outline-8 ((t (,@fmt-none :foreground ,violet))))
 
+     ;; pretty-mode
+     '(pretty-mode-symbol-face  ((t (:foreground ,green))))
+
      ;; rainbow-delimiters
      '(rainbow-delimiters-depth-1-face ((t (:foreground ,cyan))))
      '(rainbow-delimiters-depth-2-face ((t (:foreground ,yellow))))
