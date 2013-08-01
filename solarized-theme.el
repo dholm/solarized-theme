@@ -179,6 +179,12 @@
      '(font-lock-variable-name-face ((t (,@fmt-none :foreground ,blue))))
      '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
 
+     ;; grep
+     '(grep-context-face ((t (:foreground ,solarized-fg))))
+     '(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
+     '(grep-hit-face ((t (:foreground ,blue))))
+     '(grep-match-face ((t (:foreground ,orange :weight bold))))
+
      ;; auctex
      '(font-latex-warning ((t (:foreground ,red))))
      '(font-latex-sectioning-5 ((t (:foreground ,violet))))
