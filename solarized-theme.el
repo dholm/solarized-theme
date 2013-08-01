@@ -361,15 +361,26 @@
      '(term-color-white ((t ( :foreground ,base00))))
 
      ;; whitespace
-     '(whitespace-space ((t (:foreground ,base02))))
-     '(whitespace-hspace ((t (:foreground ,orange))))
-     '(whitespace-tab ((t (:foreground ,base02))))
-     '(whitespace-trailing ((t (,@fmt-bold :foreground ,red :background ,base02))))
-     '(whitespace-line ((t (:foreground ,magenta :background ,base03))))
-     '(whitespace-space-before-tab ((t (,@fmt-bold :foreground ,red))))
-     '(whitespace-indentation ((t (:foreground ,base02))))
-     '(whitespace-empty ((t (:foreground ,red))))
-     '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
+     '(whitespace-space ((t (:foreground ,solarized-comment :background unspecified
+                                         :inverse-video unspecified :slant italic))))
+     `(whitespace-hspace ((t (:foreground ,solarized-emph :background unspecified
+                                          :inverse-video unspecified))))
+     `(whitespace-tab ((t (:foreground ,red :background unspecified
+                                       :inverse-video unspecified :weight bold))))
+     `(whitespace-newline ((t (:foreground ,solarized-comment :background unspecified
+                                           :inverse-video unspecified))))
+     `(whitespace-trailing ((t (:foreground ,orange-lc :background unspecified
+                                            :inverse-video t))))
+     `(whitespace-line ((t (:foreground ,magenta :background unspecified
+                                        :inverse-video unspecified))))
+     `(whitespace-space-before-tab ((t (:foreground unspecified :background ,red-lc
+                                                    :inverse-video unspecified))))
+     `(whitespace-indentation ((t (:foreground ,yellow :background unspecified
+                                               :inverse-video unspecified :weight bold))))
+     `(whitespace-empty ((t (:foreground ,red-lc :background unspecified
+                                         :inverse-video t))))
+     `(whitespace-space-after-tab ((t (:foreground ,orange :background unspecified
+                                                   :inverse-video t :weight bold)))))))
 
 ;;;###autoload
 (when (and load-file-name
