@@ -188,12 +188,15 @@
      '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,base03))))
 
      ;; diff
-     '(diff-added ((t (,@fmt-revr :foreground ,green))))
-     '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
-     '(diff-removed ((t (,@fmt-revr :foreground ,red))))
-     '(diff-refine-change ((t (,@fmt-revr :foreground ,blue ,@back))))
-     '(diff-file-header ((t (,@back))))
-     '(diff-header ((t (:foreground ,base1 ,@back))))
+     '(diff-added ((t (:foreground ,green :background ,solarized-bg))))
+     '(diff-changed ((t (:foreground ,blue :background ,solarized-bg))))
+     '(diff-removed ((t (:foreground ,red :background ,solarized-bg))))
+     '(diff-header ((t (:background ,solarized-bg))))
+     '(diff-file-header ((t (:foreground ,solarized-fg :background ,solarized-bg
+                                         :weight bold))))
+     '(diff-refine-added ((t :foreground ,solarized-bg :background ,green)))
+     '(diff-refine-change ((t :foreground ,solarized-bg :background ,blue)))
+     '(diff-refine-removed ((t (:foreground ,solarized-bg :background ,red))))
 
      ;; eshell
      '(eshell-prompt ((t (,@fmt-bold :foreground ,green))))
