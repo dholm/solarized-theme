@@ -229,6 +229,11 @@
      '(git-gutter:added ((t (:foreground ,green))))
      '(git-gutter:deleted ((t (:foreground ,red))))
 
+     ;; git-gutter-fringe
+     '(git-gutter-fr:added ((t (:foreground ,green :weight bold))))
+     '(git-gutter-fr:deleted ((t (:foreground ,red :weight bold))))
+     '(git-gutter-fr:modified ((t (:foreground ,blue :weight bold))))
+
      ;; gnus
      '(gnus-group-mail-1 ((t (,@fmt-bold :foreground ,base3))))
      '(gnus-group-mail-1-empty ((t (:foreground ,base3))))
