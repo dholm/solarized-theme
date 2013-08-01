@@ -146,6 +146,8 @@
      '(header-line ((t (:foreground ,base0 :background ,base02 ,@fmt-revbb))))
      '(highlight ((t (:background ,base02))))
      '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow ,@back))))
+     '(match ((t (:foreground ,solarized-emph :background ,solarized-hl
+                              :weight bold))))
      '(menu ((t (:foreground ,base0 :background ,base02))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
      '(mode-line ((t (:foreground ,base1 :background ,base02 ,@fmt-revbb :box nil))))
