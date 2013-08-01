@@ -159,6 +159,17 @@
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
+     ;; dired
+     '(dired-directory ((t (:foreground ,blue :weight normal))))
+     '(dired-flagged ((t (:foreground ,red))))
+     '(dired-header ((t (:foreground ,solarized-bg :background ,blue))))
+     '(dired-ignored ((t (:inherit shadow))))
+     '(dired-mark ((t (:foreground ,yellow :weight bold))))
+     '(dired-marked ((t (:foreground ,magenta :weight bold))))
+     '(dired-perm-write ((t (:foreground ,solarized-fg :underline t))))
+     '(dired-symlink ((t (:foreground ,cyan :slant italic))))
+     '(dired-warning ((t (:foreground ,orange :underline t))))
+
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange ,@back))))
      '(isearch-fail ((t (,@fmt-stnd :foreground ,orange ,@back))))
