@@ -296,6 +296,11 @@
      ;; linum
      '(linum ((t (:foreground ,base01 :background ,base02))))
 
+     ;; man
+     '(Man-overstrike ((t (:foreground ,blue :weight bold))))
+     '(Man-reverse ((t (:foreground ,orange))))
+     '(Man-underline ((t (:foreground ,green :underline t))))
+
      ;; message
      '(message-cited-text ((t (:foreground ,base2))))
      '(message-header-name ((t (:foreground ,cyan))))
