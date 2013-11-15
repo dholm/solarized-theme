@@ -34,6 +34,46 @@
   :options '(dark light)
   :group 'solarized)
 
+(defcustom solarized-distinct-fringe-background nil
+  "Make the fringe background different from the normal background color."
+  :type 'boolean
+  :group 'solarized)
+
+(defcustom solarized-use-variable-pitch t
+  "Use variable pitch face for some headings and titles."
+  :type 'boolean
+  :group 'solarized)
+
+(defcustom solarized-high-contrast-mode-line nil
+  "Make the active/inactive mode line stand out more."
+  :type 'boolean
+  :group 'solarized)
+
+(defcustom solarized-height-minus-1 0.8
+  "Font size -1."
+  :type 'number
+  :group 'solarized)
+
+(defcustom solarized-height-plus-1 1.1
+  "Font size +1."
+  :type 'number
+  :group 'solarized)
+
+(defcustom solarized-height-plus-2 1.15
+  "Font size +2."
+  :type 'number
+  :group 'solarized)
+
+(defcustom solarized-height-plus-3 1.2
+  "Font size +3."
+  :type 'number
+  :group 'solarized)
+
+(defcustom solarized-height-plus-4 1.3
+  "Font size +4."
+  :type 'number
+  :group 'solarized)
+
 (defconst solarized-dark-palette
   ;; name     sRGB      256       16              8
   '((base03  "#002B36" "#1C1C1C" "brightblack"   "black")
@@ -157,6 +197,24 @@ NORMAL-VALUE."
             (solarized-comment ,(if (eq 'light solarized-background) 'base1 'base01))
 
             ,@(solarized-contrast-palette)
+
+            (s-variable-pitch (if solarized-use-variable-pitch
+                                  'variable-pitch 'default))
+            (s-fringe-bg (if solarized-distinct-fringe-background
+                             solarized-hl solarized-bg))
+            (s-mode-line-fg (if solarized-high-contrast-mode-line
+                                solarized-bg solarized-fg))
+            (s-mode-line-bg (if solarized-high-contrast-mode-line
+                                solarized-fg solarized-hl))
+            (s-mode-line-buffer-id-fg (if solarized-high-contrast-mode-line
+                                          'unspecified solarized-emph))
+            (s-mode-line-inactive-fg (if solarized-high-contrast-mode-line
+                                         solarized-fg solarized-comment))
+            (s-mode-line-inactive-bg (if solarized-high-contrast-mode-line
+                                         solarized-hl solarized-bg))
+            (s-mode-line-inactive-bc (if solarized-high-contrast-mode-line
+                                         solarized-fg solarized-hl))
+
             (opt-under nil)
             (fmt-none '(:weight normal :slant normal  :underline nil        :inverse-video nil))
             (fmt-bold '(:weight ,bold  :slant normal  :underline nil        :inverse-video nil))
@@ -196,8 +254,11 @@ NORMAL-VALUE."
      '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow :background ,solarized-bg))))
      '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
-     '(mode-line ((t (:foreground ,solarized-emph :background ,solarized-hl ,@fmt-revbb :box nil))))
-     '(mode-line-inactive ((t (:foreground ,base00 :background ,solarized-hl ,@fmt-revbb :box nil))))
+     '(mode-line ((t (:foreground ,s-mode-line-fg :background ,s-mode-line-bg
+                                  :box (:line-width 1 :color ,s-mode-line-bg :style unspecified)))))
+     '(mode-line-buffer-id ((t (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
+     '(mode-line-inactive ((t (:foreground ,s-mode-line-inactive-fg :background ,s-mode-line-inactive-bg
+                                           :box (:line-width 1 :color ,s-mode-line-inactive-bc :style unspecified)))))
      '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
      '(secondary-selection ((t (:background ,solarized-hl))))
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
