@@ -433,17 +433,25 @@ NORMAL-VALUE."
      ;; org
      '(org-done ((t (,@fmt-bold :foreground ,green))))
      '(org-hide ((t (:foreground ,solarized-bg))))
+     '(org-level-1 ((t (:inherit ,s-variable-pitch :foreground ,orange :height ,solarized-height-plus-4))))
+     '(org-level-2 ((t (:inherit ,s-variable-pitch :foreground ,green :height ,solarized-height-plus-3))))
+     '(org-level-3 ((t (:inherit ,s-variable-pitch :foreground ,blue :height ,solarized-height-plus-2))))
+     '(org-level-4 ((t (:inherit ,s-variable-pitch :foreground ,yellow :height ,solarized-height-plus-1))))
+     '(org-level-5 ((t (:inherit ,s-variable-pitch :foreground ,cyan))))
+     '(org-level-6 ((t (:inherit ,s-variable-pitch :foreground ,green))))
+     '(org-level-7 ((t (:inherit ,s-variable-pitch :foreground ,red))))
+     '(org-level-8 ((t (:inherit ,s-variable-pitch :foreground ,blue))))
      '(org-todo ((t (,@fmt-bold :foreground ,solarized-bg :background ,red))))
 
      ;; outline
-     '(outline-1 ((t (,@fmt-none :foreground ,blue))))
-     '(outline-2 ((t (,@fmt-none :foreground ,cyan))))
-     '(outline-3 ((t (,@fmt-none :foreground ,yellow))))
-     '(outline-4 ((t (,@fmt-none :foreground ,red))))
-     '(outline-5 ((t (,@fmt-none :foreground ,solarized-fg))))
-     '(outline-6 ((t (,@fmt-none :foreground ,solarized-comment))))
-     '(outline-7 ((t (,@fmt-none :foreground ,orange))))
-     '(outline-8 ((t (,@fmt-none :foreground ,violet))))
+     '(outline-1 ((t (:inherit org-level-1))))
+     '(outline-2 ((t (:inherit org-level-2))))
+     '(outline-3 ((t (:inherit org-level-3))))
+     '(outline-4 ((t (:inherit org-level-4))))
+     '(outline-5 ((t (:inherit org-level-5))))
+     '(outline-6 ((t (:inherit org-level-6))))
+     '(outline-7 ((t (:inherit org-level-7))))
+     '(outline-8 ((t (:inherit org-level-8))))
 
      ;; rainbow-delimiters
      '(rainbow-delimiters-depth-1-face ((t (:foreground ,cyan))))
