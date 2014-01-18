@@ -259,6 +259,9 @@ NORMAL-VALUE."
      '(mode-line-buffer-id ((t (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
      '(mode-line-inactive ((t (:foreground ,s-mode-line-inactive-fg :background ,s-mode-line-inactive-bg
                                            :box (:line-width 1 :color ,s-mode-line-inactive-bc :style unspecified)))))
+
+     '(mode-line-emphasis ((t (:inherit mode-line :foreground ,solarized-emph))))
+     '(mode-line-highlight ((t (:inherit mode-line :foreground ,magenta :box nil ,@fmt-bold))))
      '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
      '(secondary-selection ((t (:background ,solarized-hl))))
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
