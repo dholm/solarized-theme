@@ -339,6 +339,13 @@ NORMAL-VALUE."
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
+     ;; ctable
+     '(ctbl:face-cell-select ((t (:foreground ,solarized-emph :background ,solarized-hl
+                                              :underline ,solarized-emph :weight bold))))
+     '(ctbl:face-continue-bar ((t (:foreground ,yellow :background ,solarized-hl))))
+     '(ctbl:face-row-select ((t (:foreground ,solarized-fg :background ,solarized-hl
+                                             :underline t))))
+
      ;; diff
      '(diff-added ((t (,@fmt-revr :foreground ,green))))
      '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
