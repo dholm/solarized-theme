@@ -721,6 +721,31 @@ NORMAL-VALUE."
      ;; slime
      '(slime-repl-inputted-output-face ((t (:foreground ,red))))
 
+     ;; smart mode line
+     '(sml/global ((t (,@fmt-none
+                       :foreground ,s-mode-line-fg
+                       :box (:line-width 1 :color ,s-mode-line-bg :style unspecified)))))
+     '(sml/modes ((t (:inherit sml/global :foreground ,solarized-comment))))
+     '(sml/line-number ((t (:inherit sml/modes ,@fmt-bold))))
+     '(sml/position-percentage ((t (:inherit sml/modes))))
+     '(sml/col-number ((t (:inherit sml/modes))))
+     '(sml/numbers-separator ((t (:inherit sml/modes))))
+     '(sml/mule-info ((t (:inherit sml/modes))))
+     '(sml/client ((t (:inherit sml/modes))))
+     '(sml/prefix ((t (:inherit sml/modes))))
+     '(sml/folder ((t (:inherit sml/modes))))
+     '(sml/filename ((t (:inherit sml/global :foreground ,solarized-emph ,@fmt-bold))))
+     '(sml/not-modified ((t (:inherit sml/modes))))
+     '(sml/modified ((t (:inherit sml/global :foreground ,yellow))))
+     '(sml/outside-modified ((t (:inherit sml/modified :foreground ,orange))))
+     '(sml/read-only ((t (:inherit sml/modified :foreground ,red))))
+     '(sml/vc ((t (:inherit sml/global :foreground ,yellow))))
+     '(sml/vc-edited ((t (:inherit sml/vc :foreground ,orange))))
+     '(sml/git ((t (:inherit sml/vc))))
+     '(sml/charging ((t (:inherit sml/global :foreground ,green))))
+     '(sml/discharging ((t (:inherit sml/global :foreground ,red))))
+     '(sml/time ((t (:inherit sml/modes))))
+
      ;; term
      '(term-color-black ((t ( :foreground ,solarized-hl))))
      '(term-color-red ((t ( :foreground ,red))))
@@ -770,6 +795,13 @@ NORMAL-VALUE."
      '(whitespace-indentation ((t (:foreground ,solarized-hl))))
      '(whitespace-empty ((t (:foreground ,red))))
      '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
+
+(setq-default
+ ;; smart mode line
+ sml/active-foreground-color (face-attribute 'mode-line :foreground)
+ sml/active-background-color (face-attribute 'mode-line :background)
+ sml/inactive-foreground-color (face-attribute 'mode-line-inactive :foreground)
+ sml/inactive-background-color (face-attribute 'mode-line-inactive :background))
 
 ;;;###autoload
 (when (and load-file-name
