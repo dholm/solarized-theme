@@ -765,6 +765,14 @@ NORMAL-VALUE."
      '(term-color-cyan ((t ( :foreground ,cyan))))
      '(term-color-white ((t ( :foreground ,base00))))
 
+     ;; undo tree
+     '(undo-tree-visualizer-default-face ((t (:foreground ,solarized-comment :background ,solarized-bg))))
+     '(undo-tree-visualizer-unmodified-face ((t (:foreground ,green))))
+     '(undo-tree-visualizer-current-face ((t (:foreground ,blue :inverse-video t))))
+     '(undo-tree-visualizer-active-branch-face ((t (:foreground ,solarized-emph :background ,solarized-bg
+                                                                :weight bold))))
+     '(undo-tree-visualizer-register-face ((t (:foreground ,yellow))))
+
      ;; wanderlust
      '(wl-highlight-folder-few-face ((t (:foreground ,red))))
      '(wl-highlight-folder-many-face ((t (:foreground ,red))))
