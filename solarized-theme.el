@@ -271,6 +271,15 @@ NORMAL-VALUE."
      '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground ,solarized-fg :slant italic))))
      '(font-latex-warning-face ((t (:inherit bold :foreground ,orange))))
 
+     ;; auto complete
+     '(ac-candidate-face ((t (:foreground ,orange :background ,solarized-hl))))
+     '(ac-selection-face ((t (:foreground ,cyan-hc :background ,cyan-lc))))
+     '(ac-candidate-mouse-face ((t (:foreground ,cyan-lc :background ,cyan-hc))))
+     '(ac-completion-face ((t (:foreground ,solarized-emph :underline t))))
+     '(ac-gtags-candidate-face ((t (:foreground ,blue :background ,solarized-hl))))
+     '(ac-gtags-selection-face ((t (:foreground ,blue-hc :background ,blue-lc))))
+     '(ac-yasnippet-candidate-face ((t (:foreground ,yellow :background ,solarized-hl))))
+     '(ac-yasnippet-selection-face ((t (:foreground ,yellow-hc :background ,yellow-lc))))
 
      ;; basic coloring
      '(button ((t (:underline t))))
