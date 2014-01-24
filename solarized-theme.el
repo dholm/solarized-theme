@@ -667,6 +667,16 @@ NORMAL-VALUE."
      '(outline-7 ((t (:inherit org-level-7))))
      '(outline-8 ((t (:inherit org-level-8))))
 
+     ;; popup
+     '(popup-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+     '(popup-isearch-match ((t (:foreground ,solarized-bg :background ,yellow))))
+     '(popup-menu-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+     '(popup-menu-mouse-face ((t (:foreground ,solarized-fg :background ,blue))))
+     '(popup-menu-selection-face ((t (:foreground ,solarized-bg :background ,magenta))))
+     '(popup-scroll-bar-background-face ((t (:background ,solarized-comment))))
+     '(popup-scroll-bar-foreground-face ((t (:background ,solarized-emph))))
+     '(popup-tip-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+
      ;; rainbow-delimiters
      '(rainbow-delimiters-depth-1-face ((t (:foreground ,cyan))))
      '(rainbow-delimiters-depth-2-face ((t (:foreground ,yellow))))
