@@ -241,6 +241,10 @@ NORMAL-VALUE."
    `(custom-theme-set-faces
      'solarized
 
+     ;; auctex
+     '(font-latex-warning ((t (:foreground ,red))))
+     '(font-latex-sectioning-5 ((t (:foreground ,violet))))
+
      ;; basic coloring
      '(button ((t (:underline t))))
      '(link ((t (,@fmt-undr :foreground ,violet))))
@@ -266,6 +270,10 @@ NORMAL-VALUE."
      '(secondary-selection ((t (:background ,solarized-hl))))
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
      '(vertical-border ((t (:foreground ,solarized-fg))))
+
+     ;; bookmarks
+     '(bm-fringe-face ((t (:background ,orange :foreground ,solarized-bg))))
+     '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,solarized-bg))))
 
      ;; calfw
      '(cfw:face-day-title ((t (:background ,solarized-hl))))
@@ -295,34 +303,6 @@ NORMAL-VALUE."
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
 
-     ;; isearch
-     '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
-     '(isearch-fail ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
-
-     ;; font lock
-     '(font-lock-builtin-face ((t (,@fmt-none :foreground ,green))))
-     '(font-lock-comment-face ((t (,@fmt-ital :foreground ,solarized-comment))))
-     '(font-lock-comment-delimiter-face ((t (,@fmt-ital :foreground ,solarized-comment))))
-     '(font-lock-constant-face ((t (,@fmt-none :foreground ,cyan))))
-     '(font-lock-doc-face ((t (,@fmt-ital :foreground ,solarized-comment))))
-     '(font-lock-doc-string-face ((t (,@fmt-ital :foreground ,solarized-comment))))
-     '(font-lock-function-name-face ((t (,@fmt-none :foreground ,blue))))
-     '(font-lock-keyword-face ((t (,@fmt-none :foreground ,green))))
-     '(font-lock-negation-char-face ((t (,@fmt-none :foreground ,red))))
-     '(font-lock-preprocessor-face ((t (,@fmt-none :foreground ,orange))))
-     '(font-lock-string-face ((t (,@fmt-none :foreground ,cyan))))
-     '(font-lock-type-face ((t (,@fmt-none :foreground ,yellow))))
-     '(font-lock-variable-name-face ((t (,@fmt-none :foreground ,blue))))
-     '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
-
-     ;; auctex
-     '(font-latex-warning ((t (:foreground ,red))))
-     '(font-latex-sectioning-5 ((t (:foreground ,violet))))
-
-     ;; bookmarks
-     '(bm-fringe-face ((t (:background ,orange :foreground ,solarized-bg))))
-     '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,solarized-bg))))
-
      ;; diff
      '(diff-added ((t (,@fmt-revr :foreground ,green))))
      '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
@@ -330,6 +310,14 @@ NORMAL-VALUE."
      '(diff-refine-change ((t (,@fmt-revr :foreground ,blue :background ,solarized-bg))))
      '(diff-file-header ((t (:background ,solarized-bg))))
      '(diff-header ((t (:foreground ,solarized-emph :background ,solarized-bg))))
+
+     ;; erc
+     '(erc-input-face ((t (:foreground ,solarized-comment))))
+     '(erc-keyword-face ((t (,@fmt-bldi :foreground ,yellow))))
+     '(erc-nick-default-face ((t (,@fmt-none :foreground ,cyan))))
+     '(erc-my-nick-face ((t (:foreground ,blue))))
+     '(erc-notice-face ((t (,@fmt-none :foreground ,blue))))
+     '(erc-timestamp-face ((t (:foreground ,solarized-comment))))
 
      ;; eshell
      '(eshell-prompt ((t (,@fmt-bold :foreground ,green))))
@@ -365,13 +353,21 @@ NORMAL-VALUE."
      '(flyspell-incorrect ((t (:inherit flymake-errline))))
      '(flyspell-duplicate ((t (:inherit flymake-warnline))))
 
-     ;; erc
-     '(erc-input-face ((t (:foreground ,solarized-comment))))
-     '(erc-keyword-face ((t (,@fmt-bldi :foreground ,yellow))))
-     '(erc-nick-default-face ((t (,@fmt-none :foreground ,cyan))))
-     '(erc-my-nick-face ((t (:foreground ,blue))))
-     '(erc-notice-face ((t (,@fmt-none :foreground ,blue))))
-     '(erc-timestamp-face ((t (:foreground ,solarized-comment))))
+     ;; font lock
+     '(font-lock-builtin-face ((t (,@fmt-none :foreground ,green))))
+     '(font-lock-comment-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-comment-delimiter-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-constant-face ((t (,@fmt-none :foreground ,cyan))))
+     '(font-lock-doc-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-doc-string-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+     '(font-lock-function-name-face ((t (,@fmt-none :foreground ,blue))))
+     '(font-lock-keyword-face ((t (,@fmt-none :foreground ,green))))
+     '(font-lock-negation-char-face ((t (,@fmt-none :foreground ,red))))
+     '(font-lock-preprocessor-face ((t (,@fmt-none :foreground ,orange))))
+     '(font-lock-string-face ((t (,@fmt-none :foreground ,cyan))))
+     '(font-lock-type-face ((t (,@fmt-none :foreground ,yellow))))
+     '(font-lock-variable-name-face ((t (,@fmt-none :foreground ,blue))))
+     '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
 
      ;; git-gutter
      '(git-gutter:modified ((t (:foreground ,violet))))
@@ -433,6 +429,10 @@ NORMAL-VALUE."
      '(ido-only-match ((t (:foreground ,green))))
      '(ido-subdir ((t (:foreground ,blue))))
 
+     ;; isearch
+     '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
+     '(isearch-fail ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
+
      ;; jabber
      '(jabber-roster-user-away ((t (,@fmt-ital :foreground ,green))))
      '(jabber-roster-user-online ((t (,@fmt-bold :foreground ,blue))))
@@ -441,6 +441,21 @@ NORMAL-VALUE."
      '(jabber-chat-prompt-foreign ((t (,@fmt-bold :foreground ,red))))
      '(jabber-activity-face ((t (,@fmt-bold :foreground ,red))))
      '(jabber-activity-personal-face ((t (,@fmt-bold :foreground ,blue))))
+
+     ;; js3 mode
+     '(js3-warning-face ((t (:underline ,orange))))
+     '(js3-error-face ((t (:foreground ,red))))
+     '(js3-external-variable-face ((t (:foreground ,orange))))
+     '(js3-function-param-face ((t (:foreground ,green))))
+     '(js3-instance-member-face ((t (:foreground ,magenta))))
+     '(js3-jsdoc-html-tag-delimiter-face ((t (:foreground ,cyan))))
+     '(js3-jsdoc-html-tag-name-face ((t (:foreground ,orange))))
+     '(js3-jsdoc-tag-face ((t (:foreground ,cyan))))
+     '(js3-jsdoc-type-face ((t (:foreground ,blue))))
+     '(js3-jsdoc-value-face ((t (:foreground ,violet))))
+     '(js3-magic-paren-face ((t (:underline t))))
+     '(js3-private-function-call-face ((t (:foreground ,yellow))))
+     '(js3-private-member-face ((t (:foreground ,blue))))
 
      ;; linum
      '(linum ((t (:foreground ,solarized-comment :background ,solarized-hl))))
