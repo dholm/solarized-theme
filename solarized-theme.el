@@ -251,8 +251,26 @@ NORMAL-VALUE."
      '(anzu-mode-line ((t (:foreground ,solarized-emph :weight bold))))
 
      ;; auctex
-     '(font-latex-warning ((t (:foreground ,red))))
-     '(font-latex-sectioning-5 ((t (:foreground ,violet))))
+     '(font-latex-bold-face ((t (:inherit bold :foreground ,solarized-emph))))
+     '(font-latex-doctex-documentation-face ((t (:background unspecified))))
+     '(font-latex-doctex-preprocessor-face
+       ((t (:inherit (font-latex-doctex-documentation-face font-lock-builtin-face font-lock-preprocessor-face)))))
+     '(font-latex-italic-face ((t (:inherit italic :foreground ,solarized-emph))))
+     '(font-latex-math-face ((t (:foreground ,violet))))
+     '(font-latex-sectioning-0-face ((t (:inherit font-latex-sectioning-1-face :height ,solarized-height-plus-1))))
+     '(font-latex-sectioning-1-face ((t (:inherit font-latex-sectioning-2-face :height ,solarized-height-plus-1))))
+     '(font-latex-sectioning-2-face ((t (:inherit font-latex-sectioning-3-face :height ,solarized-height-plus-1))))
+     '(font-latex-sectioning-3-face ((t (:inherit font-latex-sectioning-4-face :height ,solarized-height-plus-1))))
+     '(font-latex-sectioning-4-face ((t (:inherit font-latex-sectioning-5-face :height ,solarized-height-plus-1))))
+     '(font-latex-sectioning-5-face ((t (:inherit ,s-variable-pitch :foreground ,yellow :weight bold))))
+     '(font-latex-sedate-face ((t (:foreground ,solarized-emph))))
+     '(font-latex-slide-title-face ((t (:inherit (,s-variable-pitch font-lock-type-face) :weight bold :height ,solarized-height-plus-3))))
+     '(font-latex-string-face ((t (:foreground ,cyan))))
+     '(font-latex-subscript-face ((t (:height ,solarized-height-minus-1))))
+     '(font-latex-superscript-face ((t (:height ,solarized-height-minus-1))))
+     '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground ,solarized-fg :slant italic))))
+     '(font-latex-warning-face ((t (:inherit bold :foreground ,orange))))
+
 
      ;; basic coloring
      '(button ((t (:underline t))))
