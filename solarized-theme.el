@@ -247,6 +247,9 @@ NORMAL-VALUE."
      '(ace-jump-face-foreground ((t (:foreground ,red :background ,solarized-bg
                                                  :inverse-video nil :weight bold))))
 
+     ;; anzu
+     '(anzu-mode-line ((t (:foreground ,solarized-emph :weight bold))))
+
      ;; auctex
      '(font-latex-warning ((t (:foreground ,red))))
      '(font-latex-sectioning-5 ((t (:foreground ,violet))))
