@@ -461,10 +461,16 @@ NORMAL-VALUE."
      '(font-lock-variable-name-face ((t (,@fmt-none :foreground ,blue))))
      '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
 
-     ;; git-gutter
-     '(git-gutter:modified ((t (:foreground ,violet))))
-     '(git-gutter:added ((t (:foreground ,green))))
-     '(git-gutter:deleted ((t (:foreground ,red))))
+     ;; git gutter
+     '(git-gutter:added ((t (:foreground ,solarized-bg :background ,green
+                                         :weight bold))))
+     '(git-gutter:deleted ((t (:foreground ,solarized-bg :background ,red
+                                           :weight bold))))
+     '(git-gutter:modified ((t (:foreground ,solarized-bg :background ,red
+                                            :weight bold))))
+     '(git-gutter:unchanged ((t (:foreground ,solarized-bg :background ,solarized-hl
+                                             :weight bold))))
+
 
      ;; gnus
      '(gnus-group-mail-1 ((t (,@fmt-bold :foreground ,base3))))
