@@ -677,6 +677,9 @@ NORMAL-VALUE."
      '(popup-scroll-bar-foreground-face ((t (:background ,solarized-emph))))
      '(popup-tip-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
 
+     ;; pretty mode plus
+     '(pretty-mode-symbol-face  ((t (:foreground ,green))))
+
      ;; rainbow-delimiters
      '(rainbow-delimiters-depth-1-face ((t (:foreground ,cyan))))
      '(rainbow-delimiters-depth-2-face ((t (:foreground ,yellow))))
