@@ -374,6 +374,10 @@ NORMAL-VALUE."
      '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground ,solarized-hl
                                               :height 1.0))))
 
+     ;; epc
+     '(epc:face-title ((t (:foreground ,blue :background ,solarized-bg
+                                       :weight normal :underline nil))))
+
      ;; erc
      '(erc-input-face ((t (:foreground ,solarized-comment))))
      '(erc-keyword-face ((t (,@fmt-bldi :foreground ,yellow))))
