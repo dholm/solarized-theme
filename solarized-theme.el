@@ -416,6 +416,25 @@ NORMAL-VALUE."
                      :foreground ,yellow-hc :background ,yellow-lc))
         (t (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
 
+     ;; flycheck
+     '(flycheck-error
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,red) :inherit unspecified
+                     :foreground ,red-hc :background ,red-lc))
+        (t (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
+     '(flycheck-warning
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,yellow) :inherit unspecified
+                     :foreground ,yellow-hc :background ,yellow-lc))
+        (t (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
+     '(flycheck-info
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,blue) :inherit unspecified))
+        (t (:foreground ,blue-hc :background ,blue-lc :weight bold :underline t))))
+     '(flycheck-fringe-error ((t (:foreground ,red-hc :background ,red-lc :weight bold))))
+     '(flycheck-fringe-warning ((t (:foreground ,yellow-hc :background ,yellow-lc :weight bold))))
+     '(flycheck-fringe-info ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
+
      ;; flyspell
      '(flyspell-incorrect ((t (:inherit flymake-errline))))
      '(flyspell-duplicate ((t (:inherit flymake-warnline))))
