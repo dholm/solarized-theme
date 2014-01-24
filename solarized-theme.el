@@ -590,6 +590,9 @@ NORMAL-VALUE."
      '(jabber-activity-face ((t (,@fmt-bold :foreground ,red))))
      '(jabber-activity-personal-face ((t (,@fmt-bold :foreground ,blue))))
 
+     ;; jedi
+     '(jedi:highlight-function-argument ((t (:inherit bold))))
+
      ;; js3 mode
      '(js3-warning-face ((t (:underline ,orange))))
      '(js3-error-face ((t (:foreground ,red))))
