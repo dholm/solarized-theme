@@ -241,6 +241,12 @@ NORMAL-VALUE."
    `(custom-theme-set-faces
      'solarized
 
+     ;; ace jump mode
+     '(ace-jump-face-background ((t (:foreground ,solarized-comment :background ,solarized-bg
+                                                 :inverse-video nil))))
+     '(ace-jump-face-foreground ((t (:foreground ,red :background ,solarized-bg
+                                                 :inverse-video nil :weight bold))))
+
      ;; auctex
      '(font-latex-warning ((t (:foreground ,red))))
      '(font-latex-sectioning-5 ((t (:foreground ,violet))))
