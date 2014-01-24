@@ -859,6 +859,11 @@ NORMAL-VALUE."
      '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
 
 (setq-default
+ ;; fill column indicator
+ fci-rule-color (solarized-find-color
+                 (if (eq 'light solarized-background) 'base2 'base02)
+                 solarized-dark-palette)
+
  ;; smart mode line
  sml/active-foreground-color (face-attribute 'mode-line :foreground)
  sml/active-background-color (face-attribute 'mode-line :background)
