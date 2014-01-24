@@ -267,6 +267,30 @@ NORMAL-VALUE."
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
      '(vertical-border ((t (:foreground ,solarized-fg))))
 
+     ;; calfw
+     '(cfw:face-day-title ((t (:background ,solarized-hl))))
+     '(cfw:face-annotation ((t (:inherit cfw:face-day-title :foreground ,yellow))))
+     '(cfw:face-default-content ((t (:foreground ,green))))
+     '(cfw:face-default-day ((t (:inherit cfw:face-day-title :weight bold))))
+     '(cfw:face-disable ((t (:inherit cfw:face-day-title :foreground ,solarized-comment))))
+     '(cfw:face-grid ((t (:foreground ,solarized-comment))))
+     '(cfw:face-header ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
+     '(cfw:face-holiday ((t (:background nil :foreground ,red :weight bold))))
+     '(cfw:face-periods ((t (:foreground ,magenta))))
+     '(cfw:face-select ((t (:background ,magenta-hc :foreground ,magenta-lc))))
+     '(cfw:face-saturday ((t (:foreground ,cyan-hc :background ,cyan-lc))))
+     '(cfw:face-sunday ((t (:foreground ,red-hc :background ,red-lc :weight bold))))
+     '(cfw:face-title ((t (:inherit variable-pitch :foreground ,yellow
+                                    :weight bold :height 2.0))))
+     '(cfw:face-today ((t (:weight bold :background ,solarized-hl :foreground nil))))
+     '(cfw:face-today-title ((t (:foreground ,yellow-hc :background ,yellow-lc
+                                             :weight bold))))
+     '(cfw:face-toolbar ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+     '(cfw:face-toolbar-button-off ((t (:foreground ,yellow-hc :background ,yellow-lc
+                                                    :weight bold))))
+     '(cfw:face-toolbar-button-on ((t (:foreground ,yellow-lc :background ,yellow-hc
+                                                   :weight bold))))
+
      ;; compilation
      '(compilation-info ((t (,@fmt-bold :foreground ,green))))
      '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
