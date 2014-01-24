@@ -436,8 +436,14 @@ NORMAL-VALUE."
      '(flycheck-fringe-info ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
 
      ;; flyspell
-     '(flyspell-incorrect ((t (:inherit flymake-errline))))
-     '(flyspell-duplicate ((t (:inherit flymake-warnline))))
+     '(flyspell-duplicate
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,yellow) :inherit unspecified))
+        (t (:foreground ,yellow :weight bold :underline t))))
+     '(flyspell-incorrect
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,red) :inherit unspecified))
+        (t (:foreground ,red :weight bold :underline t))))
 
      ;; font lock
      '(font-lock-builtin-face ((t (,@fmt-none :foreground ,green))))
