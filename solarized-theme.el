@@ -706,6 +706,14 @@ NORMAL-VALUE."
      '(rcirc-nick-in-message ((t (:foreground ,orange))))
      '(rcirc-prompt ((t (:foreground ,yellow))))
 
+     ;; rst mode
+     '(rst-level-1-face ((t (:foreground ,solarized-bg :background ,yellow))))
+     '(rst-level-2-face ((t (:foreground ,solarized-bg :background ,cyan))))
+     '(rst-level-3-face ((t (:foreground ,solarized-bg :background ,blue))))
+     '(rst-level-4-face ((t (:foreground ,solarized-bg :background ,violet))))
+     '(rst-level-5-face ((t (:foreground ,solarized-bg :background ,magenta))))
+     '(rst-level-6-face ((t (:foreground ,solarized-bg :background ,red))))
+
      ;; show-paren
      '(show-paren-mismatch ((t (,@fmt-bold :foreground ,red :background ,solarized-comment))))
      '(show-paren-match ((t (,@fmt-bold :foreground ,cyan :background ,solarized-hl))))
