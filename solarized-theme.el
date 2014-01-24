@@ -471,6 +471,10 @@ NORMAL-VALUE."
      '(git-gutter:unchanged ((t (:foreground ,solarized-bg :background ,solarized-hl
                                              :weight bold))))
 
+     ;; git gutter fringe
+     '(git-gutter-fr:added ((t (:foreground ,green :weight bold))))
+     '(git-gutter-fr:deleted ((t (:foreground ,red :weight bold))))
+     '(git-gutter-fr:modified ((t (:foreground ,blue :weight bold))))
 
      ;; gnus
      '(gnus-group-mail-1 ((t (,@fmt-bold :foreground ,base3))))
