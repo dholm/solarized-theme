@@ -74,7 +74,9 @@
   :type 'number
   :group 'solarized)
 
-(defcustom solarized-broken-srgb (if (and (eq system-type 'darwin)
+(defcustom solarized-broken-srgb (if (and (not (and (boundp 'ns-use-srgb-colorspace)
+                                              ns-use-srgb-colorspace))
+                                        (eq system-type 'darwin)
                                         (eq window-system 'ns)) t nil)
   "Emacs bug #8402 results in incorrect color handling on Macs. If this is t
 \(the default on Macs), Solarized works around it with alternative colors.
