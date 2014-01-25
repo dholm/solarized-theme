@@ -905,16 +905,27 @@ NORMAL-VALUE."
      '(web-mode-whitespace-face ((t (:background ,red))))
      '(web-mode-html-tag-bracket-face ((t (:foreground ,base01))))
 
-     ;; whitespace
-     '(whitespace-space ((t (:foreground ,solarized-hl))))
-     '(whitespace-hspace ((t (:foreground ,orange))))
-     '(whitespace-tab ((t (:foreground ,solarized-hl))))
-     '(whitespace-trailing ((t (,@fmt-bold :foreground ,red :background ,solarized-hl))))
-     '(whitespace-line ((t (:foreground ,magenta :background ,solarized-bg))))
-     '(whitespace-space-before-tab ((t (,@fmt-bold :foreground ,red))))
-     '(whitespace-indentation ((t (:foreground ,solarized-hl))))
-     '(whitespace-empty ((t (:foreground ,red))))
-     '(whitespace-space-after-tab ((t (:foreground ,cyan)))))))
+     ;; whitespace-mode
+     '(whitespace-space ((t (:foreground ,solarized-comment :background unspecified
+                                         :inverse-video unspecified :slant italic))))
+     `(whitespace-hspace ((t (:foreground ,solarized-emph :background unspecified
+                                          :inverse-video unspecified))))
+     `(whitespace-tab ((t (:foreground ,red :background unspecified
+                                       :inverse-video unspecified :weight bold))))
+     `(whitespace-newline ((t (:foreground ,solarized-comment :background unspecified
+                                           :inverse-video unspecified))))
+     `(whitespace-trailing ((t (:foreground ,orange-lc :background unspecified
+                                            :inverse-video t))))
+     `(whitespace-line ((t (:foreground ,magenta :background unspecified
+                                        :inverse-video unspecified))))
+     `(whitespace-space-before-tab ((t (:foreground unspecified :background ,red-lc
+                                                    :inverse-video unspecified))))
+     `(whitespace-indentation ((t (:foreground ,yellow :background unspecified
+                                               :inverse-video unspecified :weight bold))))
+     `(whitespace-empty ((t (:foreground ,red-lc :background unspecified
+                                         :inverse-video t))))
+     `(whitespace-space-after-tab ((t (:foreground ,orange :background unspecified
+                                                   :inverse-video t :weight bold)))))))
 
 (setq-default
  ;; fill column indicator
