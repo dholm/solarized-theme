@@ -299,9 +299,12 @@ NORMAL-VALUE."
      '(cursor ((t (:foreground ,solarized-bg :background ,solarized-fg))))
      '(escape-glyph ((t (:foreground ,red))))
      '(fringe ((t (:foreground ,solarized-comment :background ,solarized-hl))))
-     '(header-line ((t (:foreground ,solarized-fg :background ,solarized-hl ,@fmt-revbb))))
+     '(header-line ((t (:foreground ,solarized-emph :background ,solarized-hl
+                                    :inverse-video unspecified :underline unspecified
+                                    :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
      '(highlight ((t (:background ,solarized-hl))))
      '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow :background ,solarized-bg))))
+     '(match ((t (:foreground ,solarized-emph :background ,solarized-hl :weight bold))))
      '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
      '(mode-line ((t (:foreground ,s-mode-line-fg :background ,s-mode-line-bg
