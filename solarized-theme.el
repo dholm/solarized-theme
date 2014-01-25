@@ -394,6 +394,9 @@ NORMAL-VALUE."
      '(diff-refine-change ((t :foreground ,solarized-bg :background ,blue)))
      '(diff-refine-removed ((t (:foreground ,solarized-bg :background ,red))))
 
+     ;; dropdown
+     '(dropdown-list-face ((t (:foreground ,cyan :background ,solarized-hl))))
+     '(dropdown-list-selection-face ((t (:foreground ,cyan-hc :background ,cyan-lc))))
 
      ;; ecb
      '(ecb-default-highlight-face ((t (:foreground ,solarized-bg :background ,blue))))
