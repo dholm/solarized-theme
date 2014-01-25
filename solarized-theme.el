@@ -567,6 +567,12 @@ NORMAL-VALUE."
      '(gnus-cite-11 ((t (,@fmt-none :foreground ,solarized-hl))))
      '(gnus-signature ((t (,@fmt-none :foreground ,solarized-comment))))
 
+     ;; grep
+     '(grep-context-face ((t (:foreground ,solarized-fg))))
+     '(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
+     '(grep-hit-face ((t (:foreground ,blue))))
+     '(grep-match-face ((t (:foreground ,orange :weight bold))))
+
      ;; helm
      '(helm-apt-deinstalled ((t (:foreground ,solarized-comment))))
      '(helm-apt-installed ((t (:foreground ,green))))
