@@ -622,10 +622,13 @@ NORMAL-VALUE."
      ;; hl-line
      '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
 
-     ;; ido
-     '(ido-first-match ((t (,@fmt-bold :foreground ,green))))
-     '(ido-only-match ((t (:foreground ,green))))
+     ;; ido mode
+     '(ido-first-match ((t (:foreground ,yellow :weight normal))))
+     '(ido-only-match ((t (:foreground ,solarized-bg :background ,yellow :weight normal))))
      '(ido-subdir ((t (:foreground ,blue))))
+     '(ido-incomplete-regexp ((t (:foreground ,red :weight bold))))
+     '(ido-indicator ((t (:foreground ,solarized-bg :background ,red :width condensed))))
+     '(ido-virtual ((t (:foreground ,cyan))))
 
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
