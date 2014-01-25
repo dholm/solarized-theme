@@ -74,71 +74,81 @@
   :type 'number
   :group 'solarized)
 
+(defcustom solarized-broken-srgb (if (and (eq system-type 'darwin)
+                                        (eq window-system 'ns)) t nil)
+  "Emacs bug #8402 results in incorrect color handling on Macs. If this is t
+\(the default on Macs), Solarized works around it with alternative colors.
+However, these colors are not totally portable, so you may be able to edit
+the \"ARGB\" column in solarized-definitions.el to improve them further."
+  :type 'boolean
+  :group 'solarized)
+
 (defconst solarized-dark-palette
-  ;; name     sRGB      256       16              8
-  '((base03  "#002B36" "#1C1C1C" "brightblack"   "black")
-    (base02  "#073642" "#262626" "black"         "black")
-    (base01  "#586E75" "#585858" "brightgreen"   "green")
-    (base00  "#657B83" "#626262" "brightyellow"  "yellow")
-    (base0   "#839496" "#808080" "brightblue"    "blue")
-    (base1   "#93A1A1" "#8A8A8A" "brightcyan"    "cyan")
-    (base2   "#EEE8D5" "#E4E4E4" "white"         "white")
-    (base3   "#FDF6E3" "#FFFFD7" "brightwhite"   "white")
-    (yellow  "#B58900" "#AF8700" "yellow"        "yellow")
-    (orange  "#CB4B16" "#D75F00" "brightred"     "red")
-    (red     "#DC322F" "#D70000" "red"           "red")
-    (magenta "#D33682" "#AF005F" "magenta"       "magenta")
-    (violet  "#6C71C4" "#5F5FAF" "brightmagenta" "magenta")
-    (blue    "#268BD2" "#0087FF" "blue"          "blue")
-    (cyan    "#2AA198" "#00AFAF" "cyan"          "cyan")
-    (green   "#859900" "#5F8700" "green"         "green")))
+  ;; name     sRGB      RGB       256       16              8
+  '((base03  "#002B36" "#042028" "#1C1C1C" "brightblack"   "black")
+    (base02  "#073642" "#0A2832" "#262626" "black"         "black")
+    (base01  "#586E75" "#465A61" "#585858" "brightgreen"   "green")
+    (base00  "#657B83" "#52676f" "#626262" "brightyellow"  "yellow")
+    (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
+    (base1   "#93A1A1" "#81908f" "#8A8A8A" "brightcyan"    "cyan")
+    (base2   "#EEE8D5" "#E9E2CB" "#E4E4E4" "white"         "white")
+    (base3   "#FDF6E3" "#FCF4DC" "#FFFFD7" "brightwhite"   "white")
+    (yellow  "#B58900" "#A57705" "#AF8700" "yellow"        "yellow")
+    (orange  "#CB4B16" "#BD3612" "#D75F00" "brightred"     "red")
+    (red     "#DC322F" "#C60007" "#D70000" "red"           "red")
+    (magenta "#D33682" "#C61B6E" "#AF005F" "magenta"       "magenta")
+    (violet  "#6C71C4" "#5859B7" "#5F5FAF" "brightmagenta" "magenta")
+    (blue    "#268BD2" "#2075C7" "#0087FF" "blue"          "blue")
+    (cyan    "#2AA198" "#259185" "#00AFAF" "cyan"          "cyan")
+    (green   "#859900" "#728A05" "#5F8700" "green"         "green")))
 
 (defconst solarized-light-palette
-  ;; name     sRGB      256       16              8
-  '((base03  "#FDF6E3" "#FFFFD7" "brightwhite"   "white")
-    (base02  "#EEE8D5" "#E4E4E4" "white"         "white")
-    (base01  "#93A1A1" "#8A8A8A" "brightcyan"    "cyan")
-    (base00  "#839496" "#808080" "brightblue"    "blue")
-    (base0   "#657B83" "#626262" "brightyellow"  "yellow")
-    (base1   "#586E75" "#585858" "brightgreen"   "green")
-    (base2   "#073642" "#262626" "black"         "black")
-    (base3   "#002B36" "#1C1C1C" "brightblack"   "black")
-    (yellow  "#B58900" "#AF8700" "yellow"        "yellow")
-    (orange  "#CB4B16" "#D75F00" "brightred"     "red")
-    (red     "#DC322F" "#D70000" "red"           "red")
-    (magenta "#D33682" "#AF005F" "magenta"       "magenta")
-    (violet  "#6C71C4" "#5F5FAF" "brightmagenta" "magenta")
-    (blue    "#268BD2" "#0087FF" "blue"          "blue")
-    (cyan    "#2AA198" "#00AFAF" "cyan"          "cyan")
-    (green   "#859900" "#5F8700" "green"         "green")))
+  ;; name     sRGB      ARGB      256       16              8
+  '(
+    (base03  "#FDF6E3" "#FCF4DC" "#FFFFD7" "brightwhite"   "white")
+    (base02  "#EEE8D5" "#E9E2CB" "#E4E4E4" "white"         "white")
+    (base01  "#93A1A1" "#81908f" "#8A8A8A" "brightcyan"    "cyan")
+    (base00  "#839496" "#708183" "#808080" "brightblue"    "blue")
+    (base0   "#657B83" "#52676f" "#626262" "brightyellow"  "yellow")
+    (base1   "#586E75" "#465A61" "#585858" "brightgreen"   "green")
+    (base2   "#073642" "#0A2832" "#262626" "black"         "black")
+    (base3   "#002B36" "#042028" "#1C1C1C" "brightblack"   "black")
+    (yellow  "#B58900" "#A57705" "#AF8700" "yellow"        "yellow")
+    (orange  "#CB4B16" "#BD3612" "#D75F00" "brightred"     "red")
+    (red     "#DC322F" "#C60007" "#D70000" "red"           "red")
+    (magenta "#D33682" "#C61B6E" "#AF005F" "magenta"       "magenta")
+    (violet  "#6C71C4" "#5859B7" "#5F5FAF" "brightmagenta" "magenta")
+    (blue    "#268BD2" "#2075C7" "#0087FF" "blue"          "blue")
+    (cyan    "#2AA198" "#259185" "#00AFAF" "cyan"          "cyan")
+    (green   "#859900" "#728A05" "#5F8700" "green"         "green")))
 
 (defconst solarized-contrast-components
-  ;; name       sRGB      256       16              8
-  '((yellow  (("#7B6000" "#875f00" "yellow"        "yellow")
-              ("#DEB542" "#d7a55f" "brightyellow"  "white")))
-    (orange  (("#8B2C02" "#d75f00" "red"           "red")
-              ("#F2804F" "#ff875f" "brightyellow"  "white")))
-    (red     (("#990A1B" "#870000" "red"           "red")
-              ("#FF6E64" "#ff5f5f" "brightred"     "white")))
-    (magenta (("#93115C" "#87005f" "magenta"       "magenta")
-              ("#F771AC" "#ff87af" "brightmagenta" "white")))
-    (violet  (("#3F4D91" "#5f5fd7" "blue"          "blue")
-              ("#9EA0E5" "#87afff" "brightmagenta" "white")))
-    (blue    (("#00629D" "#005faf" "blue"          "blue")
-              ("#69B7F0" "#5fafff" "brightblue"    "white")))
-    (cyan    (("#00736F" "#00875f" "cyan"          "cyan")
-              ("#69CABF" "#5fd7d7" "brightcyan"    "white")))
-    (green   (("#546E00" "#5f8700" "green"         "green")
-              ("#B4C342" "#d7ff5f" "brightgreen"   "white")))))
+  ;; name       sRGB      ARGB      256       16              8
+  '((yellow  (("#7B6000" "#686207" "#875f00" "yellow"        "yellow")
+              ("#DEB542" "#BDB962" "#d7a55f" "brightyellow"  "white")))
+    (orange  (("#8B2C02" "#652D06" "#d75f00" "red"           "red")
+              ("#F2804F" "#C08B70" "#ff875f" "brightyellow"  "white")))
+    (red     (("#990A1B" "#680A24" "#870000" "red"           "red")
+              ("#FF6E64" "#C27189" "#ff5f5f" "brightred"     "white")))
+    (magenta (("#93115C" "#651177" "#87005f" "magenta"       "magenta")
+              ("#F771AC" "#BD73E5" "#ff87af" "brightmagenta" "white")))
+    (violet  (("#3F4D91" "#394EBF" "#5f5fd7" "blue"          "blue")
+              ("#9EA0E5" "#8AA3FF" "#87afff" "brightmagenta" "white")))
+    (blue    (("#00629D" "#1363CF" "#005faf" "blue"          "blue")
+              ("#69B7F0" "#6CBAFF" "#5fafff" "brightblue"    "white")))
+    (cyan    (("#00736F" "#187595" "#00875f" "cyan"          "cyan")
+              ("#69CABF" "#71CEFF" "#5fd7d7" "brightcyan"    "white")))
+    (green   (("#546E00" "#517108" "#5f8700" "green"         "green")
+              ("#B4C342" "#A3C863" "#d7ff5f" "brightgreen"   "white")))))
 
 (defun solarized-column-index ()
   "Return the palette column to use based on available features."
   (if window-system
-      1
+      (if solarized-broken-srgb 2 1)
     (case (display-color-cells)
-      (16 3)
-      (8 4)
-      (otherwise 2))))
+      (16 4)
+      (8 5)
+      (otherwise 3))))
 
 (defun solarized-find-color (name palette)
   "Grab the color NAME from the PALETTE."
