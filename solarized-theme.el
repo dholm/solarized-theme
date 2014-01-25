@@ -685,6 +685,11 @@ NORMAL-VALUE."
                                                   :box 1))))
      '(magit-log-sha1 ((t (:foreground ,yellow))))
 
+     ;; man
+     '(Man-overstrike ((t (:foreground ,blue :weight bold))))
+     '(Man-reverse ((t (:foreground ,orange))))
+     '(Man-underline ((t (:foreground ,green :underline t))))
+
      ;; message
      '(message-cited-text ((t (:foreground ,base2))))
      '(message-header-name ((t (:foreground ,cyan))))
