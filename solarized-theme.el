@@ -349,8 +349,22 @@ NORMAL-VALUE."
                                                    :weight bold))))
 
      ;; compilation
-     '(compilation-info ((t (,@fmt-bold :foreground ,green))))
-     '(compilation-warning ((t (,@fmt-bold :foreground ,orange))))
+     '(compilation-column-face ((t (:foreground ,cyan :underline nil))))
+     '(compilation-column-number ((t (:inherit font-lock-doc-face :foreground ,cyan :underline nil))))
+     '(compilation-enter-directory-face ((t (:foreground ,green :underline nil))))
+     '(compilation-error ((t (:inherit error :underline nil))))
+     '(compilation-error-face ((t (:foreground ,red : :underline nil))))
+     '(compilation-face ((t (:foreground ,solarized-fg :underline nil))))
+     '(compilation-info ((t (:foreground ,solarized-comment :underline nil :bold nil))))
+     '(compilation-info-face ((t (:foreground ,blue :underline nil))))
+     '(compilation-leave-directory-face ((t (:foreground ,green :underline nil))))
+     '(compilation-line-face ((t (:foreground ,green :underline nil))))
+     '(compilation-line-number ((t (:foreground ,green :underline nil))))
+     '(compilation-warning ((t (:inherit warning :underline nil))))
+     '(compilation-warning-face ((t (:foreground ,yellow :weight normal :underline nil))))
+     '(compilation-mode-line-exit ((t (:inherit compilation-info :foreground ,green :weight bold))))
+     '(compilation-mode-line-fail ((t (:inherit compilation-error :foreground ,red :weight bold))))
+     '(compilation-mode-line-run ((t (:foreground ,orange :weight bold))))
 
      ;; ctable
      '(ctbl:face-cell-select ((t (:foreground ,solarized-emph :background ,solarized-hl
