@@ -385,12 +385,15 @@ NORMAL-VALUE."
      '(dired-warning ((t (:foreground ,orange :underline t))))
 
      ;; diff
-     '(diff-added ((t (,@fmt-revr :foreground ,green))))
-     '(diff-changed ((t (,@fmt-revr :foreground ,yellow))))
-     '(diff-removed ((t (,@fmt-revr :foreground ,red))))
-     '(diff-refine-change ((t (,@fmt-revr :foreground ,blue :background ,solarized-bg))))
-     '(diff-file-header ((t (:background ,solarized-bg))))
-     '(diff-header ((t (:foreground ,solarized-emph :background ,solarized-bg))))
+     '(diff-added ((t (:foreground ,green :background ,solarized-bg))))
+     '(diff-changed ((t (:foreground ,blue :background ,solarized-bg))))
+     '(diff-removed ((t (:foreground ,red :background ,solarized-bg))))
+     '(diff-header ((t (:background ,solarized-bg))))
+     '(diff-file-header ((t (:foreground ,solarized-fg :background ,solarized-bg :weight bold))))
+     '(diff-refine-added ((t :foreground ,solarized-bg :background ,green)))
+     '(diff-refine-change ((t :foreground ,solarized-bg :background ,blue)))
+     '(diff-refine-removed ((t (:foreground ,solarized-bg :background ,red))))
+
 
      ;; ecb
      '(ecb-default-highlight-face ((t (:foreground ,solarized-bg :background ,blue))))
