@@ -420,6 +420,24 @@ NORMAL-VALUE."
      '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground ,solarized-hl
                                               :height 1.0))))
 
+     ;; ediff
+     '(ediff-current-diff-A ((t (:background ,orange-lc :foreground ,base03))))
+     '(ediff-current-diff-B ((t (:background ,green-lc :foreground ,base03))))
+     '(ediff-current-diff-C ((t (:background ,yellow-lc :foreground ,base03))))
+     '(ediff-current-diff-Ancestor ((t (:background ,orange-lc :foreground ,base03))))
+     '(ediff-fine-diff-A ((t (:background ,orange-hc :foreground ,base03))))
+     '(ediff-fine-diff-B ((t (:background ,green-hc :foreground ,base03))))
+     '(ediff-fine-diff-C ((t (:background ,yellow-hc :foreground ,base03))))
+     '(ediff-fine-diff-Ancestor ((t (:background ,orange-hc :foreground ,base03))))
+     '(ediff-even-diff-A ((t (:background ,base02 :foreground ,solarized-comment))))
+     '(ediff-even-diff-B ((t (:background ,base02 :foreground ,solarized-comment))))
+     '(ediff-even-diff-C ((t (:background ,base02 :foreground ,solarized-comment))))
+     '(ediff-even-diff-Ancestor ((t (:background ,base02 :foreground ,solarized-comment))))
+     '(ediff-odd-diff-A ((t (:background ,base02 :foreground ,solarized-emph))))
+     '(ediff-odd-diff-B ((t (:background ,base02 :foreground ,solarized-emph))))
+     '(ediff-odd-diff-C ((t (:background ,base02 :foreground ,solarized-emph))))
+     '(ediff-odd-diff-Ancestor ((t (:background ,base02 :foreground ,solarized-emph))))
+
      ;; epc
      '(epc:face-title ((t (:foreground ,blue :background ,solarized-bg
                                        :weight normal :underline nil))))
