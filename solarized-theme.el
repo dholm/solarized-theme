@@ -600,16 +600,13 @@ NORMAL-VALUE."
      '(helm-bookmark-w3m ((t (:foreground ,yellow))))
      '(helm-bookmarks-su ((t (:foreground ,orange))))
      '(helm-buffer-not-saved ((t (:foreground ,orange))))
-     '(helm-buffer-saved-out ((t (:foreground ,red :background ,solarized-bg
-                                              :inverse-video t))))
+     '(helm-buffer-saved-out ((t (:foreground ,red :background ,solarized-bg :inverse-video t))))
      '(helm-buffer-size ((t (:foreground ,solarized-comment))))
-     '(helm-candidate-number ((t (:foreground ,solarized-emph :background ,solarized-hl
-                                              :bold t))))
+     '(helm-candidate-number ((t (:foreground ,solarized-emph :background ,solarized-hl :bold t))))
      '(helm-ff-directory ((t (:foreground ,blue :background ,solarized-bg))))
      '(helm-ff-executable ((t (:foreground ,green))))
      '(helm-ff-file ((t (:foreground ,solarized-fg :background ,solarized-bg))))
-     '(helm-ff-invalid-symlink ((t (:foreground ,orange :background ,solarized-bg
-                                                :slant italic))))
+     '(helm-ff-invalid-symlink ((t (:foreground ,orange :background ,solarized-bg :slant italic))))
      '(helm-ff-prefix ((t (:foreground ,solarized-bg :background ,yellow))))
      '(helm-ff-symlink ((t (:foreground ,cyan))))
      '(helm-grep-file ((t (:foreground ,cyan :underline t))))
@@ -619,21 +616,22 @@ NORMAL-VALUE."
      '(helm-grep-running ((t (:foreground ,red))))
      '(helm-header ((t (:inherit header-line))))
      '(helm-lisp-completion-info ((t (:foreground ,solarized-fg))))
-     '(helm-lisp-show-completion ((t (:foreground ,yellow :background ,solarized-hl
-                                                  :bold t))))
+     '(helm-lisp-show-completion ((t (:foreground ,yellow :background ,solarized-hl :bold t))))
      '(helm-M-x-key ((t (:foreground ,orange :underline t))))
      '(helm-moccur-buffer ((t (:foreground ,cyan :underline t))))
      '(helm-match ((t (:inherit match))))
      '(helm-selection ((t (:background ,solarized-hl ,@fmt-undr))))
-     '(helm-selection-line ((t (:foreground ,solarized-emph :background ,solarized-hl
-                                            :underline nil))))
+     '(helm-selection-line ((t (:foreground ,solarized-emph :background ,solarized-hl :underline nil))))
      '(helm-separator ((t (:foreground ,red))))
-     '(helm-source-header ((t (:foreground ,solarized-bg :background ,blue-lc
-                                           :underline nil))))
+     '(helm-source-header ((t (:foreground ,solarized-bg :background ,blue-lc :underline nil))))
      '(helm-time-zone-current ((t (:foreground ,green))))
      '(helm-time-zone-home ((t (:foreground ,red))))
-     '(helm-visible-mark ((t (:foreground ,magenta :background ,solarized-bg
-                                          :bold t))))
+     '(helm-visible-mark ((t (:foreground ,magenta :background ,solarized-bg :bold t))))
+
+     ;; helm-swoop
+     '(helm-swoop-target-line-face ((t (:foreground unspecified :background ,base02))))
+     '(helm-swoop-target-line-block-face ((t (:foreground unspecified :background ,base02))))
+     '(helm-swoop-target-word-face ((t (:foreground ,magenta :background unspecified))))
 
      ;; hl-line
      '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
