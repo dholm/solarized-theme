@@ -723,8 +723,41 @@ NORMAL-VALUE."
      '(message-separator ((t (:foreground ,base3))))
 
      ;; org
+     '(org-agenda-structure
+       ((t (:foreground ,base1 :background ,base02
+                        :weight bold :slant normal :inverse-video nil
+                        :height ,solarized-height-plus-1
+                        :underline nil
+                        :box (:line-width 2 :color ,base03)))))
+     '(org-agenda-calendar-event ((t (:foreground ,base1))))
+     '(org-agenda-calendar-sexp ((t (:foreground ,base0 :slant italic))))
+     '(org-agenda-date
+       ((t (:foreground ,base01 :background ,base03 :weight normal
+                        :box (:line-width 2 :color ,base03)
+                        :inverse-video nil :overline nil :slant normal
+                        :height 1.0))))
+     '(org-agenda-date-weekend
+       ((t (:inherit org-agenda-date :inverse-video nil :background
+                     unspecified
+                     :foreground ,base01 :weight unspecified
+                     :underline t :overline nil :box unspecified))))
+     '(org-agenda-date-today
+       ((t (:inherit org-agenda-date :inverse-video t :weight bold
+                     :underline unspecified :overline nil :box unspecified
+                     :foreground ,blue :background ,base03))))
+     '(org-agenda-done ((t (:foreground ,base01 :slant italic))))
+     '(org-archived ((t (:foreground ,base01 :weight normal))))
+     '(org-block ((t (:foreground ,base01))))
+     '(org-block-begin-line ((t (:foreground ,base01 :slant italic))))
+     '(org-checkbox ((t (:background ,base03 :foreground ,base0
+                                     :box (:line-width 1 :style released-button)))))
+     '(org-code ((t (:foreground ,base01))))
+     '(org-date ((t (:foreground ,blue :underline t))))
      '(org-done ((t (,@fmt-bold :foreground ,green))))
-     '(org-hide ((t (:foreground ,solarized-bg))))
+     '(org-ellipsis ((t (:foreground ,base01))))
+     '(org-formula ((t (:foreground ,yellow))))
+     '(org-headline-done ((t (:foreground ,green))))
+     '(org-hide ((t (:foreground ,base03))))
      '(org-level-1 ((t (:inherit ,s-variable-pitch :foreground ,orange :height ,solarized-height-plus-4))))
      '(org-level-2 ((t (:inherit ,s-variable-pitch :foreground ,green :height ,solarized-height-plus-3))))
      '(org-level-3 ((t (:inherit ,s-variable-pitch :foreground ,blue :height ,solarized-height-plus-2))))
@@ -733,7 +766,42 @@ NORMAL-VALUE."
      '(org-level-6 ((t (:inherit ,s-variable-pitch :foreground ,green))))
      '(org-level-7 ((t (:inherit ,s-variable-pitch :foreground ,red))))
      '(org-level-8 ((t (:inherit ,s-variable-pitch :foreground ,blue))))
-     '(org-todo ((t (,@fmt-bold :foreground ,solarized-bg :background ,red))))
+     '(org-link ((t (:foreground ,yellow :underline t))))
+     '(org-sexp-date ((t (:foreground ,violet))))
+     '(org-scheduled ((t (:foreground ,green))))
+     '(org-scheduled-previously ((t (:foreground ,cyan))))
+     '(org-scheduled-today ((t (:foreground ,blue :weight normal))))
+     '(org-special-keyword ((t (:foreground ,base01 :weight bold))))
+     '(org-table ((t (:foreground ,green))))
+     '(org-tag ((t (:weight bold))))
+     '(org-time-grid ((t (:foreground ,base01))))
+     '(org-todo ((t (:foreground ,red :weight bold))))
+     '(org-upcoming-deadline ((t (:foreground ,yellow  :weight normal :underline nil))))
+     '(org-warning ((t (:foreground ,orange :weight normal :underline nil))))
+     ;; org-habit (clear=blue, ready=green, alert=yellow, overdue=red. future=lower contrast)
+     '(org-habit-clear-face ((t (:background ,blue-lc :foreground ,blue-hc))))
+     '(org-habit-clear-future-face ((t (:background ,blue-lc))))
+     '(org-habit-ready-face ((t (:background ,green-lc :foreground ,green))))
+     '(org-habit-ready-future-face ((t (:background ,green-lc))))
+     '(org-habit-alert-face ((t (:background ,yellow :foreground ,yellow-lc))))
+     '(org-habit-alert-future-face ((t (:background ,yellow-lc))))
+     '(org-habit-overdue-face ((t (:background ,red :foreground ,red-lc))))
+     '(org-habit-overdue-future-face ((t (:background ,red-lc))))
+     ;; latest additions
+     '(org-agenda-dimmed-todo-face ((t (:foreground ,base01))))
+     '(org-agenda-restriction-lock ((t (:background ,yellow))))
+     '(org-clock-overlay ((t (:background ,yellow))))
+     '(org-column ((t (:background ,base02 :strike-through nil
+                                   :underline nil :slant normal
+                                   :weight normal :inherit default))))
+     '(org-column-title ((t (:background ,base02 :underline t :weight bold))))
+     '(org-date-selected ((t (:foreground ,red :inverse-video t))))
+     '(org-document-info ((t (:foreground ,base0))))
+     '(org-document-title ((t (:foreground ,base1  :weight bold :height ,solarized-height-plus-4))))
+     '(org-drawer ((t (:foreground ,cyan))))
+     '(org-footnote ((t (:foreground ,magenta :underline t))))
+     '(org-latex-and-export-specials ((t (:foreground ,orange))))
+     '(org-mode-line-clock-overrun ((t (:inherit mode-line :background ,red))))
 
      ;; outline
      '(outline-1 ((t (:inherit org-level-1))))
