@@ -690,20 +690,25 @@ NORMAL-VALUE."
      '(magit-item-highlight ((t (:background ,solarized-hl :weight unspecified))))
      '(magit-log-author ((t (:foreground ,cyan))))
      '(magit-log-graph ((t (:foreground ,solarized-comment))))
-     '(magit-log-head-label-bisect-bad ((t (:foreground ,red-lc :background ,red-hc
-                                                        :box 1))))
-     '(magit-log-head-label-bisect-good ((t (:foreground ,green-lc :background ,green-hc
-                                                         :box 1))))
+     '(magit-log-head-label-bisect-bad ((t (:foreground ,red-lc :background ,red-hc :box 1))))
+     '(magit-log-head-label-bisect-good ((t (:foreground ,green-lc :background ,green-hc :box 1))))
      '(magit-log-head-label-default ((t (:background ,solarized-hl :box 1))))
-     '(magit-log-head-label-local ((t (:foreground ,blue-hc :background ,blue-lc
-                                                   :box 1))))
-     '(magit-log-head-label-patches ((t (:foreground ,red-hc :background ,red-lc
-                                                     :box 1))))
-     '(magit-log-head-label-remote ((t (:foreground ,green-hc :background ,green-lc
-                                                    :box 1))))
-     '(magit-log-head-label-tags ((t (:foreground ,yellow-hc :background ,yellow-lc
-                                                  :box 1))))
+     '(magit-log-head-label-local ((t (:foreground ,blue-hc :background ,blue-lc :box 1))))
+     '(magit-log-head-label-patches ((t (:foreground ,red-hc :background ,red-lc :box 1))))
+     '(magit-log-head-label-remote ((t (:foreground ,green-hc :background ,green-lc :box 1))))
+     '(magit-log-head-label-tags ((t (:foreground ,yellow-hc :background ,yellow-lc :box 1))))
      '(magit-log-sha1 ((t (:foreground ,yellow))))
+     '(magit-header ((t (:inherit default))))
+     '(magit-log-sha1 ((t (:foreground ,yellow))))
+     '(magit-cherry-equivalent ((t (:foreground ,magenta))))
+     '(magit-cherry-unmatched ((t (:foreground ,cyan))))
+     '(magit-process-ng ((t (:inherit magit-header :foreground ,red))))
+     '(magit-process-ok ((t (:inherit magit-header :foreground ,green))))
+     '(magit-signature-bad ((t (:foreground ,red))))
+     '(magit-signature-good ((t (:foreground ,green))))
+     '(magit-signature-none ((t (:inherit magit-log-message))))
+     '(magit-signature-untrusted ((t (:foreground ,cyan))))
+     '(magit-whitespace-warning-face ((t (:inherit trailing-whitespace))))
 
      ;; man
      '(Man-overstrike ((t (:foreground ,blue :weight bold))))
