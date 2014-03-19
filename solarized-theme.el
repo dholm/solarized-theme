@@ -526,14 +526,10 @@ NORMAL-VALUE."
      '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
 
      ;; git gutter
-     '(git-gutter:added ((t (:foreground ,solarized-bg :background ,green
-                                         :weight bold))))
-     '(git-gutter:deleted ((t (:foreground ,solarized-bg :background ,red
-                                           :weight bold))))
-     '(git-gutter:modified ((t (:foreground ,solarized-bg :background ,red
-                                            :weight bold))))
-     '(git-gutter:unchanged ((t (:foreground ,solarized-bg :background ,solarized-hl
-                                             :weight bold))))
+     '(git-gutter:added ((t (:foreground ,solarized-bg :background ,green :weight bold))))
+     '(git-gutter:deleted ((t (:foreground ,solarized-bg :background ,red :weight bold))))
+     '(git-gutter:modified ((t (:foreground ,solarized-bg :background ,red :weight bold))))
+     '(git-gutter:unchanged ((t (:foreground ,solarized-bg :background ,solarized-hl :weight bold))))
 
      ;; git gutter fringe
      '(git-gutter-fr:added ((t (:foreground ,green :weight bold))))
@@ -649,6 +645,38 @@ NORMAL-VALUE."
      '(ido-incomplete-regexp ((t (:foreground ,red :weight bold))))
      '(ido-indicator ((t (:foreground ,solarized-bg :background ,red :width condensed))))
      '(ido-virtual ((t (:foreground ,cyan))))
+
+     ;; info+
+     '(info-file
+       ((t (:foreground ,yellow-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-menu
+       ((t (:foreground ,yellow-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-quoted-name ((t (:foreground ,green-lc :inherit font-lock-string-face))))
+     '(info-string ((t (:foreground ,orange-lc :inherit font-lock-string-face))))
+     '(info-single-quote ((t (:foreground ,red-lc :inherit font-lock-string-face))))
+     '(info-quoted-name ((t (:foreground ,violet-lc :inherit font-lock-string-face))))
+     '(info-string ((t (:foreground ,orange-lc :inherit font-lock-string-face))))
+     '(info-title-1 ((t (:foreground ,red-hc :weight bold))))
+     '(info-title-2 ((t (:foreground ,blue-lc :weight bold))))
+     '(info-title-3 ((t (:weight bold))))
+     '(info-title-4 ((t (:weight bold))))
+     '(info-command-ref-item
+       ((t (:foreground ,green-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-constant-ref-item
+       ((t (:foreground ,red-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-function-ref-item
+       ((t (:foreground ,cyan-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-macro-ref-item
+       ((t (:foreground ,green-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-reference-item ((t (:background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-special-form-ref-item
+       ((t (:foreground ,magenta-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-syntax-class-item
+       ((t (:foreground ,magenta-lc :background ,solarized-hl))))
+     '(info-user-option-ref-item
+       ((t (:foreground ,red-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+     '(info-user-option-ref-item
+       ((t (:foreground ,orange-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
 
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
@@ -920,8 +948,8 @@ NORMAL-VALUE."
      '(undo-tree-visualizer-default-face ((t (:foreground ,solarized-comment :background ,solarized-bg))))
      '(undo-tree-visualizer-unmodified-face ((t (:foreground ,green))))
      '(undo-tree-visualizer-current-face ((t (:foreground ,blue :inverse-video t))))
-     '(undo-tree-visualizer-active-branch-face ((t (:foreground ,solarized-emph :background ,solarized-bg
-                                                                :weight bold))))
+     '(undo-tree-visualizer-active-branch-face
+       ((t (:foreground ,solarized-emph :background ,solarized-bg :weight bold))))
      '(undo-tree-visualizer-register-face ((t (:foreground ,yellow))))
 
      ;; w3m
@@ -980,8 +1008,8 @@ NORMAL-VALUE."
      '(web-mode-builtin-face ((t (:foreground ,red))))
      '(web-mode-comment-face ((t (:foreground ,base01))))
      '(web-mode-constant-face ((t (:foreground ,blue :weight bold))))
-     '(web-mode-current-element-highlight-face ((t (:underline unspecified :weight unspecified
-                                                               :background ,base02))))
+     '(web-mode-current-element-highlight-face
+       ((t (:underline unspecified :weight unspecified :background ,base02))))
      '(web-mode-css-at-rule-face ((t (:foreground ,violet :slant italic))))
      '(web-mode-css-pseudo-class-face ((t (:foreground ,green :slant italic))))
      '(web-mode-doctype-face ((t (:foreground ,base01 :slant italic :weight bold))))
@@ -1022,26 +1050,27 @@ NORMAL-VALUE."
      '(web-mode-html-tag-bracket-face ((t (:foreground ,base01))))
 
      ;; whitespace-mode
-     '(whitespace-space ((t (:foreground ,solarized-comment :background unspecified
-                                         :inverse-video unspecified :slant italic))))
-     `(whitespace-hspace ((t (:foreground ,solarized-emph :background unspecified
-                                          :inverse-video unspecified))))
-     `(whitespace-tab ((t (:foreground ,red :background unspecified
-                                       :inverse-video unspecified :weight bold))))
-     `(whitespace-newline ((t (:foreground ,solarized-comment :background unspecified
-                                           :inverse-video unspecified))))
-     `(whitespace-trailing ((t (:foreground ,orange-lc :background unspecified
-                                            :inverse-video t))))
-     `(whitespace-line ((t (:foreground ,magenta :background unspecified
-                                        :inverse-video unspecified))))
-     `(whitespace-space-before-tab ((t (:foreground unspecified :background ,red-lc
-                                                    :inverse-video unspecified))))
-     `(whitespace-indentation ((t (:foreground ,yellow :background unspecified
-                                               :inverse-video unspecified :weight bold))))
-     `(whitespace-empty ((t (:foreground ,red-lc :background unspecified
-                                         :inverse-video t))))
-     `(whitespace-space-after-tab ((t (:foreground ,orange :background unspecified
-                                                   :inverse-video t :weight bold)))))))
+     '(whitespace-space
+       ((t (:foreground ,solarized-comment :background unspecified :inverse-video unspecified :slant italic))))
+     '(whitespace-hspace
+       ((t (:foreground ,solarized-emph :background unspecified :inverse-video unspecified))))
+     '(whitespace-tab
+       ((t (:foreground ,red :background unspecified :inverse-video unspecified :weight bold))))
+     '(whitespace-newline
+       ((t (:foreground ,solarized-comment :background unspecified :inverse-video unspecified))))
+     '(whitespace-trailing
+       ((t (:foreground ,orange-lc :background unspecified :inverse-video t))))
+     '(whitespace-line
+       ((t (:foreground ,magenta :background unspecified :inverse-video unspecified))))
+     '(whitespace-space-before-tab
+       ((t (:foreground unspecified :background ,red-lc :inverse-video unspecified))))
+     '(whitespace-indentation
+       ((t (:foreground ,yellow :background unspecified :inverse-video unspecified :weight bold))))
+     '(whitespace-empty
+       ((t (:foreground ,red-lc :background unspecified :inverse-video t))))
+     '(whitespace-space-after-tab
+       ((t (:foreground ,orange :background unspecified :inverse-video t :weight bold)))))))
+
 
 (setq-default
  ;; fill column indicator
