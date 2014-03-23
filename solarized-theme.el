@@ -943,12 +943,12 @@ NORMAL-VALUE."
      '(term-color-white ((t ( :foreground ,base00))))
 
      ;; undo tree
-     '(undo-tree-visualizer-default-face ((t (:foreground ,solarized-comment :background ,solarized-bg))))
-     '(undo-tree-visualizer-unmodified-face ((t (:foreground ,green))))
+     '(undo-tree-visualizer-default-face ((t (:foreground ,base01 :background ,base03))))
      '(undo-tree-visualizer-current-face ((t (:foreground ,blue :inverse-video t))))
      '(undo-tree-visualizer-active-branch-face
-       ((t (:foreground ,solarized-emph :background ,solarized-bg :weight bold))))
+       ((t (:foreground ,base1 :background ,base03 :weight bold))))
      '(undo-tree-visualizer-register-face ((t (:foreground ,yellow))))
+     '(undo-tree-visualizer-unmodified-face ((t (:foreground ,green))))
 
      ;; w3m
      '(w3m-anchor ((t (:inherit link))))
