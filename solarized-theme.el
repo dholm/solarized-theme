@@ -589,6 +589,11 @@ NORMAL-VALUE."
      '(grep-hit-face ((t (:foreground ,blue))))
      '(grep-match-face ((t (:foreground ,orange :weight bold))))
 
+     ;; guide-key
+     '(guide-key/highlight-command-face ((t (:foreground ,blue))))
+     '(guide-key/key-face ((t (:foreground ,base01))))
+     '(guide-key/prefix-command-face ((t (:foreground ,green))))
+
      ;; helm
      '(helm-apt-deinstalled ((t (:foreground ,solarized-comment))))
      '(helm-apt-installed ((t (:foreground ,green))))
