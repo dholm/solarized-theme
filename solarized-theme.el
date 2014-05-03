@@ -350,6 +350,11 @@ NORMAL-VALUE."
      '(cfw:face-toolbar-button-on ((t (:foreground ,yellow-lc :background ,yellow-hc
                                                    :weight bold))))
 
+     ;; comint
+     '(comint-highlight-input ((t (:foreground ,yellow))))
+     '(comint-highlight-prompt ((t (:foreground ,orange :background ,base03
+                                                :weight bold))))
+
      ;; compilation
      '(compilation-column-face ((t (:foreground ,cyan :underline nil))))
      '(compilation-column-number ((t (:inherit font-lock-doc-face :foreground ,cyan :underline nil))))
