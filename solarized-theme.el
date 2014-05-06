@@ -74,14 +74,20 @@
   :type 'number
   :group 'solarized)
 
+(defcustom solarized-force-256color nil
+  "Force use of the 256-color palette."
+  :type 'boolean
+  :group 'solarized)
+
 (defcustom solarized-broken-srgb (if (and (not (and (boundp 'ns-use-srgb-colorspace)
                                               ns-use-srgb-colorspace))
                                         (eq system-type 'darwin)
                                         (eq window-system 'ns)) t nil)
-  "Emacs bug #8402 results in incorrect color handling on Macs. If this is t
-\(the default on Macs), Solarized works around it with alternative colors.
-However, these colors are not totally portable, so you may be able to edit
-the \"ARGB\" column in solarized-definitions.el to improve them further."
+  "Emacs bug #8402 results in incorrect color handling on Macs.
+If this is t \(the default on Macs), Solarized works around it
+with alternative colors.  However, these colors are not totally
+portable, so you may be able to edit the \"ARGB\" column in
+solarized-definitions.el to improve them further."
   :type 'boolean
   :group 'solarized)
 
@@ -145,12 +151,14 @@ the \"ARGB\" column in solarized-definitions.el to improve them further."
 
 (defun solarized-column-index ()
   "Return the palette column to use based on available features."
-  (if window-system
-      (if solarized-broken-srgb 2 1)
-    (case (display-color-cells)
-      (16 4)
-      (8 5)
-      (otherwise 3))))
+  (if solarized-force-256color
+      3
+    (if window-system
+        (if solarized-broken-srgb 2 1)
+      (case (display-color-cells)
+        (16 4)
+        (8 5)
+        (otherwise 3)))))
 
 (defun solarized-find-color (name palette)
   "Grab the color NAME from the PALETTE."
