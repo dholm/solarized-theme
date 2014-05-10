@@ -476,6 +476,14 @@ NORMAL-VALUE."
      '(eshell-ls-special ((t (:foreground ,violet))))
      '(eshell-ls-symlink ((t (:foreground ,cyan))))
 
+     ;; fic
+     '(fic-author-face ((t (:background ,base03 :foreground ,orange
+                                        :underline t :slant italic))))
+     '(fic-face ((t (:background ,base03 :foreground ,orange
+                                 :weight normal :slant italic))))
+     '(font-lock-fic-face ((t (:background ,base03 :foreground ,orange
+                                           :weight normal :slant italic))))
+
      ;; flymake
      '(flymake-errline
        ((,'((supports :underline (:style wave)))
