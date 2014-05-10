@@ -677,9 +677,9 @@ NORMAL-VALUE."
 
      ;; info+
      '(info-file
-       ((t (:foreground ,yellow-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,yellow-lc :background ,base02))))
      '(info-menu
-       ((t (:foreground ,yellow-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,yellow-lc :background ,base02))))
      '(info-quoted-name ((t (:foreground ,green-lc :inherit font-lock-string-face))))
      '(info-string ((t (:foreground ,orange-lc :inherit font-lock-string-face))))
      '(info-single-quote ((t (:foreground ,red-lc :inherit font-lock-string-face))))
@@ -690,22 +690,22 @@ NORMAL-VALUE."
      '(info-title-3 ((t (:weight bold))))
      '(info-title-4 ((t (:weight bold))))
      '(info-command-ref-item
-       ((t (:foreground ,green-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,green-lc :background ,base02))))
      '(info-constant-ref-item
-       ((t (:foreground ,red-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,red-hc :background ,base02))))
      '(info-function-ref-item
-       ((t (:foreground ,cyan-lc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,cyan-lc :background ,base02))))
      '(info-macro-ref-item
-       ((t (:foreground ,green-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
-     '(info-reference-item ((t (:background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,green-hc :background ,base02))))
+     '(info-reference-item ((t (:background ,base02))))
      '(info-special-form-ref-item
-       ((t (:foreground ,magenta-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,magenta-hc :background ,base02))))
      '(info-syntax-class-item
        ((t (:foreground ,magenta-lc :background ,solarized-hl))))
      '(info-user-option-ref-item
-       ((t (:foreground ,red-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,red-hc :background ,base02))))
      '(info-user-option-ref-item
-       ((t (:foreground ,orange-hc :background ,(if (eq solarized-background 'light) base02 base2)))))
+       ((t (:foreground ,orange-hc :background ,base02))))
 
      ;; isearch
      '(isearch ((t (,@fmt-stnd :foreground ,orange :background ,solarized-bg))))
