@@ -484,6 +484,11 @@ NORMAL-VALUE."
      '(font-lock-fic-face ((t (:background ,base03 :foreground ,orange
                                            :weight normal :slant italic))))
 
+     ;; fixmee
+     '(fixmee-notice-face ((t (:background nil :foreground ,base1
+                                           :underline nil :slant italic
+                                           :weight bold))))
+
      ;; flymake
      '(flymake-errline
        ((,'((supports :underline (:style wave)))
