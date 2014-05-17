@@ -744,17 +744,27 @@ NORMAL-VALUE."
      ;; magit
      '(magit-section-title ((t (:foreground ,yellow :weight bold))))
      '(magit-branch ((t (:foreground ,orange :weight bold))))
-     '(magit-item-highlight ((t (:background ,solarized-hl :weight unspecified))))
+     '(magit-tag ((t (:inherit magit-log-sha1))))
+     '(magit-item-highlight
+       ((t (:background ,solarized-hl :weight unspecified))))
      '(magit-log-author ((t (:foreground ,cyan))))
      '(magit-log-graph ((t (:foreground ,solarized-comment))))
-     '(magit-log-head-label-bisect-bad ((t (:foreground ,red-lc :background ,red-hc :box 1))))
-     '(magit-log-head-label-bisect-good ((t (:foreground ,green-lc :background ,green-hc :box 1))))
+     '(magit-log-head-label-bisect-good
+       ((t (:foreground ,green-lc :background ,green-hc :box 1))))
+     '(magit-log-head-label-bisect-skip
+       ((t (:foreground ,solarized-comment :weight bold :box 1))))
+     '(magit-log-head-label-bisect-bad
+       ((t (:foreground ,red-lc :background ,red-hc :box 1))))
      '(magit-log-head-label-default ((t (:background ,solarized-hl :box 1))))
-     '(magit-log-head-label-local ((t (:foreground ,blue-hc :background ,blue-lc :box 1))))
-     '(magit-log-head-label-patches ((t (:foreground ,red-hc :background ,red-lc :box 1))))
-     '(magit-log-head-label-remote ((t (:foreground ,green-hc :background ,green-lc :box 1))))
-     '(magit-log-head-label-tags ((t (:foreground ,yellow-hc :background ,yellow-lc :box 1))))
-     '(magit-log-sha1 ((t (:foreground ,yellow))))
+     '(magit-log-head-label-local
+       ((t (:foreground ,blue-hc :background ,blue-lc :box 1))))
+     '(magit-log-head-label-patches
+       ((t (:foreground ,red-hc :background ,red-lc :box 1))))
+     '(magit-log-head-label-remote
+       ((t (:foreground ,green-hc :background ,green-lc :box 1))))
+     '(magit-log-head-label-tags
+       ((t (:foreground ,yellow-hc :background ,yellow-lc :box 1))))
+     '(magit-log-sha1 ((t (:foreground ,yellow :weight bold))))
      '(magit-header ((t (:inherit default))))
      '(magit-log-sha1 ((t (:foreground ,yellow))))
      '(magit-cherry-equivalent ((t (:foreground ,magenta))))
