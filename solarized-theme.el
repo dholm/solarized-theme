@@ -462,6 +462,12 @@ NORMAL-VALUE."
      '(ediff-odd-diff-C ((t (:background ,base02 :foreground ,solarized-emph))))
      '(ediff-odd-diff-Ancestor ((t (:background ,base02 :foreground ,solarized-emph))))
 
+     ;; elfeed
+     '(elfeed-search-date-face ((t (:foreground ,base01))))
+     '(elfeed-search-feed-face ((t (:foreground ,base01))))
+     '(elfeed-search-tag-face ((t (:foreground ,base0))))
+     '(elfeed-search-title-face ((t (:foreground ,base0))))
+
      ;; epc
      '(epc:face-title ((t (:foreground ,blue :background ,solarized-bg
                                        :weight normal :underline nil))))
