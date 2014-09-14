@@ -919,6 +919,9 @@ NORMAL-VALUE."
      '(outline-7 ((t (:inherit org-level-7))))
      '(outline-8 ((t (:inherit org-level-8))))
 
+     ;; perspective
+     '(persp-selected-face ((t (:foreground ,yellow))))
+
      ;; popup
      '(popup-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(popup-isearch-match ((t (:foreground ,solarized-bg :background ,yellow))))
