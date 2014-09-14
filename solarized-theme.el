@@ -922,6 +922,12 @@ NORMAL-VALUE."
      ;; perspective
      '(persp-selected-face ((t (:foreground ,yellow))))
 
+     ;; prodigy
+     '(prodigy-green-face ((t (:foreground ,green))))
+     '(prodigy-red-face ((t (:foreground ,orange))))
+     '(prodigy-yellow-face ((t (:foreground ,yellow))))
+     '(prodigy-line-face ((t (:foreground ,base02))))
+
      ;; popup
      '(popup-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(popup-isearch-match ((t (:foreground ,solarized-bg :background ,yellow))))
