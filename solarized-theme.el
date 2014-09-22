@@ -314,7 +314,7 @@ NORMAL-VALUE."
                                     :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
      '(highlight ((t (:background ,solarized-hl))))
      '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow :background ,solarized-bg))))
-     '(match ((t (:foreground ,solarized-emph :background ,solarized-hl :weight bold))))
+     '(match ((t (:foreground ,yellow :background ,solarized-bg))))
      '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
      '(mode-line ((t (:foreground ,s-mode-line-fg :background ,s-mode-line-bg
@@ -677,14 +677,14 @@ NORMAL-VALUE."
      '(helm-grep-file ((t (:foreground ,cyan :underline t))))
      '(helm-grep-finish ((t (:foreground ,green))))
      '(helm-grep-lineno ((t (:foreground ,orange))))
-     '(helm-grep-match ((t (:inherit match))))
+     '(helm-grep-match ((t (:foreground ,yellow :inherit match)))) ;:inherit match doesn't work?
      '(helm-grep-running ((t (:foreground ,red))))
      '(helm-header ((t (:inherit header-line))))
      '(helm-lisp-completion-info ((t (:foreground ,solarized-fg))))
      '(helm-lisp-show-completion ((t (:foreground ,yellow :background ,solarized-hl :bold t))))
      '(helm-M-x-key ((t (:foreground ,orange :underline t))))
      '(helm-moccur-buffer ((t (:foreground ,cyan :underline t))))
-     '(helm-match ((t (:inherit match))))
+     '(helm-match ((t (:foreground ,yellow :inherit match)))) ;:inherit match doesn't work?
      '(helm-selection ((t (:background ,solarized-hl ,@fmt-undr))))
      '(helm-selection-line ((t (:foreground ,solarized-emph :background ,solarized-hl :underline nil))))
      '(helm-separator ((t (:foreground ,red))))
