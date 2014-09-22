@@ -560,11 +560,11 @@ NORMAL-VALUE."
      '(flycheck-fringe-info ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
 
      ;; flyspell
-     '(flyspell-duplicate
+     '(flyspell-duplicate-face
        ((,'((supports :underline (:style wave)))
          (:underline (:style wave :color ,yellow) :inherit unspecified))
         (t (:foreground ,yellow :weight bold :underline t))))
-     '(flyspell-incorrect
+     '(flyspell-incorrect-face
        ((,'((supports :underline (:style wave)))
          (:underline (:style wave :color ,red) :inherit unspecified))
         (t (:foreground ,red :weight bold :underline t))))
