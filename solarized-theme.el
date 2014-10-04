@@ -392,6 +392,11 @@ NORMAL-VALUE."
      '(compilation-mode-line-fail ((t (:inherit compilation-error :foreground ,red :weight bold))))
      '(compilation-mode-line-run ((t (:foreground ,orange :weight bold))))
 
+     ;; cperl
+     '(cperl-nonoverridable-face ((t (:foreground nil :inherit font-lock-keyword-face))))
+     '(cperl-array-face ((t (:foregorund nil :inherit font-lock-variable-name-face))))
+     '(cperl-hash-face ((t (:foregorund nil :inherit font-lock-variable-name-face))))
+
      ;; ctable
      '(ctbl:face-cell-select ((t (:foreground ,solarized-emph :background ,solarized-hl
                                               :underline ,solarized-emph :weight bold))))
