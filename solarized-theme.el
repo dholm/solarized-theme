@@ -397,6 +397,14 @@ NORMAL-VALUE."
      '(cperl-array-face ((t (:foregorund nil :inherit font-lock-variable-name-face))))
      '(cperl-hash-face ((t (:foregorund nil :inherit font-lock-variable-name-face))))
 
+     ;; cscope
+     '(cscope-file-face ((t (:foreground ,green :weight bold))))
+     '(cscope-function-face ((t (:foreground ,blue))))
+     '(cscope-line-number-face ((t (:foreground ,solarized-comment))))
+     '(cscope-mouse-face ((t (:background ,blue :foreground ,solarized-fg))))
+     '(cscope-line-face ((t (:foreground ,solarized-fg))))
+     '(cscope-separator-face ((t (:foreground ,solarized-emph))))
+
      ;; ctable
      '(ctbl:face-cell-select ((t (:foreground ,solarized-emph :background ,solarized-hl
                                               :underline ,solarized-emph :weight bold))))
