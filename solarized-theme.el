@@ -412,6 +412,9 @@ NORMAL-VALUE."
      '(ctbl:face-row-select ((t (:foreground ,solarized-fg :background ,solarized-hl
                                              :underline t))))
 
+     ;; csv
+     '(csv-separator-face ((t (,@fmt-ital :foreground ,solarized-comment))))
+
      ;; dired
      '(dired-directory ((t (:foreground ,blue :weight normal))))
      '(dired-flagged ((t (:foreground ,red))))
