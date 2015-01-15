@@ -709,6 +709,15 @@ NORMAL-VALUE."
      '(helm-time-zone-home ((t (:foreground ,red))))
      '(helm-visible-mark ((t (:foreground ,magenta :background ,solarized-bg :bold t))))
 
+     ;; helm-css-scss
+     '(helm-css-scss-selector-depth-face-1 ((t (:foreground ,base0))))
+     '(helm-css-scss-selector-depth-face-2 ((t (:foreground ,blue))))
+     '(helm-css-scss-selector-depth-face-3 ((t (:foreground ,cyan))))
+     '(helm-css-scss-selector-depth-face-4 ((t (:foreground ,green))))
+     '(helm-css-scss-selector-depth-face-5 ((t (:foreground ,yellow))))
+     '(helm-css-scss-selector-depth-face-6 ((t (:foreground ,violet))))
+     '(helm-css-scss-target-line-face ((t (:background unspecified :foreground ,magenta))))
+
      ;; helm-go-package
      '(helm-source-go-package-godoc-description ((t (:foreground ,base01))))
 
