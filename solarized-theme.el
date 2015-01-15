@@ -709,6 +709,9 @@ NORMAL-VALUE."
      '(helm-time-zone-home ((t (:foreground ,red))))
      '(helm-visible-mark ((t (:foreground ,magenta :background ,solarized-bg :bold t))))
 
+     ;; helm-go-package
+     '(helm-source-go-package-godoc-description ((t (:foreground ,base01))))
+
      ;; helm-swoop
      '(helm-swoop-target-line-face ((t (:foreground unspecified :background ,base02))))
      '(helm-swoop-target-line-block-face ((t (:foreground unspecified :background ,base02))))
