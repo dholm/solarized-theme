@@ -499,7 +499,7 @@ NORMAL-VALUE."
      '(erc-direct-msg-face ((t (:inherit erc-default-face))))
      '(erc-error-face ((t (:inherit font-lock-warning-face))))
      '(erc-fool-face ((t (:foreground ,solarized-fg))))
-     '(erc-header-line ((t (:inherit header-line))))
+     '(erc-header-line ((t (:foreground nil :background nil :inherit header-line))))
      '(erc-input-face ((t (:foreground ,solarized-emph))))
      '(erc-inverse-face ((t (:foreground ,solarized-bg :background ,solarized-fg))))
      '(erc-keyword-face ((t (:foreground ,yellow :weight bold))))
