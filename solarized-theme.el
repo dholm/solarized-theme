@@ -1199,7 +1199,11 @@ NORMAL-VALUE."
      '(whitespace-empty
        ((t (:foreground ,red-lc :background unspecified :inverse-video t))))
      '(whitespace-space-after-tab
-       ((t (:foreground ,orange :background unspecified :inverse-video t :weight bold)))))))
+       ((t (:foreground ,orange :background unspecified :inverse-video t :weight bold))))
+
+     ;; woman
+     '(woman-italic ((t (:inherit italic :foreground ,green))))
+     '(woman-bold ((t (:inherit bold :foreground ,blue)))))))
 
 
 (setq-default
