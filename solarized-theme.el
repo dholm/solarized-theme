@@ -490,6 +490,14 @@ NORMAL-VALUE."
      '(elscreen-tab-other-screen-face ((t (:background ,base03 :foreground ,base01))))
      '(elscreen-tab-control-face ((t (:background ,base03 :foreground ,base0))))
 
+     ;; epa
+     '(epa-mark ((t (:foreground ,magenta :weight bold))))
+     '(epa-string ((t (:foreground ,violet))))
+     '(epa-validity-disabled ((t (:inverse-video t :slant italic))))
+     '(epa-validity-high ((t (:weight bold))))
+     '(epa-validity-low ((t (:slant italic))))
+     '(epa-validity-medium ((t (:slant italic))))
+
      ;; epc
      '(epc:face-title ((t (:foreground ,blue :background ,solarized-bg
                                        :weight normal :underline nil))))
