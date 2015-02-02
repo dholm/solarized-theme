@@ -484,6 +484,12 @@ NORMAL-VALUE."
      '(elfeed-search-tag-face ((t (:foreground ,base0))))
      '(elfeed-search-title-face ((t (:foreground ,base0))))
 
+     ;; elscreen
+     '(elscreen-tab-background-face ((t (:background ,base03))))
+     '(elscreen-tab-current-screen-face ((t (:background ,base02 :foreground ,base1)) (t (:underline t))))
+     '(elscreen-tab-other-screen-face ((t (:background ,base03 :foreground ,base01))))
+     '(elscreen-tab-control-face ((t (:background ,base03 :foreground ,base0))))
+
      ;; epc
      '(epc:face-title ((t (:foreground ,blue :background ,solarized-bg
                                        :weight normal :underline nil))))
