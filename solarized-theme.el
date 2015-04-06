@@ -334,6 +334,14 @@ NORMAL-VALUE."
      '(bm-fringe-face ((t (:background ,orange :foreground ,solarized-bg))))
      '(bm-fringe-persistent-face ((t (:background ,blue :foreground ,solarized-bg))))
 
+     ;; calendar
+     '(calendar-today ((t (:weight bold :background ,solarized-hl :foreground nil))))
+     '(holiday ((t (:background nil :foreground ,red-lc :weight bold))))
+     '(diary ((t (:foreground ,yellow))))
+     '(calendar-weekday-header ((t (:inherit default))))
+     '(calendar-weekend-header ((t (:inherit font-lock-comment-face))))
+     '(calendar-month-header ((t (:foreground ,yellow :weight bold :height 1.1))))
+
      ;; calfw
      '(cfw:face-day-title ((t (:background ,solarized-hl))))
      '(cfw:face-annotation ((t (:inherit cfw:face-day-title :foreground ,yellow))))
