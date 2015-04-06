@@ -623,6 +623,17 @@ NORMAL-VALUE."
      '(font-lock-variable-name-face ((t (,@fmt-none :foreground ,blue))))
      '(font-lock-warning-face ((t (,@fmt-bold :foreground ,red))))
 
+     ;; function args
+     '(fa-face-hint ((t (:inherit popup-face))))
+     '(fa-face-hint-bold ((t (:inherit fa-face-hint :weight bold))))
+     '(fa-face-type ((t (:inherit fa-face-hint :foreground ,yellow))))
+     '(fa-face-type-bold ((t (:inherit fa-face-type :weight bold))))
+     '(fa-face-semi ((t (:inherit fa-face-hint :foreground ,solarized-comment
+                                  :slant italic))))
+     '(fa-face-type-definition ((t (:inherit font-lock-type-face
+                                             :slant italic))))
+     '(fa-face-type-compound ((t (:inherit font-lock-type-face))))
+
      ;; git gutter
      '(git-gutter:added ((t (:foreground ,solarized-bg :background ,green :weight bold))))
      '(git-gutter:deleted ((t (:foreground ,solarized-bg :background ,red :weight bold))))
