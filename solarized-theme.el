@@ -347,7 +347,7 @@ NORMAL-VALUE."
      '(cfw:face-select ((t (:background ,magenta-hc :foreground ,magenta-lc))))
      '(cfw:face-saturday ((t (:foreground ,cyan-hc :background ,cyan-lc))))
      '(cfw:face-sunday ((t (:foreground ,red-hc :background ,red-lc :weight bold))))
-     '(cfw:face-title ((t (:inherit variable-pitch :foreground ,yellow
+     '(cfw:face-title ((t (:inherit ,s-variable-pitch :foreground ,yellow
                                     :weight bold :height 2.0))))
      '(cfw:face-today ((t (:weight bold :background ,solarized-hl :foreground nil))))
      '(cfw:face-today-title ((t (:foreground ,yellow-hc :background ,yellow-lc
