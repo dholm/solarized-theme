@@ -1234,6 +1234,15 @@ NORMAL-VALUE."
      '(whitespace-space-after-tab
        ((t (:foreground ,orange :background unspecified :inverse-video t :weight bold))))
 
+     ;; widget
+     '(widget-documentation ((t (:foreground ,green :background unspecified))))
+     '(widget-button ((t (:inherit org-checkbox))))
+     '(widget-button-pressed ((t (:background ,base03 :foreground ,base0
+                                              :box (:line-width 1 :style pressed-button)))))
+     '(widget-field ((t (:inherit secondary-selection))))
+     '(widget-single-line-field ((t (:inherit widget-field))))
+     '(widget-inactive ((t (:inherit modeline-inactive))))
+
      ;; woman
      '(woman-italic ((t (:inherit italic :foreground ,green))))
      '(woman-bold ((t (:inherit bold :foreground ,blue)))))))
