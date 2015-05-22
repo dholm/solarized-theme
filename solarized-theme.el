@@ -897,6 +897,52 @@ NORMAL-VALUE."
      '(Man-reverse ((t (:foreground ,orange))))
      '(Man-underline ((t (:foreground ,green :underline t))))
 
+     ;; markup-faces
+     '(markup-gen-face ((t (:foreground ,base01))))
+     '(markup-title-0-face ((t (:inherit ,s-variable-pitch :foreground ,orange :height ,solarized-height-plus-4))))
+     '(markup-title-1-face ((t (:inherit ,s-variable-pitch :foreground ,green :height ,solarized-height-plus-3))))
+     '(markup-title-2-face ((t (:inherit ,s-variable-pitch :foreground ,blue :height ,solarized-height-plus-2))))
+     '(markup-title-3-face ((t (:inherit ,s-variable-pitch :foreground ,yellow :height ,solarized-height-plus-1))))
+     '(markup-title-4-face ((t (:inherit ,s-variable-pitch :foreground ,cyan))))
+     '(markup-title-5-face ((t (:inherit ,s-variable-pitch :foreground ,green))))
+     '(markup-emphasis-face ((t (:inherit markup-gen-face :slant italic))))
+     '(markup-strong-face ((t (:inherit markup-gen-face :weight bold))))
+     '(markup-code-face ((t (:inherit (fixed-pitch markup-gen-face)))))
+     '(markup-verbatim-face ((t (:inherit fixed-pitch :foreground ,base01))))
+     '(markup-superscript-face ((t (:inherit markup-gen-face :height 0.8))))
+     '(markup-subscript-face ((t (:inherit markup-gen-face :height 0.8))))
+     '(markup-reference-face ((t (:inherit markup-gen-face :underline t))))
+     '(markup-secondary-text-face ((t (:inherit markup-gen-face :foreground ,magenta :height 0.8))))
+     '(markup-italic-face ((t (:inherit markup-gen-face :slant italic))))
+     '(markup-bold-face ((t (:inherit markup-gen-face :weight bold))))
+     '(markup-underline-face ((t (:inherit markup-gen-face :underline t))))
+     '(markup-typewriter-face ((t (:inherit (fixed-pitch markup-gen-face)))))
+     '(markup-small-face ((t (:inherit markup-gen-face :height 0.8))))
+     '(markup-big-face ((t (:inherit markup-gen-face :height 1.3))))
+     '(markup-meta-face ((t (:family "Monospace" :height 90 :stipple nil
+                                     :inverse-video nil :box nil
+                                     :strike-through nil :overline nil
+                                     :underline nil :slant normal :weight normal
+                                     :width normal :foundry "unknown"
+                                     :foreground ,base01))))
+     '(markup-meta-hide-face ((t (:inherit markup-meta-face :height 0.8))))
+     '(markup-command-face ((t (:inherit markup-meta-face :weight bold))))
+     '(markup-attribute-face ((t (:inherit markup-meta-face :slant italic))))
+     '(markup-value-face ((t (:inherit markup-meta-face))))
+     '(markup-complex-replacement-face ((t (:background ,base03 :foreground ,base0
+                                                        :box (:line-width 1 :style released-button)))))
+     '(markup-list-face ((t (:inherit markup-meta-face))))
+     '(markup-table-face ((t (:inherit markup-meta-face :foreground ,green))))
+     '(markup-table-row-face ((t (:inherit markup-table-face))))
+     '(markup-table-cell-face ((t (:inherit markup-meta-face))))
+     '(markup-anchor-face ((t (:inherit markup-meta-face :overline t))))
+     '(markup-internal-reference-face ((t (:inherit markup-meta-face :underline t))))
+     '(markup-comment-face ((t (:inherit (font-lock-comment-face markup-meta-face)))))
+     '(markup-preprocessor-face ((t (:inherit (font-lock-preprocessor-face markup-meta-face)))))
+     '(markup-replacement-face ((t (:family "Monospace" :foreground ,base01 :weight bold))))
+     '(markup-passthrough-face ((t (:inherit (fixed-pitch markup-gen-face)))))
+     '(markup-error-face ((t (:inherit (font-lock-warning-face)))))
+
      ;; message
      '(message-cited-text ((t (:foreground ,base2))))
      '(message-header-name ((t (:foreground ,cyan))))
