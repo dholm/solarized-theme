@@ -486,6 +486,15 @@ NORMAL-VALUE."
      '(ediff-odd-diff-C ((t (:background ,base02 :foreground ,solarized-emph))))
      '(ediff-odd-diff-Ancestor ((t (:background ,base02 :foreground ,solarized-emph))))
 
+     ;; ee
+     '(ee-bookmarked ((t (:foreground ,base1))))
+     '(ee-category ((t (:foreground ,blue))))
+     '(ee-link ((t (:inherit link))))
+     '(ee-link-visited ((t (:inherit link-visited))))
+     '(ee-marked ((t (:foreground ,magenta :weight bold))))
+     '(ee-omitted ((t (:foreground ,base01))))
+     '(ee-shadow ((t (:inherit shadow))))
+
      ;; elfeed
      '(elfeed-search-date-face ((t (:foreground ,base01))))
      '(elfeed-search-feed-face ((t (:foreground ,base01))))
