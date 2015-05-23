@@ -779,6 +779,17 @@ NORMAL-VALUE."
      '(helm-swoop-target-line-block-face ((t (:foreground unspecified :background ,base02))))
      '(helm-swoop-target-word-face ((t (:foreground ,magenta :background unspecified))))
 
+     ;; hi-lock-mode
+     '(hi-yellow ((t (:foreground ,yellow-hc :background ,yellow-lc))))
+     '(hi-pink ((t (:foreground ,magenta-hc :background ,magenta-lc))))
+     '(hi-green ((t (:foreground ,green-hc :background ,green-lc))))
+     '(hi-blue ((t (:foreground ,blue-hc :background ,blue-lc))))
+     '(hi-black-b ((t (:foreground ,base1 :background ,base03 :weight bold))))
+     '(hi-blue-b ((t (:weight bold :foreground ,cyan-hc :background ,cyan-lc))))
+     '(hi-green-b ((t (:weight bold :foreground ,green-hc :background ,green-lc))))
+     '(hi-red-b ((t (:weight bold :foreground ,red-hc :background ,red-lc))))
+     '(hi-black-hb ((t (:weight bold :foreground ,base1 :background ,base02))))
+
      ;; hl-line
      '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
 
