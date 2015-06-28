@@ -267,6 +267,10 @@ NORMAL-VALUE."
      '(ace-jump-face-foreground ((t (:foreground ,red :background ,solarized-bg
                                                  :inverse-video nil :weight bold))))
 
+     ;; annotate.el
+     '(annotate-highlight ((t (:underlibe ,base02))))
+     '(annotate-annotation ((t (:foreground ,base1 :background ,base02))))
+
      ;; anzu
      '(anzu-mode-line ((t (:foreground ,solarized-emph :weight bold))))
 
