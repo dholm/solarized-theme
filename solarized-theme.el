@@ -806,6 +806,13 @@ NORMAL-VALUE."
      ;; hl-line
      '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
 
+     ;; hydra
+     '(hydra-face-red ((t (:foreground ,red))))
+     '(hydra-face-blue ((t (:foreground ,blue))))
+     '(hydra-face-amaranth ((t (:foreground ,orange))))
+     '(hydra-face-pink ((t (:foreground ,magenta))))
+     '(hydra-face-teal ((t (:foreground ,cyan))))
+
      ;; ido mode
      '(ido-first-match ((t (:foreground ,yellow :weight normal))))
      '(ido-only-match ((t (:foreground ,solarized-bg :background ,yellow :weight normal))))
