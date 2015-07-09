@@ -888,40 +888,78 @@ NORMAL-VALUE."
      '(linum ((t (:foreground ,solarized-comment :background ,solarized-hl))))
 
      ;; magit
-     '(magit-section-title ((t (:foreground ,yellow :weight bold))))
-     '(magit-branch ((t (:foreground ,orange :weight bold))))
-     '(magit-tag ((t (:inherit magit-log-sha1))))
-     '(magit-item-highlight
-       ((t (:background ,solarized-hl :weight unspecified))))
-     '(magit-log-author ((t (:foreground ,cyan))))
-     '(magit-log-graph ((t (:foreground ,solarized-comment))))
-     '(magit-log-head-label-bisect-good
-       ((t (:foreground ,green-lc :background ,green-hc :box 1))))
-     '(magit-log-head-label-bisect-skip
-       ((t (:foreground ,solarized-comment :weight bold :box 1))))
-     '(magit-log-head-label-bisect-bad
-       ((t (:foreground ,red-lc :background ,red-hc :box 1))))
-     '(magit-log-head-label-default ((t (:background ,solarized-hl :box 1))))
-     '(magit-log-head-label-local
-       ((t (:foreground ,blue-hc :background ,blue-lc :box 1))))
-     '(magit-log-head-label-patches
-       ((t (:foreground ,red-hc :background ,red-lc :box 1))))
-     '(magit-log-head-label-remote
-       ((t (:foreground ,green-hc :background ,green-lc :box 1))))
-     '(magit-log-head-label-tags
-       ((t (:foreground ,yellow-hc :background ,yellow-lc :box 1))))
-     '(magit-log-sha1 ((t (:foreground ,yellow :weight bold))))
-     '(magit-header ((t (:inherit default))))
-     '(magit-log-sha1 ((t (:foreground ,yellow))))
-     '(magit-cherry-equivalent ((t (:foreground ,magenta))))
-     '(magit-cherry-unmatched ((t (:foreground ,cyan))))
-     '(magit-process-ng ((t (:inherit magit-header :foreground ,red))))
-     '(magit-process-ok ((t (:inherit magit-header :foreground ,green))))
-     '(magit-signature-bad ((t (:foreground ,red))))
-     '(magit-signature-good ((t (:foreground ,green))))
-     '(magit-signature-none ((t (:inherit magit-log-message))))
-     '(magit-signature-untrusted ((t (:foreground ,cyan))))
-     '(magit-whitespace-warning-face ((t (:inherit trailing-whitespace))))
+     ;; headings and diffs
+     '(magit-section-highlight           ((t (:background ,base02))))
+     '(magit-section-heading             ((t (:foreground ,yellow :weight bold))))
+     '(magit-section-heading-selection   ((t (:foreground ,orange :weight bold))))
+     '(magit-diff-file-heading           ((t (:weight bold))))
+     '(magit-diff-file-heading-highlight ((t (:background ,base02 :weight bold))))
+     '(magit-diff-file-heading-selection ((t (:background ,base02
+                                              :foreground ,orange :weight bold))))
+     '(magit-diff-hunk-heading           ((t (:foreground ,yellow-lc))))
+     '(magit-diff-hunk-heading-highlight ((t (:foreground ,yellow))))
+     '(magit-diff-hunk-heading-selection ((t (:foreground ,yellow-hc :weight bold))))
+     '(magit-diff-lines-heading          ((t (:background ,orange
+                                              :foreground ,base3))))
+     '(magit-diff-context-highlight      ((t (:background ,base02))))
+     '(magit-diffstat-added              ((t (:foreground ,green))))
+     '(magit-diffstat-removed            ((t (:foreground ,red))))
+     ;; popup
+     '(magit-popup-heading             ((t (:foreground ,base1 :weight normal))))
+     '(magit-popup-key                 ((t (:foreground ,base1 :weight bold))))
+     '(magit-popup-argument            ((t (:foreground ,base1 :weight bold))))
+     '(magit-popup-disabled-argument   ((t (:foreground ,base01 :weight normal))))
+     '(magit-popup-option-value        ((t (:foreground ,base1 :weight bold))))
+     ;; process
+     '(magit-process-ok    ((t (:foreground ,green :weight bold))))
+     '(magit-process-ng    ((t (:foreground ,red   :weight bold))))
+     ;; log
+     '(magit-log-author    ((t (:foreground ,base0))))
+     '(magit-log-date      ((t (:foreground ,base01))))
+     '(magit-log-graph     ((t (:foreground ,base1))))
+     ;; sequence
+     '(magit-sequence-pick ((t (:foreground ,yellow-lc))))
+     '(magit-sequence-stop ((t (:foreground ,green))))
+     '(magit-sequence-part ((t (:foreground ,yellow))))
+     '(magit-sequence-head ((t (:foreground ,blue))))
+     '(magit-sequence-drop ((t (:foreground ,red))))
+     '(magit-sequence-done ((t (:foreground ,base01))))
+     '(magit-sequence-onto ((t (:foreground ,base01))))
+     ;; bisect
+     '(magit-bisect-good ((t (:foreground ,green))))
+     '(magit-bisect-skip ((t (:foreground ,yellow))))
+     '(magit-bisect-bad  ((t (:foreground ,red))))
+     ;; blame
+     '(magit-blame-heading ((t (:background ,base1 :foreground ,base02))))
+     '(magit-blame-hash    ((t (:background ,base1 :foreground ,base02))))
+     '(magit-blame-name    ((t (:background ,base1 :foreground ,orange-lc))))
+     '(magit-blame-date    ((t (:background ,base1 :foreground ,orange-lc))))
+     '(magit-blame-summary ((t (:background ,base1 :foreground ,base02 :weight bold))))
+     ;; references etc.
+     '(magit-dimmed         ((t (:foreground ,base01))))
+     '(magit-hash           ((t (:foreground ,base01))))
+     '(magit-tag            ((t (:foreground ,cyan :weight bold))))
+     '(magit-branch-remote  ((t (:foreground ,green  :weight bold))))
+     '(magit-branch-local   ((t (:foreground ,blue   :weight bold))))
+     '(magit-branch-current ((t (:foreground ,blue   :weight bold :box t))))
+     '(magit-head           ((t (:foreground ,blue   :weight bold))))
+     '(magit-refname        ((t (:background ,base02 :foreground ,base01 :weight bold))))
+     '(magit-refname-stash  ((t (:background ,base02 :foreground ,base01 :weight bold))))
+     '(magit-refname-wip    ((t (:background ,base02 :foreground ,base01 :weight bold))))
+     '(magit-signature-good      ((t (:foreground ,green))))
+     '(magit-signature-bad       ((t (:foreground ,red))))
+     '(magit-signature-untrusted ((t (:foreground ,yellow))))
+     '(magit-cherry-unmatched    ((t (:foreground ,cyan))))
+     '(magit-cherry-equivalent   ((t (:foreground ,magenta))))
+     '(magit-reflog-commit       ((t (:foreground ,green))))
+     '(magit-reflog-amend        ((t (:foreground ,magenta))))
+     '(magit-reflog-merge        ((t (:foreground ,green))))
+     '(magit-reflog-checkout     ((t (:foreground ,blue))))
+     '(magit-reflog-reset        ((t (:foreground ,red))))
+     '(magit-reflog-rebase       ((t (:foreground ,magenta))))
+     '(magit-reflog-cherry-pick  ((t (:foreground ,green))))
+     '(magit-reflog-remote       ((t (:foreground ,cyan))))
+     '(magit-reflog-other        ((t (:foreground ,cyan))))
 
      ;; man
      '(Man-overstrike ((t (:foreground ,blue :weight bold))))
