@@ -220,6 +220,7 @@ NORMAL-VALUE."
 
             (s-variable-pitch (if solarized-use-variable-pitch
                                   'variable-pitch 'default))
+            (s-fringe-fg solarized-comment)
             (s-fringe-bg (if solarized-distinct-fringe-background
                              solarized-hl solarized-bg))
             (s-mode-line-fg (if solarized-high-contrast-mode-line
@@ -307,32 +308,22 @@ NORMAL-VALUE."
 
      ;; basic coloring
      '(button ((t (:underline t))))
-     '(link ((t (,@fmt-undr :foreground ,violet))))
-     '(link-visited ((t (,@fmt-undr :foreground ,magenta))))
+     '(link ((t (,@fmt-undb :foreground ,yellow))))
+     '(link-visited ((t (,@fmt-undr :foreground ,yellow))))
      '(default ((t (:foreground ,solarized-fg :background ,solarized-bg))))
-     '(cursor ((t (:foreground ,solarized-bg :background ,solarized-fg))))
-     '(escape-glyph ((t (:foreground ,red))))
-     '(fringe ((t (:foreground ,solarized-comment :background ,solarized-hl))))
-     '(header-line ((t (:foreground ,solarized-emph :background ,solarized-hl
-                                    :inverse-video unspecified :underline unspecified
-                                    :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
+     '(shadow ((t (:foreground ,base01))))
+     '(cursor ((t (:foreground ,solarized-bg :background ,solarized-fg
+                               :inverse-video t))))
+     '(escape-glyph ((t (:foreground ,violet))))
+     '(fringe ((t (:foreground ,s-fringe-fg :background ,s-fringe-bg))))
+     '(success ((t (:foreground ,green))))
+     '(warning ((t (:foreground ,yellow))))
+     '(error ((t (:foreground ,orange))))
+     '(widget-field ((t (:background ,base02))))
      '(highlight ((t (:background ,solarized-hl))))
-     '(lazy-highlight ((t (,@fmt-revr :foreground ,yellow :background ,solarized-bg))))
-     '(match ((t (:foreground ,yellow :background ,solarized-bg))))
-     '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
-     '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
-     '(mode-line ((t (:foreground ,s-mode-line-fg :background ,s-mode-line-bg
-                                  :box (:line-width 1 :color ,s-mode-line-bg :style unspecified)))))
-     '(mode-line-buffer-id ((t (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
-     '(mode-line-inactive ((t (:foreground ,s-mode-line-inactive-fg :background ,s-mode-line-inactive-bg
-                                           :box (:line-width 1 :color ,s-mode-line-inactive-bc :style unspecified)))))
-
-     '(mode-line-emphasis ((t (:inherit mode-line :foreground ,solarized-emph))))
-     '(mode-line-highlight ((t (:inherit mode-line :foreground ,magenta :box nil ,@fmt-bold))))
-     '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
-     '(secondary-selection ((t (:background ,solarized-hl))))
-     '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
-     '(vertical-border ((t (:foreground ,solarized-fg))))
+     '(lazy-highlight ((t (:foreground ,base03 :background ,yellow
+                                       :weight normal))))
+     '(match ((t (:background ,base02 :foreground ,base1 :weight bold))))
 
      ;; bookmarks
      '(bm-fringe-face ((t (:background ,orange :foreground ,solarized-bg))))
@@ -1023,6 +1014,25 @@ NORMAL-VALUE."
      '(message-header-xheader ((t (:foreground ,violet))))
      '(message-mml ((t (:foreground ,blue))))
      '(message-separator ((t (:foreground ,base3))))
+
+     ;; misc
+     '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
+     '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
+     '(mode-line ((t (:foreground ,s-mode-line-fg :background ,s-mode-line-bg
+                                  :box (:line-width 1 :color ,s-mode-line-bg :style unspecified)))))
+     '(mode-line-buffer-id ((t (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
+     '(mode-line-inactive ((t (:foreground ,s-mode-line-inactive-fg :background ,s-mode-line-inactive-bg
+                                           :box (:line-width 1 :color ,s-mode-line-inactive-bc :style unspecified)))))
+
+     '(mode-line-emphasis ((t (:inherit mode-line :foreground ,solarized-emph))))
+     '(mode-line-highlight ((t (:inherit mode-line :foreground ,magenta :box nil ,@fmt-bold))))
+     '(header-line ((t (:foreground ,solarized-emph :background ,solarized-hl
+                                    :inverse-video unspecified :underline unspecified
+                                    :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
+     '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
+     '(secondary-selection ((t (:background ,solarized-hl))))
+     '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
+     '(vertical-border ((t (:foreground ,solarized-fg))))
 
      ;; org
      '(org-agenda-structure
