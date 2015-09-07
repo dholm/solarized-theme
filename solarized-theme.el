@@ -434,6 +434,16 @@ NORMAL-VALUE."
      ;; dired-efap
      '(dired-efap-face ((t (:box nil :background ,base02 :foreground ,base1
                                  :underline ,solarized-fg :weight bold))))
+     ;; dired-k
+     '(dired-k-added ((t (:inherit diff-added))))
+     '(dired-k-commited ((t (:foreground ,green))))
+     '(dired-k-directory ((t (:inherit dired-directory))))
+     '(dired-k-ignored ((t (:inherit dired-ignored))))
+     '(dired-k-modified ((t (:inherit diff-changed))))
+     '(dired-k-untracked ((t (:foreground ,base01))))
+     '(direx-k-ignored ((t (:inherit dired-k-ignored))))
+     '(direx-k-modified ((t (:inherit dired-k-modified))))
+     '(direx-k-untracked ((t (:inherit dired-k-untracked))))
 
      ;; diff
      '(diff-added ((t (:foreground ,green :background ,solarized-bg))))
