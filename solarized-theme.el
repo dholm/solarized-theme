@@ -421,7 +421,7 @@ NORMAL-VALUE."
      ;; dired
      '(dired-directory ((t (:foreground ,blue :weight normal))))
      '(dired-flagged ((t (:foreground ,red))))
-     '(dired-header ((t (:foreground ,solarized-bg :background ,blue))))
+     '(dired-header ((t (:inherit header-line))))
      '(dired-ignored ((t (:inherit shadow))))
      '(dired-mark ((t (:foreground ,yellow :weight bold))))
      '(dired-marked ((t (:foreground ,magenta :weight bold))))
