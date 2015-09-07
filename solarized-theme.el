@@ -428,6 +428,12 @@ NORMAL-VALUE."
      '(dired-perm-write ((t (:foreground ,solarized-fg :underline t))))
      '(dired-symlink ((t (:foreground ,cyan :slant italic))))
      '(dired-warning ((t (:foreground ,orange :underline t))))
+     ;; dired-async
+     '(dired-async-message ((t (:background ,(if (eq solarized-background 'light) yellow-lc yellow)))))
+     '(dired-async-mode-message ((t (:background ,(if (eq solarized-background 'light) red-lc red)))))
+     ;; dired-efap
+     '(dired-efap-face ((t (:box nil :background ,base02 :foreground ,base1
+                                 :underline ,solarized-fg :weight bold))))
 
      ;; diff
      '(diff-added ((t (:foreground ,green :background ,solarized-bg))))
@@ -929,7 +935,7 @@ NORMAL-VALUE."
      ;; references etc.
      '(magit-dimmed         ((t (:foreground ,base01))))
      '(magit-hash           ((t (:foreground ,base01))))
-     '(magit-tag            ((t (:foreground ,cyan :weight bold))))
+     '(magit-tag            ((t (:foreground ,cyan   :weight bold))))
      '(magit-branch-remote  ((t (:foreground ,green  :weight bold))))
      '(magit-branch-local   ((t (:foreground ,blue   :weight bold))))
      '(magit-branch-current ((t (:foreground ,blue   :weight bold :box t))))
