@@ -1229,6 +1229,20 @@ NORMAL-VALUE."
      '(sml/discharging ((t (:inherit sml/global :foreground ,red))))
      '(sml/time ((t (:inherit sml/modes))))
 
+     ;; smartparens
+     '(sp-pair-overlay-face ((t (:background ,base02))))
+     '(sp-wrap-overlay-face ((t (:background ,base02))))
+     '(sp-wrap-overlay-opening-pair
+       ((t (:inherit sp-wrap-overlay-face :foreground ,green))))
+     '(sp-wrap-overlay-closing-pair
+       ((t (:inherit sp-wrap-overlay-face :foreground ,orange))))
+     '(sp-wrap-tag-overlay-face ((t (:background ,base02))))
+     '(sp-show-pair-enclosing ((t (:inherit highlight))))
+     '(sp-show-pair-match-face
+       ((t (:background unspecified :foreground ,cyan :weight bold))))
+     '(sp-show-pair-mismatch-face
+       ((t (:foreground ,base02 :background ,red :weight bold))))
+
      ;; syslog mode
      '(syslog-ip-face ((t (:foreground ,yellow :background unspecified))))
      '(syslog-hour-face ((t (:foreground ,green :background unspecified))))
