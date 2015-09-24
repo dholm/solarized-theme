@@ -1454,20 +1454,49 @@ NORMAL-VALUE."
      '(ztreep-expand-sign-face ((t (:foreground ,base01))))
      '(ztreep-header-face ((t (:foreground ,base01 :weight bold :height 1.2))))
      '(ztreep-leaf-face ((t (:foreground ,base0))))
-     '(ztreep-node-face ((t (:foreground ,blue)))))))
+     '(ztreep-node-face ((t (:foreground ,blue)))))
 
+   (custom-theme-set-variables
+    'solarized
 
-(setq-default
- ;; fill column indicator
- fci-rule-color (solarized-find-color
-                 (if (eq 'light solarized-background) 'base2 'base02)
-                 solarized-dark-palette)
+    ;; ansi-colors
+    `(ansi-color-names-vector
+      [,base02 ,red ,green ,yellow ,blue ,magenta ,cyan ,base00])
 
- ;; smart mode line
- sml/active-foreground-color (face-attribute 'mode-line :foreground)
- sml/active-background-color (face-attribute 'mode-line :background)
- sml/inactive-foreground-color (face-attribute 'mode-line-inactive :foreground)
- sml/inactive-background-color (face-attribute 'mode-line-inactive :background))
+    ;; compilation
+    `(compilation-message-face 'default)
+
+    ;; cua
+    `(cua-normal-cursor-color ,base0)
+    `(cua-read-only-cursor-color ,green)
+    `(cua-global-mark-cursor-color ,cyan)
+    `(cua-overwrite-cursor-color ,yellow)
+
+    ;; fill column indicator
+    `(fci-rule-color ,(solarized-find-color
+                       (if (eq 'light solarized-background) 'base2 'base02)
+                       solarized-dark-palette))
+
+    ;; highlight-changes
+    `(highlight-changes-colors '(,magenta ,violet))
+
+    ;; pos-tip
+    `(pos-tip-foreground-color ,base1)
+    `(pos-tip-background-color ,base02)
+
+    ;; smart mode line
+    `(sml/active-foreground-color ,(face-attribute 'mode-line :foreground))
+    `(sml/active-background-color ,(face-attribute 'mode-line :background))
+    `(sml/inactive-foreground-color ,(face-attribute 'mode-line-inactive :foreground))
+    `(sml/inactive-background-color ,(face-attribute 'mode-line-inactive :background))
+
+    ;; xterm-color
+    `(xterm-color-names [,base02 ,red ,green ,yellow
+                                 ,blue ,magenta ,cyan ,base2])
+    `(xterm-color-names-bright [,base03 ,orange ,base01 ,base00
+                                        ,base0 ,violet ,base1 ,base3]))
+   ))
+
 
 ;;;###autoload
 (when (and load-file-name
