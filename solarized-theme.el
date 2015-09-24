@@ -1406,6 +1406,9 @@ NORMAL-VALUE."
      '(web-mode-javascript-comment-face ((t (:inherit web-mode-comment-face))))
      '(web-mode-json-comment-face ((t (:inherit web-mode-comment-face))))
 
+     ;; which-func-mode
+     '(which-func ((t (:foreground ,green))))
+
      ;; whitespace-mode
      '(whitespace-space
        ((t (:foreground ,solarized-comment :background unspecified :inverse-video unspecified :slant italic))))
