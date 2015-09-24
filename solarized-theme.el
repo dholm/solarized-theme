@@ -1442,7 +1442,19 @@ NORMAL-VALUE."
 
      ;; woman
      '(woman-italic ((t (:inherit italic :foreground ,green))))
-     '(woman-bold ((t (:inherit bold :foreground ,blue)))))))
+     '(woman-bold ((t (:inherit bold :foreground ,blue))))
+
+     ;; ztree
+     '(ztreep-arrow-face ((t (:foreground ,base01))))
+     '(ztreep-diff-header-face ((t (:foreground ,base01 :weight bold :height 1.2))))
+     '(ztreep-diff-header-small-face ((t (:foreground ,base01 :weight bold))))
+     '(ztreep-diff-model-add-face ((t (:foreground ,blue))))
+     '(ztreep-diff-model-diff-face ((t (:foreground ,red))))
+     '(ztreep-diff-model-normal-face ((t (:foreground ,base0))))
+     '(ztreep-expand-sign-face ((t (:foreground ,base01))))
+     '(ztreep-header-face ((t (:foreground ,base01 :weight bold :height 1.2))))
+     '(ztreep-leaf-face ((t (:foreground ,base0))))
+     '(ztreep-node-face ((t (:foreground ,blue)))))))
 
 
 (setq-default
