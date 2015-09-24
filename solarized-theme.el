@@ -1351,7 +1351,7 @@ NORMAL-VALUE."
      '(wl-summary-persistent-mark-face ((t (:inherit dired-mark))))
 
      ;; web mode
-     '(web-mode-builtin-face ((t (:foreground ,red))))
+     '(web-mode-builtin-face ((t (:inherit font-lock-builtin-face))))
      '(web-mode-comment-face ((t (:foreground ,base01))))
      '(web-mode-constant-face ((t (:foreground ,blue :weight bold))))
      '(web-mode-current-element-highlight-face
@@ -1394,6 +1394,17 @@ NORMAL-VALUE."
      '(web-mode-symbol-face ((t (:foreground ,yellow))))
      '(web-mode-whitespace-face ((t (:background ,red))))
      '(web-mode-html-tag-bracket-face ((t (:foreground ,base01))))
+     '(web-mode-block-delimiter-face ((t (:inherit font-lock-preprocessor-face))))
+     '(web-mode-css-comment-face ((t (:inherit web-mode-comment-face))))
+     '(web-mode-css-variable-face ((t (:inherit web-mode-variable-name-face :slant italic))))
+     '(web-mode-error-face ((t (:background ,red))))
+     '(web-mode-function-call-face ((t (:inherit font-lock-function-name-face))))
+     '(web-mode-html-attr-custom-face ((t (:inherit web-mode-html-attr-name-face))))
+     '(web-mode-html-attr-engine-face ((t (:inherit web-mode-html-attr-custom-face))))
+     '(web-mode-html-attr-equal-face ((t (:inherit web-mode-html-attr-name-face))))
+     '(web-mode-html-tag-custom-face ((t (:inherit web-mode-html-tag-face))))
+     '(web-mode-javascript-comment-face ((t (:inherit web-mode-comment-face))))
+     '(web-mode-json-comment-face ((t (:inherit web-mode-comment-face))))
 
      ;; whitespace-mode
      '(whitespace-space
