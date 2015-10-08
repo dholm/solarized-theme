@@ -1178,6 +1178,13 @@ NORMAL-VALUE."
        ((t (:foreground ,solarized-fg :background ,solarized-bg
                         :inverse-video t))))
 
+     ;; realgud
+     '(debugger-running ((t (:foreground ,green :weight bold))))
+     '(realgud-backtrace-number ((t (:inherit fringe))))
+     '(realgud-overlay-arrow1 ((t (:foreground ,green :weight bold))))
+     '(realgud-overlay-arrow2 ((t (:foreground ,orange :weight bold))))
+     '(realgud-overlay-arrow3 ((t (:foreground ,blue :weight bold))))
+
      ;; rcirc
      '(rcirc-my-nick ((t (:foreground ,blue))))
      '(rcirc-other-nick ((t (:foreground ,green))))
