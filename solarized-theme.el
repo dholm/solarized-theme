@@ -1151,9 +1151,9 @@ NORMAL-VALUE."
      ;; popup
      '(popup-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(popup-isearch-match ((t (:foreground ,solarized-bg :background ,yellow))))
-     '(popup-menu-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
-     '(popup-menu-mouse-face ((t (:foreground ,solarized-fg :background ,blue))))
-     '(popup-menu-selection-face ((t (:foreground ,solarized-bg :background ,magenta))))
+     '(popup-menu-face ((t (:inherit ac-candidate-face))))
+     '(popup-menu-mouse-face ((t (:inherit ac-candidate-mouse-face))))
+     '(popup-menu-selection-face ((t (:inherit ac-selection-face))))
      '(popup-scroll-bar-background-face ((t (:background ,solarized-comment))))
      '(popup-scroll-bar-foreground-face ((t (:background ,solarized-emph))))
      '(popup-tip-face ((t (:foreground ,solarized-fg :background ,solarized-hl))))
