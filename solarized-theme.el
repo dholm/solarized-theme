@@ -497,6 +497,20 @@ NORMAL-VALUE."
      '(ediff-odd-diff-C ((t (:background ,base02 :foreground ,solarized-emph))))
      '(ediff-odd-diff-Ancestor ((t (:background ,base02 :foreground ,solarized-emph))))
 
+     ;; edts
+     '(edts-face-error-line
+       ((t (:foreground ,red-hc :background ,red-lc :weight bold :underline (:style line :color ,red)))))
+     '(edts-face-warning-line
+       ((t (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline (:style line :color ,yellow)))))
+     '(edts-face-error-fringe-bitmap
+       ((t (:foreground ,red :background unspecified :weight bold))))
+     '(edts-face-warning-fringe-bitmap
+       ((t (:foreground ,yellow :background unspecified :weight bold))))
+     '(edts-face-error-mode-line
+       ((t (:background ,red :foreground unspecified))))
+     '(edts-face-warning-mode-line
+       ((t (:background ,yellow :foreground unspecified))))
+
      ;; ee
      '(ee-bookmarked ((t (:foreground ,base1))))
      '(ee-category ((t (:foreground ,blue))))
