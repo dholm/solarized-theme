@@ -361,6 +361,11 @@ NORMAL-VALUE."
      '(cfw:face-toolbar-button-on ((t (:foreground ,yellow-lc :background ,yellow-hc
                                                    :weight bold))))
 
+     ;; cogre
+     '(cogre-box-face ((t (:foreground ,solarized-emph :background ,solarized-hl))))
+     '(cogre-box-first-face ((t (:inherit cogre-box-face :overline t))))
+     '(cogre-box-last-face ((t (:inherit cogre-box-face :underline t))))
+
      ;; comint
      '(comint-highlight-input ((t (:foreground ,yellow))))
      '(comint-highlight-prompt ((t (:foreground ,orange :background ,base03
