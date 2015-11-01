@@ -1288,6 +1288,10 @@ NORMAL-VALUE."
      '(term-color-cyan ((t ( :foreground ,cyan))))
      '(term-color-white ((t ( :foreground ,base00))))
 
+     ;; tooltip
+     '(tooltip ((t (:background ,yellow-lc :foreground ,yellow-hc
+                                :inherit ,s-variable-pitch))))
+
      ;; undo tree
      '(undo-tree-visualizer-default-face ((t (:foreground ,base01 :background ,base03))))
      '(undo-tree-visualizer-current-face ((t (:foreground ,blue :inverse-video t))))
