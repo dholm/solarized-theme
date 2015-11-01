@@ -372,11 +372,13 @@ NORMAL-VALUE."
                                                 :weight bold))))
 
      ;; company-mode
+     '(company-template-field ((t (:background ,yellow :foreground ,base02))))
      '(company-tooltip ((t (:background ,base02 :foreground ,cyan))))
      '(company-tooltip-selection ((t (:background ,cyan-lc :foreground ,cyan-hc))))
      '(company-tooltip-mouse ((t (:background ,cyan-hc :foreground ,cyan-lc))))
      '(company-tooltip-common ((t (:foreground ,base1 :underline t))))
      '(company-tooltip-common-selection ((t (:foreground ,base1 :underline t))))
+     '(company-tooltip-annotation ((t (:foreground ,base1 :background ,base02))))
      '(company-scrollbar-fg ((t (:foreground ,base03 :background ,base0))))
      '(company-scrollbar-bg ((t (:background ,base02 :foreground ,cyan))))
      '(company-preview ((t (:background ,base02 :foreground ,cyan))))
