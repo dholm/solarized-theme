@@ -373,6 +373,7 @@ NORMAL-VALUE."
 
      ;; company-mode
      '(company-template-field ((t (:background ,yellow :foreground ,base02))))
+     '(company-echo-common ((t (:inherit company-echo :underline t))))
      '(company-tooltip ((t (:background ,base02 :foreground ,cyan))))
      '(company-tooltip-selection ((t (:background ,cyan-lc :foreground ,cyan-hc))))
      '(company-tooltip-mouse ((t (:background ,cyan-hc :foreground ,cyan-lc))))
@@ -383,6 +384,7 @@ NORMAL-VALUE."
      '(company-scrollbar-bg ((t (:background ,base02 :foreground ,cyan))))
      '(company-preview ((t (:background ,base02 :foreground ,cyan))))
      '(company-preview-common ((t (:foreground ,base1 :underline t))))
+     '(company-preview-search ((t (:inherit company-preview :slant italic))))
 
      ;; compilation
      '(compilation-column-face ((t (:foreground ,cyan :underline nil))))
