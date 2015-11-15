@@ -427,6 +427,11 @@ NORMAL-VALUE."
      ;; csv
      '(csv-separator-face ((t (,@fmt-ital :foreground ,solarized-comment))))
 
+     ;; cua
+     '(cua-global-mark ((t (:background ,yellow :foreground ,base03))))
+     '(cua-rectangle ((t (:inherit region))))
+     '(cua-rectangle-noselect ((t (:inherit region :background ,base02 :foreground ,base01))))
+
      ;; dired
      '(dired-directory ((t (:foreground ,blue :weight normal))))
      '(dired-flagged ((t (:foreground ,red))))
@@ -1066,8 +1071,8 @@ NORMAL-VALUE."
      '(header-line ((t (:foreground ,solarized-emph :background ,solarized-hl
                                     :inverse-video unspecified :underline unspecified
                                     :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
-     '(region ((t (:foreground ,solarized-comment :background ,solarized-bg ,@fmt-revbb))))
-     '(secondary-selection ((t (:background ,solarized-hl))))
+     '(region ((t (:foreground ,base1 :background ,base03 ,@fmt-revbb))))
+     '(secondary-selection ((t (:background ,base02))))
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
      '(vertical-border ((t (:foreground ,solarized-fg))))
 
