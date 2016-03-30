@@ -275,6 +275,15 @@ NORMAL-VALUE."
      ;; anzu
      '(anzu-mode-line ((t (:foreground ,solarized-emph :weight bold))))
 
+     ;; artbollocks-mode
+     '(artbollocks-face ((t (:foreground ,solarized-emph :background unspecified :inverse-video unspecified))))
+     '(artbollocks-lexical-illusions-face
+       ((t (:foreground ,orange-lc :background unspecified :inverse-video t))))
+     '(artbollocks-passive-voice-face
+       ((t (:foreground ,solarized-comment :background unspecified :inverse-video unspecified :slant italic))))
+     '(artbollocks-weasel-words-face
+       ((t (:foreground ,red :background unspecified :inverse-video unspecified :weight bold))))
+
      ;; auctex
      '(font-latex-bold-face ((t (:inherit bold :foreground ,solarized-emph))))
      '(font-latex-doctex-documentation-face ((t (:background unspecified))))
