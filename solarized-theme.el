@@ -592,6 +592,15 @@ NORMAL-VALUE."
      '(erc-timestamp-face ((t (:foreground ,solarized-comment))))
      '(erc-underline-face ((t (:underline t))))
 
+     ;; erc-colorize
+     '(erc-distinct-1-face ((t (:foreground ,magenta))))
+     '(erc-distinct-2-face ((t (:foreground ,blue))))
+     '(erc-distinct-3-face ((t (:foreground ,cyan))))
+     '(erc-distinct-4-face ((t (:foreground ,green))))
+     '(erc-distinct-5-face ((t (:foreground ,yellow))))
+     '(erc-distinct-6-face ((t (:foreground ,violet))))
+     '(erc-distinct-7-face ((t (:foreground ,red))))
+
      ;; eshell
      '(eshell-prompt ((t (,@fmt-bold :foreground ,green))))
      '(eshell-ls-archive ((t (:foreground ,magenta))))
