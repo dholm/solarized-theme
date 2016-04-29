@@ -1075,6 +1075,14 @@ NORMAL-VALUE."
      '(message-mml ((t (:foreground ,blue))))
      '(message-separator ((t (:foreground ,base3))))
 
+     ;; mic-paren
+     '(paren-face-match
+       ((t (:foreground ,green :background unspecified :weight bold))))
+     '(paren-face-mismatch
+       ((t (:foreground ,base02 :background ,red :weight bold))))
+     '(paren-face-no-match
+       ((t (:foreground ,base02 :background ,red :weight bold))))
+
      ;; misc
      '(menu ((t (:foreground ,solarized-fg :background ,solarized-hl))))
      '(minibuffer-prompt ((t (,@fmt-bold :foreground ,cyan))))
