@@ -1012,6 +1012,12 @@ NORMAL-VALUE."
      '(magit-reflog-remote       ((t (:foreground ,cyan))))
      '(magit-reflog-other        ((t (:foreground ,cyan))))
 
+     ;; makefile
+     '(makefile-space ((t (:inherit font-lock-warning-face))))
+     '(makefile-shell ((t (:inherit font-lock-preprocessor-face))))
+     '(makefile-targets ((t (:inherit font-lock-function-name-face))))
+     '(makefile-makepp-perl ((t (:inherit font-lock-string-face))))
+
      ;; man
      '(Man-overstrike ((t (:foreground ,blue :weight bold))))
      '(Man-reverse ((t (:foreground ,orange))))
