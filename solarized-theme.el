@@ -1308,6 +1308,10 @@ NORMAL-VALUE."
      '(sp-show-pair-mismatch-face
        ((t (:foreground ,base02 :background ,red :weight bold))))
 
+     ;; structured-haskell
+     '(shm-current-face ((t (:background ,base02))))
+     '(shm-quarantine-face ((t (:background ,base01))))
+
      ;; syslog mode
      '(syslog-ip-face ((t (:foreground ,yellow :background unspecified))))
      '(syslog-hour-face ((t (:foreground ,green :background unspecified))))
