@@ -711,6 +711,10 @@ NORMAL-VALUE."
      '(git-gutter-fr:deleted ((t (:foreground ,red :weight bold))))
      '(git-gutter-fr:modified ((t (:foreground ,blue :weight bold))))
 
+     ;; git timemachine
+     '(git-timemachine-minibuffer-author-face ((t (:foreground ,orange))))
+     '(git-timemachine-minibuffer-detail-face ((t (:foreground ,yellow))))
+
      ;; gnus
      '(gnus-group-mail-1 ((t (:weight bold :inherit gnus-group-mail-1-empty))))
      '(gnus-group-mail-1-empty ((t (:inherit gnus-group-news-1-empty))))
@@ -956,16 +960,16 @@ NORMAL-VALUE."
      '(magit-diffstat-added              ((t (:foreground ,green))))
      '(magit-diffstat-removed            ((t (:foreground ,red))))
      ;; popup
-     '(magit-popup-heading             ((t (:foreground ,base1 :weight normal))))
+     '(magit-popup-heading             ((t (:foreground ,yellow :weight bold))))
      '(magit-popup-key                 ((t (:foreground ,base1 :weight bold))))
-     '(magit-popup-argument            ((t (:foreground ,base1 :weight bold))))
+     '(magit-popup-argument            ((t (:foreground ,cyan :weight bold))))
      '(magit-popup-disabled-argument   ((t (:foreground ,base01 :weight normal))))
-     '(magit-popup-option-value        ((t (:foreground ,base1 :weight bold))))
+     '(magit-popup-option-value        ((t (:foreground ,cyan :weight bold))))
      ;; process
      '(magit-process-ok    ((t (:foreground ,green :weight bold))))
      '(magit-process-ng    ((t (:foreground ,red   :weight bold))))
      ;; log
-     '(magit-log-author    ((t (:foreground ,base0))))
+     '(magit-log-author    ((t (:foreground ,base01 :weight bold))))
      '(magit-log-date      ((t (:foreground ,base01))))
      '(magit-log-graph     ((t (:foreground ,base1))))
      ;; sequence
@@ -981,11 +985,16 @@ NORMAL-VALUE."
      '(magit-bisect-skip ((t (:foreground ,yellow))))
      '(magit-bisect-bad  ((t (:foreground ,red))))
      ;; blame
-     '(magit-blame-heading ((t (:background ,base1 :foreground ,base02))))
-     '(magit-blame-hash    ((t (:background ,base1 :foreground ,base02))))
-     '(magit-blame-name    ((t (:background ,base1 :foreground ,orange-lc))))
-     '(magit-blame-date    ((t (:background ,base1 :foreground ,orange-lc))))
-     '(magit-blame-summary ((t (:background ,base1 :foreground ,base02 :weight bold))))
+     '(magit-blame-heading ((t (:background ,base02 :foreground ,violet
+                                            :weight bold :slant normal :box (:color ,base02 :line-width 2)))))
+     '(magit-blame-hash    ((t (:background ,base02 :foreground ,violet
+                                            :weight normal :slant normal :box (:color ,base02 :line-width 2)))))
+     '(magit-blame-name    ((t (:background ,base02 :foreground ,violet
+                                            :weight normal :slant normal :box (:color ,base02 :line-width 2)))))
+     '(magit-blame-date    ((t (:background ,base02 :foreground ,violet
+                                            :weight bold :slant normal :box (:color ,base02 :line-width 2)))))
+     '(magit-blame-summary ((t (:background ,base02 :foreground ,base0
+                                            :weight bold :slant normal :box (:color ,base02 :line-width 2)))))
      ;; references etc.
      '(magit-dimmed         ((t (:foreground ,base01))))
      '(magit-hash           ((t (:foreground ,base01))))
