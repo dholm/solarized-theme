@@ -475,7 +475,7 @@ NORMAL-VALUE."
      '(diff-header ((t (:background ,solarized-bg))))
      '(diff-file-header ((t (:foreground ,solarized-fg :background ,solarized-bg :weight bold))))
      '(diff-refine-added ((t :foreground ,solarized-bg :background ,green)))
-     '(diff-refine-change ((t :foreground ,solarized-bg :background ,blue)))
+     '(diff-refine-changed ((t :foreground ,solarized-bg :background ,blue)))
      '(diff-refine-removed ((t (:foreground ,solarized-bg :background ,red))))
 
      ;; dropdown
@@ -1316,6 +1316,15 @@ NORMAL-VALUE."
        ((t (:background unspecified :foreground ,cyan :weight bold))))
      '(sp-show-pair-mismatch-face
        ((t (:foreground ,base02 :background ,red :weight bold))))
+
+     ;; smerge
+     '(smerge-upper ((t (:background ,orange-lc :foreground ,base03))))
+     '(smerge-lower ((t (:background ,green-lc :foreground ,base03))))
+     '(smerge-base ((t (:background ,orange-lc :foreground ,base03))))
+     '(smerge-markers ((t (:background ,base02))))
+     '(smerge-refined-changed ((t (:inherit diff-refine-changed))))
+     '(smerge-refined-removed ((t (:inherit diff-refine-removed))))
+     '(smerge-refined-added ((t (:inherit diff-refine-added))))
 
      ;; structured-haskell
      '(shm-current-face ((t (:background ,base02))))
