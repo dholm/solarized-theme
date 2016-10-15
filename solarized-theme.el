@@ -502,6 +502,18 @@ NORMAL-VALUE."
      '(ecb-tree-guide-line-face ((t (:inherit ecb-default-general-face :foreground ,solarized-hl
                                               :height 1.0))))
 
+     ;; edbi
+     '(edbi:face-title ((t (:inherit ,s-variable-pitch :foreground ,yellow
+                                     :weight bold :height 2.0))))
+     '(edbi:face-header ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
+     '(edbi:face-error ((t (:inherit error))))
+     '(edbi:face-ac-table-candidate-face ((t (:foreground ,blue :background ,solarized-hl))))
+     '(edbi:face-ac-table-selection-face ((t (:foreground ,blue-hc :background ,blue-lc))))
+     '(edbi:face-ac-column-candidate-face ((t (:foreground ,yellow :background ,solarized-hl))))
+     '(edbi:face-ac-column-selection-face ((t (:foreground ,yellow-hc :background ,yellow-lc))))
+     '(edbi:face-ac-type-candidate-face ((t (:foreground ,green :background ,solarized-hl))))
+     '(edbi:face-ac-type-selection-face ((t (:foreground ,green-hc :background ,green-lc))))
+
      ;; ediff
      '(ediff-current-diff-A ((t (:background ,orange-lc :foreground ,base03))))
      '(ediff-current-diff-B ((t (:background ,green-lc :foreground ,base03))))
@@ -1192,7 +1204,7 @@ NORMAL-VALUE."
      '(org-column-title ((t (:background ,base02 :underline t :weight bold))))
      '(org-date-selected ((t (:foreground ,red :inverse-video t))))
      '(org-document-info ((t (:foreground ,base0))))
-     '(org-document-title ((t (:foreground ,base1  :weight bold :height ,solarized-height-plus-4))))
+     '(org-document-title ((t (:foreground ,base1 :weight bold :height ,solarized-height-plus-4))))
      '(org-drawer ((t (:foreground ,cyan))))
      '(org-footnote ((t (:foreground ,magenta :underline t))))
      '(org-latex-and-export-specials ((t (:foreground ,orange))))
