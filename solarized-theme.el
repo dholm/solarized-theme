@@ -1283,6 +1283,26 @@ NORMAL-VALUE."
      '(rst-level-5-face ((t (:foreground ,solarized-bg :background ,magenta))))
      '(rst-level-6-face ((t (:foreground ,solarized-bg :background ,red))))
 
+     ;; rtags
+     '(rtags-warnline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,yellow) :inherit unspecified
+                     :foreground ,yellow-hc :background ,yellow-lc))
+        (t (:foreground ,yellow-hc :background ,yellow-lc :weight bold :underline t))))
+     '(rtags-errline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,red) :inherit unspecified
+                     :foreground ,red-hc :background ,red-lc))
+        (t (:foreground ,red-hc :background ,red-lc :weight bold :underline t))))
+     '(rtags-fixitline
+       ((,'((supports :underline (:style wave)))
+         (:underline (:style wave :color ,base1)
+                     :foreground ,base1 :background nil))
+        (t (:foreground ,base1 :background nil :weight bold :underline t))))
+     '(rtags-current-line ((t (:underline unspecified :weight unspecified :background ,base02))))
+     '(rtags-skippedline ((t (:foreground ,yellow))))
+     '(rtags-argument-face ((t (:foreground ,cyan :weight bold))))
+
      ;; show-paren
      '(show-paren-mismatch ((t (,@fmt-bold :foreground ,red :background ,solarized-comment))))
      '(show-paren-match ((t (,@fmt-bold :foreground ,cyan :background ,solarized-hl))))
