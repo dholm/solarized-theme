@@ -613,6 +613,9 @@ NORMAL-VALUE."
      '(erc-distinct-6-face ((t (:foreground ,violet))))
      '(erc-distinct-7-face ((t (:foreground ,red))))
 
+     ;; eros
+     '(eros-result-overlay-face ((t (:background unspecified))))
+
      ;; eshell
      '(eshell-prompt ((t (,@fmt-bold :foreground ,green))))
      '(eshell-ls-archive ((t (:foreground ,magenta))))
