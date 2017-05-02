@@ -269,7 +269,7 @@ NORMAL-VALUE."
                                                  :inverse-video nil :weight bold))))
 
      ;; annotate.el
-     '(annotate-highlight ((t (:underlibe ,base02))))
+     '(annotate-highlight ((t (:underline ,base02))))
      '(annotate-annotation ((t (:foreground ,base1 :background ,base02))))
 
      ;; anzu
@@ -513,6 +513,10 @@ NORMAL-VALUE."
      '(edbi:face-ac-column-selection-face ((t (:foreground ,yellow-hc :background ,yellow-lc))))
      '(edbi:face-ac-type-candidate-face ((t (:foreground ,green :background ,solarized-hl))))
      '(edbi:face-ac-type-selection-face ((t (:foreground ,green-hc :background ,green-lc))))
+
+     ;; edebug-x
+     '(hi-edebug-x-stop ((t (:underline ,orange-lc))))
+     '(hi-edebug-x-debug-line ((t (:underline ,green-lc :background ,solarized-hl :weight bold))))
 
      ;; ediff
      '(ediff-current-diff-A ((t (:background ,orange-lc :foreground ,base03))))
