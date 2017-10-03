@@ -356,7 +356,7 @@ NORMAL-VALUE."
      '(cfw:face-header ((t (:foreground ,blue-hc :background ,blue-lc :weight bold))))
      '(cfw:face-holiday ((t (:background nil :foreground ,red :weight bold))))
      '(cfw:face-periods ((t (:foreground ,magenta))))
-     '(cfw:face-select ((t (:background ,magenta-hc :foreground ,magenta-lc))))
+     '(cfw:face-select ((t (:background ,green-hc :foreground ,green-lc))))
      '(cfw:face-saturday ((t (:foreground ,cyan-hc :background ,cyan-lc))))
      '(cfw:face-sunday ((t (:foreground ,red-hc :background ,red-lc :weight bold))))
      '(cfw:face-title ((t (:inherit ,s-variable-pitch :foreground ,yellow
@@ -447,7 +447,7 @@ NORMAL-VALUE."
      '(dired-header ((t (:inherit header-line))))
      '(dired-ignored ((t (:inherit shadow))))
      '(dired-mark ((t (:foreground ,yellow :weight bold))))
-     '(dired-marked ((t (:foreground ,magenta :weight bold))))
+     '(dired-marked ((t (:foreground ,green :weight bold))))
      '(dired-perm-write ((t (:foreground ,solarized-fg :underline t))))
      '(dired-symlink ((t (:foreground ,cyan :slant italic))))
      '(dired-warning ((t (:foreground ,orange :underline t))))
@@ -555,7 +555,7 @@ NORMAL-VALUE."
      '(ee-category ((t (:foreground ,blue))))
      '(ee-link ((t (:inherit link))))
      '(ee-link-visited ((t (:inherit link-visited))))
-     '(ee-marked ((t (:foreground ,magenta :weight bold))))
+     '(ee-marked ((t (:foreground ,green :weight bold))))
      '(ee-omitted ((t (:foreground ,base01))))
      '(ee-shadow ((t (:inherit shadow))))
 
@@ -572,7 +572,7 @@ NORMAL-VALUE."
      '(elscreen-tab-control-face ((t (:background ,base03 :foreground ,base0))))
 
      ;; epa
-     '(epa-mark ((t (:foreground ,magenta :weight bold))))
+     '(epa-mark ((t (:foreground ,green :weight bold))))
      '(epa-string ((t (:foreground ,violet))))
      '(epa-validity-disabled ((t (:inverse-video t :slant italic))))
      '(epa-validity-high ((t (:weight bold))))
@@ -847,7 +847,7 @@ NORMAL-VALUE."
      '(helm-source-header ((t (:foreground ,solarized-bg :background ,blue-lc :underline nil))))
      '(helm-time-zone-current ((t (:foreground ,green))))
      '(helm-time-zone-home ((t (:foreground ,red))))
-     '(helm-visible-mark ((t (:foreground ,magenta :background ,solarized-bg :bold t))))
+     '(helm-visible-mark ((t (:foreground ,green :background ,solarized-bg :bold t))))
 
      ;; helm-css-scss
      '(helm-css-scss-selector-depth-face-1 ((t (:foreground ,base0))))
@@ -1127,7 +1127,7 @@ NORMAL-VALUE."
                                            :box (:line-width 1 :color ,s-mode-line-inactive-bc :style unspecified)))))
 
      '(mode-line-emphasis ((t (:inherit mode-line :foreground ,solarized-emph))))
-     '(mode-line-highlight ((t (:inherit mode-line :foreground ,magenta :box nil ,@fmt-bold))))
+     '(mode-line-highlight ((t (:inherit mode-line :foreground ,green :box nil ,@fmt-bold))))
      '(header-line ((t (:foreground ,solarized-emph :background ,solarized-hl
                                     :inverse-video unspecified :underline unspecified
                                     :box (:line-width 1 :color ,solarized-hl :style unspecified)))))
