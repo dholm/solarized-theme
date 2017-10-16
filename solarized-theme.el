@@ -269,8 +269,9 @@ NORMAL-VALUE."
                                                  :inverse-video nil :weight bold))))
 
      ;; annotate.el
-     '(annotate-highlight ((t (:underline ,base02))))
-     '(annotate-annotation ((t (:foreground ,base1 :background ,base02))))
+     '(annotate-highlight ((t (:underline (:color ,orange-lc)))))
+     '(annotate-annotation ((t (:foreground ,base03 :background
+                                            ,orange-lc :weight bold))))
 
      ;; anzu
      '(anzu-mode-line ((t (:foreground ,solarized-emph :weight bold))))
