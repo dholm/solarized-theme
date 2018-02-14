@@ -1189,6 +1189,9 @@ NORMAL-VALUE."
      '(mu4e-view-link-face ((t (:inherit link))))
      '(mu4e-view-special-header-value-face ((t (:foreground ,blue :weight normal :underline nil))))
 
+     ;; multiple-cursors
+     '(mc/cursor-face ((t (:inherit cursor :inverse-video nil))))
+
      ;; org
      '(org-agenda-structure
        ((t (:foreground ,base1 :background ,base02
