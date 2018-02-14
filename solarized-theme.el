@@ -1722,6 +1722,30 @@ Alpha should be a float between 0 and 1."
     `(sml/inactive-foreground-color ,(face-attribute 'mode-line-inactive :foreground))
     `(sml/inactive-background-color ,(face-attribute 'mode-line-inactive :background))
 
+    ;; vc-annotate
+    `(vc-annotate-background-mode nil)
+    `(vc-annotate-color-map
+      '((20 . ,red)
+        (40 . ,(solarized-color-blend yellow red (/ 2.0 4)))
+        (60 . ,(solarized-color-blend yellow red (/ 3.0 4)))
+        (80 . ,yellow)
+        (100 . ,(solarized-color-blend green yellow (/ 2.0 6)))
+        (120 . ,(solarized-color-blend green yellow (/ 3.0 6)))
+        (140 . ,(solarized-color-blend green yellow (/ 4.0 6)))
+        (160 . ,(solarized-color-blend green yellow (/ 5.0 6)))
+        (180 . ,green)
+        (200 . ,(solarized-color-blend cyan green (/ 2.0 6)))
+        (220 . ,(solarized-color-blend cyan green (/ 3.0 6)))
+        (240 . ,(solarized-color-blend cyan green (/ 4.0 6)))
+        (260 . ,(solarized-color-blend cyan green (/ 5.0 6)))
+        (280 . ,cyan)
+        (300 . ,(solarized-color-blend blue cyan (/ 2.0 5)))
+        (320 . ,(solarized-color-blend blue cyan (/ 3.0 5)))
+        (340 . ,(solarized-color-blend blue cyan (/ 4.0 5)))
+        (360 . ,blue)))
+    `(vc-annotate-very-old-color nil)
+    `(vc-annotate-background nil)
+
     ;; xterm-color
     `(xterm-color-names [,base02 ,red ,green ,yellow
                                  ,blue ,magenta ,cyan ,base2])
