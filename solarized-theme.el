@@ -804,6 +804,9 @@ Alpha should be a float between 0 and 1."
      '(gnus-signature ((t (:foreground ,yellow))))
      '(gnus-x-face ((t (:background ,base0 :foreground ,base03))))
 
+     ;; go-guru
+     '(go-guru-hl-identifier-face ((t (:foreground ,magenta))))
+
      ;; go-mode
      '(go-coverage-0 ((t (:foreground ,orange))))
      '(go-coverage-1 ((t (:foreground ,(solarized-color-blend blue yellow (/ 2.0 6))))))
