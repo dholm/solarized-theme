@@ -804,6 +804,21 @@ Alpha should be a float between 0 and 1."
      '(gnus-signature ((t (:foreground ,yellow))))
      '(gnus-x-face ((t (:background ,base0 :foreground ,base03))))
 
+     ;; go-mode
+     '(go-coverage-0 ((t (:foreground ,orange))))
+     '(go-coverage-1 ((t (:foreground ,(solarized-color-blend blue yellow (/ 2.0 6))))))
+     '(go-coverage-2 ((t (:foreground ,(solarized-color-blend blue yellow (/ 3.0 6))))))
+     '(go-coverage-3 ((t (:foreground ,(solarized-color-blend blue yellow (/ 4.0 6))))))
+     '(go-coverage-4 ((t (:foreground ,(solarized-color-blend blue yellow (/ 5.0 6))))))
+     '(go-coverage-5 ((t (:foreground ,blue))))
+     '(go-coverage-6 ((t (:foreground ,(solarized-color-blend cyan blue (/ 2.0 6))))))
+     '(go-coverage-7 ((t (:foreground ,(solarized-color-blend cyan blue (/ 3.0 6))))))
+     '(go-coverage-8 ((t (:foreground ,(solarized-color-blend cyan blue (/ 4.0 6))))))
+     '(go-coverage-9 ((t (:foreground ,(solarized-color-blend cyan blue (/ 5.0 6))))))
+     '(go-coverage-10 ((t (:foreground ,cyan))))
+     '(go-coverage-covered ((t (:foreground ,green))))
+     '(go-coverage-untracked ((t (:foreground ,base01))))
+
      ;; grep
      '(grep-context-face ((t (:foreground ,solarized-fg))))
      '(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
