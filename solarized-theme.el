@@ -1168,6 +1168,27 @@ NORMAL-VALUE."
      '(trailing-whitespace ((t (,@fmt-revr :foreground ,red))))
      '(vertical-border ((t (:foreground ,solarized-fg))))
 
+     ;; mu4e
+     '(mu4e-cited-1-face ((t (:foreground ,green :slant italic :weight normal))))
+     '(mu4e-cited-2-face ((t (:foreground ,blue :slant italic :weight normal))))
+     '(mu4e-cited-3-face ((t (:foreground ,orange :slant italic :weight normal))))
+     '(mu4e-cited-4-face ((t (:foreground ,yellow :slant italic :weight normal))))
+     '(mu4e-cited-5-face ((t (:foreground ,cyan :slant italic :weight normal))))
+     '(mu4e-cited-6-face ((t (:foreground ,green :slant italic :weight normal))))
+     '(mu4e-cited-7-face ((t (:foreground ,blue :slant italic :weight normal))))
+     '(mu4e-flagged-face ((t (:foreground ,blue :weight normal))))
+     '(mu4e-unread-face ((t (:foreground ,green :weight normal))))
+     '(mu4e-view-url-number-face ((t (:foreground ,yellow :weight normal))))
+     '(mu4e-warning-face ((t (:foreground ,red :slant normal :weight bold))))
+     '(mu4e-header-highlight-face
+       ((t (:inherit unspecified :foreground unspecified :background ,base02
+                     :underline unspecified  :weight unspecified))))
+     '(mu4e-view-contact-face ((t (:foreground ,base0  :weight normal))))
+     '(mu4e-view-header-key-face ((t (:inherit message-header-name :weight normal))))
+     '(mu4e-view-header-value-face ((t (:foreground ,cyan :weight normal :slant normal))))
+     '(mu4e-view-link-face ((t (:inherit link))))
+     '(mu4e-view-special-header-value-face ((t (:foreground ,blue :weight normal :underline nil))))
+
      ;; org
      '(org-agenda-structure
        ((t (:foreground ,base1 :background ,base02
