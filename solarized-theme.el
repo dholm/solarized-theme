@@ -804,6 +804,11 @@ Alpha should be a float between 0 and 1."
      '(gnus-signature ((t (:foreground ,yellow))))
      '(gnus-x-face ((t (:background ,base0 :foreground ,base03))))
 
+     ;; go-direx
+     '(go-direx-header ((t (:foreground ,blue))))
+     '(go-direx-label ((t (:foreground ,green))))
+     '(go-direx-package ((t (:foreground ,base1 :weight bold))))
+
      ;; go-guru
      '(go-guru-hl-identifier-face ((t (:foreground ,magenta))))
 
