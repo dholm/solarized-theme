@@ -4,6 +4,8 @@
 
 (eval-when-compile
   (require 'cl))
+(require 'dash)
+(require 'color)
 
 (deftheme solarized "Solarized")
 
@@ -193,6 +195,17 @@ NORMAL-VALUE."
                                  (list (intern (concat (symbol-name (car color)) "-lc"))
                                        (nth index (nth lc-index cons)))))
                               (cdr color)))) solarized-contrast-components))))
+
+(defun solarized-color-blend (color1 color2 alpha)
+  "Blends COLOR1 onto COLOR2 with ALPHA.
+COLOR1 and COLOR2 should be color names (e.g. \"white\") or RGB
+triplet strings (e.g. \"#ff12ec\").
+Alpha should be a float between 0 and 1."
+  (apply 'color-rgb-to-hex
+         (-zip-with '(lambda (it other)
+                       (+ (* alpha it) (* other (- 1 alpha))))
+                    (color-name-to-rgb color1)
+                    (color-name-to-rgb color2))))
 
 (defmacro solarized-with-values (&rest body)
   "`let' bind all values for Solarized on BODY."
@@ -983,23 +996,28 @@ NORMAL-VALUE."
      '(magit-section-heading             ((t (:foreground ,yellow :weight bold))))
      '(magit-section-heading-selection   ((t (:foreground ,orange :weight bold))))
      '(magit-diff-file-heading           ((t (:weight bold))))
-     '(magit-diff-file-heading-highlight ((t (:background ,base02 :weight bold))))
+     '(magit-diff-file-heading-highlight ((t (:background ,base02))))
      '(magit-diff-file-heading-selection ((t (:background ,base02
-                                              :foreground ,orange :weight bold))))
-     '(magit-diff-hunk-heading           ((t (:foreground ,yellow-lc))))
-     '(magit-diff-hunk-heading-highlight ((t (:foreground ,yellow))))
-     '(magit-diff-hunk-heading-selection ((t (:foreground ,yellow-hc :weight bold))))
+                                                          :foreground ,orange))))
+     '(magit-diff-hunk-heading
+       ((t (:background ,(solarized-color-blend yellow base03 0.1)))))
+     '(magit-diff-hunk-heading-highlight
+       ((t (:background ,(solarized-color-blend yellow base02 0.1)))))
+     '(magit-diff-hunk-heading-selection
+       ((t (:background ,(solarized-color-blend yellow base02 0.1)
+                        :foreground ,orange
+                        :weight bold))))
      '(magit-diff-lines-heading          ((t (:background ,orange
-                                              :foreground ,base3))))
+                                                          :foreground ,base3))))
      '(magit-diff-context-highlight      ((t (:background ,base02))))
      '(magit-diffstat-added              ((t (:foreground ,green))))
      '(magit-diffstat-removed            ((t (:foreground ,red))))
      ;; popup
-     '(magit-popup-heading             ((t (:foreground ,yellow :weight bold))))
-     '(magit-popup-key                 ((t (:foreground ,base1 :weight bold))))
-     '(magit-popup-argument            ((t (:foreground ,cyan :weight bold))))
-     '(magit-popup-disabled-argument   ((t (:foreground ,base01 :weight normal))))
-     '(magit-popup-option-value        ((t (:foreground ,cyan :weight bold))))
+     '(magit-popup-heading             ((t (:foreground ,yellow  :weight bold))))
+     '(magit-popup-key                 ((t (:foreground ,base1   :weight bold))))
+     '(magit-popup-argument            ((t (:foreground ,cyan    :weight bold))))
+     '(magit-popup-disabled-argument   ((t (:foreground ,base01  :weight normal))))
+     '(magit-popup-option-value        ((t (:foreground ,cyan    :weight bold))))
      ;; process
      '(magit-process-ok    ((t (:foreground ,green :weight bold))))
      '(magit-process-ng    ((t (:foreground ,red   :weight bold))))
@@ -1008,7 +1026,7 @@ NORMAL-VALUE."
      '(magit-log-date      ((t (:foreground ,base01))))
      '(magit-log-graph     ((t (:foreground ,base1))))
      ;; sequence
-     '(magit-sequence-pick ((t (:foreground ,yellow-lc))))
+     '(magit-sequence-pick ((t (:foreground ,yellow))))
      '(magit-sequence-stop ((t (:foreground ,green))))
      '(magit-sequence-part ((t (:foreground ,yellow))))
      '(magit-sequence-head ((t (:foreground ,blue))))
@@ -1033,7 +1051,7 @@ NORMAL-VALUE."
      ;; references etc.
      '(magit-dimmed         ((t (:foreground ,base01))))
      '(magit-hash           ((t (:foreground ,base01))))
-     '(magit-tag            ((t (:foreground ,cyan   :weight bold))))
+     '(magit-tag            ((t (:foreground ,cyan :weight bold))))
      '(magit-branch-remote  ((t (:foreground ,green  :weight bold))))
      '(magit-branch-local   ((t (:foreground ,blue   :weight bold))))
      '(magit-branch-current ((t (:foreground ,blue   :weight bold :box t))))
@@ -1054,7 +1072,7 @@ NORMAL-VALUE."
      '(magit-reflog-rebase       ((t (:foreground ,magenta))))
      '(magit-reflog-cherry-pick  ((t (:foreground ,green))))
      '(magit-reflog-remote       ((t (:foreground ,cyan))))
-     '(magit-reflog-other        ((t (:foreground ,cyan))))
+     '(magit-reflog-other ((t (:foreground ,cyan))))
 
      ;; makefile
      '(makefile-space ((t (:inherit font-lock-warning-face))))
