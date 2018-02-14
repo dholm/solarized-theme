@@ -1225,6 +1225,19 @@ Alpha should be a float between 0 and 1."
      ;; multiple-cursors
      '(mc/cursor-face ((t (:inherit cursor :inverse-video nil))))
 
+     ;; notmuch
+     '(notmuch-message-summary-face ((t (:inherit highlight))))
+     '(notmuch-search-date ((t (:inherit default))))
+     '(notmuch-search-count ((t (:inherit default))))
+     '(notmuch-search-subject ((t (:inherit default))))
+     '(notmuch-search-matching-authors ((t (:inherit default))))
+     '(notmuch-search-non-matching-authors ((t (:inherit shadow))))
+     '(notmuch-tag-face ((t (:foreground ,yellow))))
+     '(notmuch-search-flagged-face ((t (:foreground ,blue))))
+     '(notmuch-search-unread-face ((t (:weight bold))))
+     '(notmuch-tree-match-author-face ((t (:foreground ,blue))))
+     '(notmuch-tree-match-tag-face ((t (:foreground ,yellow))))
+
      ;; org
      '(org-agenda-structure
        ((t (:foreground ,base1 :background ,base02
