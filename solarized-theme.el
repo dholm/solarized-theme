@@ -1264,7 +1264,6 @@ Alpha should be a float between 0 and 1."
      '(org-agenda-done ((t (:foreground ,base01 :slant italic))))
      '(org-archived ((t (:foreground ,base01 :weight normal))))
      '(org-block ((t (:foreground ,base01))))
-     '(org-block-begin-line ((t (:foreground ,base01 :slant italic))))
      '(org-checkbox ((t (:background ,base03 :foreground ,base0
                                      :box (:line-width 1 :style released-button)))))
      '(org-code ((t (:foreground ,base01))))
@@ -1283,6 +1282,7 @@ Alpha should be a float between 0 and 1."
      '(org-level-7 ((t (:inherit ,s-variable-pitch :foreground ,red))))
      '(org-level-8 ((t (:inherit ,s-variable-pitch :foreground ,blue))))
      '(org-link ((t (:foreground ,yellow :underline t))))
+     '(org-meta-line ((t (:foreground ,base01 :slant italic))))
      '(org-sexp-date ((t (:foreground ,violet))))
      '(org-scheduled ((t (:foreground ,green))))
      '(org-scheduled-previously ((t (:foreground ,cyan))))
@@ -1306,7 +1306,7 @@ Alpha should be a float between 0 and 1."
      ;; latest additions
      '(org-agenda-dimmed-todo-face ((t (:foreground ,base01))))
      '(org-agenda-restriction-lock ((t (:background ,yellow))))
-     '(org-clock-overlay ((t (:background ,yellow))))
+     '(org-clock-overlay ((t (:background ,base02))))
      '(org-column ((t (:background ,base02 :strike-through nil
                                    :underline nil :slant normal
                                    :weight normal :inherit default))))
