@@ -488,8 +488,8 @@ Alpha should be a float between 0 and 1."
      '(diff-removed ((t (:foreground ,red :background ,solarized-bg))))
      '(diff-header ((t (:background ,solarized-bg))))
      '(diff-file-header ((t (:foreground ,solarized-fg :background ,solarized-bg :weight bold))))
-     '(diff-refine-added ((t :foreground ,solarized-bg :background ,green)))
-     '(diff-refine-changed ((t :foreground ,solarized-bg :background ,blue)))
+     '(diff-refine-added ((t (:foreground ,solarized-bg :background ,green))))
+     '(diff-refine-changed ((t (:foreground ,solarized-bg :background ,blue))))
      '(diff-refine-removed ((t (:foreground ,solarized-bg :background ,red))))
 
      ;; dropdown
@@ -1012,6 +1012,11 @@ Alpha should be a float between 0 and 1."
 
      ;; linum
      '(linum ((t (:foreground ,solarized-comment :background ,solarized-hl))))
+
+     ;; lsp-mode
+     '(lsp-face-highlight-textual ((t (:foreground ,blue :background ,solarized-hl))))
+     '(lsp-face-highlight-read ((t (:foreground ,red :background ,solarized-hl))))
+     '(lsp-face-highlight-write ((t (:foreground ,green :background ,solarized-hl))))
 
      ;; magit
      ;; headings and diffs
