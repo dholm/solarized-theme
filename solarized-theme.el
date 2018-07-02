@@ -1018,6 +1018,23 @@ Alpha should be a float between 0 and 1."
      '(lsp-face-highlight-read ((t (:foreground ,red :background ,solarized-hl))))
      '(lsp-face-highlight-write ((t (:foreground ,green :background ,solarized-hl))))
 
+     ;; lsp-ui
+     '(lsp-ui-doc-background ((t (:inherit widget-field))))
+     '(lsp-ui-doc-header ((t (:inherit match))))
+     '(lsp-ui-peek-peek ((t (:background ,base02))))
+     '(lsp-ui-peek-list ((t (:background ,solarized-hl))))
+     '(lsp-ui-peek-filename ((t (:foreground ,orange))))
+     '(lsp-ui-peek-line-number ((t (:inherit linum))))
+     '(lsp-ui-peek-highlight ((t (:inherit company-preview-search))))
+     '(lsp-ui-peek-header ((t (:inherit company-tooltip))))
+     '(lsp-ui-peek-footer ((t (:inherit lsp-ui-peek-header))))
+     '(lsp-ui-peek-selection ((t (:inherit company-tooltip-selection))))
+     '(lsp-ui-sideline-symbol ((t (:background ,base02 :foreground ,solarized-comment
+                                   :box (:color ,base02 :line-width -1)))))
+     '(lsp-ui-sideline-current-symbol ((t (:background ,base02 :foreground ,base0 :weight bold
+                                           :box (:color ,base02 :line-width -1)))))
+     '(lsp-ui-sideline-code-action ((t (:foreground ,yellow :weight normal))))
+
      ;; magit
      ;; headings and diffs
      '(magit-section-highlight           ((t (:background ,base02))))
