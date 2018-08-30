@@ -914,6 +914,10 @@ Alpha should be a float between 0 and 1."
      '(hi-red-b ((t (:weight bold :foreground ,red-hc :background ,red-lc))))
      '(hi-black-hb ((t (:weight bold :foreground ,base1 :background ,base02))))
 
+     ;; highlight-doxygen
+     '(highlight-doxygen-comment ((t (:background ,base02))))
+     '(highlight-doxygen-code-block ((t (:inherit highlight-doxygen-comment :slant italic))))
+
      ;; hl-line
      '(hl-line ((t (:underline ,opt-under :background ,solarized-hl))))
 
