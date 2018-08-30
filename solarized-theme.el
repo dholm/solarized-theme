@@ -928,6 +928,9 @@ Alpha should be a float between 0 and 1."
      '(hydra-face-pink ((t (:foreground ,magenta))))
      '(hydra-face-teal ((t (:foreground ,cyan))))
 
+     ;; idle-highlight-in-visible-buffers
+     '(idle-highlight-in-visible-buffers ((t (:background ,base02))))
+
      ;; ido mode
      '(ido-first-match ((t (:foreground ,yellow :weight normal))))
      '(ido-only-match ((t (:foreground ,solarized-bg :background ,yellow :weight normal))))
