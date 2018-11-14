@@ -98,7 +98,7 @@
   :type 'number
   :group 'solarized)
 
-(defcustom solarized-force-256color nil
+(defcustom solarized-force-256color t
   "Force use of the 256-color palette."
   :type 'boolean
   :group 'solarized)
