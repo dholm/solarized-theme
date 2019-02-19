@@ -1,4 +1,4 @@
-;;; solarized-theme.el --- Solarized-based highlighting.
+;;; solarized-dholm-theme.el --- Solarized-based highlighting.
 
 ;; Copyright (C) 2013-2018 David Holm
 ;; Copyright (C) 2013 Greg Pfeil
@@ -26,83 +26,83 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 (require 'dash)
 (require 'color)
 
-(deftheme solarized "Solarized")
+(deftheme solarized-dholm "Solarized")
 
 (defcustom solarized-bold t
   "Stops Solarized from displaying bold when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-underline t
   "Stops Solarized from displaying underlines when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-italic t
   "Stops Solarized from displaying italics when nil."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-diff-mode 'normal
   "Sets the level of highlighting to use in diff-like modes."
   :type 'symbol
   :options '(high normal low)
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-background 'dark
   "Sets the background."
   :type 'symbol
   :options '(dark light)
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-distinct-fringe-background nil
   "Make the fringe background different from the normal background color."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-use-variable-pitch t
   "Use variable pitch face for some headings and titles."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-high-contrast-mode-line nil
   "Make the active/inactive mode line stand out more."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-height-minus-1 0.8
   "Font size -1."
   :type 'number
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-height-plus-1 1.1
   "Font size +1."
   :type 'number
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-height-plus-2 1.15
   "Font size +2."
   :type 'number
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-height-plus-3 1.2
   "Font size +3."
   :type 'number
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-height-plus-4 1.3
   "Font size +4."
   :type 'number
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-force-256color t
   "Force use of the 256-color palette."
   :type 'boolean
-  :group 'solarized)
+  :group 'solarized-dholm)
 
 (defcustom solarized-broken-srgb (if (and (not (and (boundp 'ns-use-srgb-colorspace)
                                               ns-use-srgb-colorspace))
@@ -180,7 +180,7 @@ solarized-definitions.el to improve them further."
       3
     (if window-system
         (if solarized-broken-srgb 2 1)
-      (case (display-color-cells)
+      (cl-case (display-color-cells)
         (16 4)
         (8 5)
         (otherwise 3)))))
@@ -194,7 +194,7 @@ solarized-definitions.el to improve them further."
   "Check `solarized-diff-mode' and return the appropriate value.
 These values are chosen from HIGH-VALUE, LOW-VALUE, NORMAL-WINDOWED-VALUE and
 NORMAL-VALUE."
-  (case solarized-diff-mode
+  (cl-case solarized-diff-mode
     (high high-value)
     (low low-value)
     (normal (if window-system
@@ -296,7 +296,7 @@ Alpha should be a float between 0 and 1."
 (solarized-with-values
   (eval
    `(custom-theme-set-faces
-     'solarized
+     'solarized-dholm
 
      ;; ace jump mode
      '(ace-jump-face-background ((t (:foreground ,solarized-comment :background ,solarized-bg
@@ -1768,7 +1768,7 @@ Alpha should be a float between 0 and 1."
      '(ztreep-node-face ((t (:foreground ,blue)))))
 
    (custom-theme-set-variables
-    'solarized
+    'solarized-dholm
 
     ;; ansi-colors
     `(ansi-color-names-vector
@@ -1839,7 +1839,7 @@ Alpha should be a float between 0 and 1."
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide 'solarized-theme)
+(provide 'solarized-dholm-theme)
 
 ;; Local Variables:
 ;; no-byte-compile: t
@@ -1847,4 +1847,4 @@ Alpha should be a float between 0 and 1."
 ;; indent-tabs-mode: nil
 ;; fill-column: 95
 ;; End:
-;;; solarized-theme.el ends here
+;;; solarized-dholm-theme.el ends here
